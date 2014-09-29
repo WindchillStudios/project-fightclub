@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Brecon\Documents\ControllerTest\Assets\TwoDCharControl.cs">
+    <Files>
+      <File FileName="..\..\..\..\Brecon\Documents\ControllerTest\Assets\attackController.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Brecon\Documents\ControllerTest\Assets\TwoDCharControl.cs" Line="93" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
