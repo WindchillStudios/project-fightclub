@@ -46,10 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\TwoDController.cs" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\TwoDControllerWTranslate.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\TwoDCharControl.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\TwoDController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
