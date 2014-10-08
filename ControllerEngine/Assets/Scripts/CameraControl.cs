@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour {
 
 	GameObject[] players;
 	Vector3 camLocation;
+	Vector3 lastCamLocation;
 
 
 	// Use this for initialization
@@ -32,9 +33,12 @@ public class CameraControl : MonoBehaviour {
 			}
 			
 			camLocation = camLocation / players.Length;
+			//camLocation = camLocation - lastCamLocation * 0.75f;
 			camLocation.z = -20;
 
+
 			this.camera.transform.position = camLocation;
+			lastCamLocation = camLocation;
 		}
 		else{
 			this.camera.transform.position = new Vector3(0,0,-20);

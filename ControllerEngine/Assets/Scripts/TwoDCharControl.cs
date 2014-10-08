@@ -4,6 +4,7 @@ using System.Collections;
 public class TwoDCharControl : MonoBehaviour {
 
 	public CharacterController body;
+	public Health healthScript;
 
 	bool onGround;
 
@@ -33,6 +34,7 @@ public class TwoDCharControl : MonoBehaviour {
 	bool isFalling = false;
 	bool onRSlope = false;
 	bool onLSlope = false;
+	bool isDead = false;
 
 	Vector3 movement = new Vector3 (0,0,0);
 	
@@ -45,12 +47,17 @@ public class TwoDCharControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		getMovement ();
+		isDead = healthScript.isDead;
 
-		movement.x = horizontalMove * Time.deltaTime;
-		movement.y = verticalMove * Time.deltaTime;
+		if(!isDead)
+		{
+			getMovement ();
 
-		body.Move (movement);
+			movement.x = horizontalMove * Time.deltaTime;
+			movement.y = verticalMove * Time.deltaTime;
+
+			body.Move (movement);
+		}
 		
 	}
 
@@ -164,41 +171,45 @@ public class TwoDCharControl : MonoBehaviour {
 			}
 			verticalMove = gravity;
 		}
-
 	}
-	void OnControllerColliderHit(ControllerColliderHit hit){
-		Debug.Log (hit.moveDirection);
 
-		if (hit.moveDirection.y == 1.0f) {
-			if(hit.collider.tag == "Level")
-			{
-				isFalling = true;
-			}
+	void OnControllerColliderHit(ControllerColliderHit hit){
+
+		if(hit.gameObject.rigidbody)
+		{
+			hit.rigidbody.AddForceAtPosition(hit.moveDirection*10.0f, hit.point);
 		}
 
-		if(hit.moveDirection.y < -0.5f)
+		if (hit.moveDirection.y == 1.0f) {
+			isFalling = true;
+		}
+
+		if(hit.gameObject.tag == "Level")
 		{
-			if(hit != null)
+			if(hit.moveDirection.y < -0.5f)
 			{
-				float slope = (hit.normal.y/hit.normal.x);
+				if(hit != null)
+				{
+					float slope = (hit.normal.y/hit.normal.x);
 
-				if(slope < 1 && slope > 0){
-					onLSlope = true;
-				}
-				else{
-					onLSlope = false;
-				}
+					if(slope < 1 && slope > 0){
+						onLSlope = true;
+					}
+					else{
+						onLSlope = false;
+					}
 
-				if(slope < 0 && slope > -1){
-					onRSlope = true;
+					if(slope < 0 && slope > -1){
+						onRSlope = true;
+					}
+					else{
+						onRSlope = false;
+					}
 				}
 				else{
 					onRSlope = false;
+					onLSlope = false;
 				}
-			}
-			else{
-				onRSlope = false;
-				onLSlope = false;
 			}
 		}
 	}
