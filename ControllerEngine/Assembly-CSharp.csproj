@@ -46,20 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Crusher.cs" />
-     <Compile Include="Assets\DamagerStats.cs" />
+     <Compile Include="Assets\ConveyorTrap.cs" />
+     <Compile Include="Assets\Scripts\Breakable.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\Crusher.cs" />
+     <Compile Include="Assets\Scripts\DamagerStats.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
-     <Compile Include="Assets\Scripts\Health.cs" />
-     <Compile Include="Assets\Scripts\TwoDCharControl.cs" />
-     <Compile Include="Assets\attacks.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{350485C5-BB90-4E66-55AA-E4456958125F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{6F4E89A2-1498-2373-B75D-13375A1FC30A}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+     <Compile Include="Assets\Scripts\MatchControl.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\Health.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\TwoDCharControl.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\attacks.cs" />
+     <Compile Include="Assets\Scripts\SwitchScript.cs" />
+     <Compile Include="Assets\Scripts\TrapScript.cs" />
+     <None Include="Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

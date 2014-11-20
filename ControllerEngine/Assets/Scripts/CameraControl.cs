@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		getCameraPos ();
 	}
 
@@ -34,7 +34,7 @@ public class CameraControl : MonoBehaviour {
 			
 			camLocation = camLocation / players.Length;
 			//camLocation = camLocation - lastCamLocation * 0.75f;
-			camLocation.z = -20;
+			camLocation.z = -40;
 
 
 			this.camera.transform.position = camLocation;

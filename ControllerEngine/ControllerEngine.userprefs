@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\attacks.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScripts\TwoDCharControl.cs">
     <Files>
-      <File FileName="Assets\attacks.cs" Line="7" Column="2" />
-      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TwoDCharControl.cs" Line="97" Column="23" />
+      <File FileName="Assets\Scripts\TrapScript.cs" Line="2" Column="20" />
+      <File FileName="Assets\Scripts\PlayerScripts\attacks.cs" Line="1" Column="1" />
+      <File FileName="Assets\ConveyorTrap.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\PlayerScripts\TwoDCharControl.cs" Line="211" Column="8" />
+      <File FileName="Assets\Scripts\PlayerScripts\Health.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
