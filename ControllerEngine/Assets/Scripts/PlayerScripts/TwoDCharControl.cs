@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TwoDCharControl : MonoBehaviour {
 
+	public Animator model;
 	public CharacterController body;
 	public Health healthScript;
 
@@ -57,7 +58,6 @@ public class TwoDCharControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		Debug.Log(isFalling);
 
 		isDead = healthScript.isDead;
 
@@ -96,6 +96,8 @@ public class TwoDCharControl : MonoBehaviour {
 		direction = Input.GetAxis ("Horizontal" + playerNumber) ;
 		if(direction != 0)
 		{
+			model.SetBool("isWalking", true);
+
 			if(direction > 0){
 				facing = 1;
 				body.transform.eulerAngles = new Vector3 (0, 90, 0);
@@ -111,6 +113,7 @@ public class TwoDCharControl : MonoBehaviour {
 		}
 		else{
 			currentSpeed = 0;
+			model.SetBool("isWalking", false);
 		}
 
 		if(!onRSlope && !onLSlope)
@@ -127,7 +130,8 @@ public class TwoDCharControl : MonoBehaviour {
 		{
 			if(knockForce != Vector3.zero)
 			{
-				body.Move(knockForce);
+				horizontalMove = horizontalMove + knockForce.x;
+				verticalMove = verticalMove + knockForce.y;
 
 				if(knockForce.y > 0)
 				{
@@ -223,6 +227,14 @@ public class TwoDCharControl : MonoBehaviour {
 	}
 
 	//SOME COLLISION DETECTION//
+	void OnTriggerEnter(Collider hit){
+	
+		// INSTANT DEATH OBJECT ////////////
+		
+		if (hit.gameObject.tag == "Death") { 
+			healthScript.takeDamage(1000.0f,hit.gameObject);
+		}
+	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit){
 

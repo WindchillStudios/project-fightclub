@@ -1,0 +1,645 @@
+fileFormatVersion: 2
+guid: 5d7fa334c9b141a4bb85aeb790095f3f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ambientLight1
+    100002: back
+    100004: BandannaModel
+    100006: BatteriesGroup
+    100008: bottom1
+    100010: Connector
+    100012: Connector2
+    100014: ControlledCharacter_01:clusterAbs
+    100016: ControlledCharacter_01:clusterChest
+    100018: ControlledCharacter_01:clusterHip
+    100020: ControlledCharacter_01:clusterNeckbase
+    100022: ControlledCharacter_01:ctrl_Abs
+    100024: ControlledCharacter_01:ctrl_Back
+    100026: ControlledCharacter_01:ctrl_Chest
+    100028: ControlledCharacter_01:ctrl_Global
+    100030: ControlledCharacter_01:ctrl_Hips
+    100032: ControlledCharacter_01:ctrl_Hipsway
+    100034: ControlledCharacter_01:ctrl_L_Arm
+    100036: ControlledCharacter_01:ctrl_L_Elbow
+    100038: ControlledCharacter_01:ctrl_L_Foot
+    100040: ControlledCharacter_01:ctrl_L_Knee
+    100042: ControlledCharacter_01:ctrl_L_Wrist
+    100044: ControlledCharacter_01:ctrl_Neck
+    100046: ControlledCharacter_01:ctrl_R_Arm
+    100048: ControlledCharacter_01:ctrl_R_Elbow
+    100050: ControlledCharacter_01:ctrl_R_Foot
+    100052: ControlledCharacter_01:ctrl_R_Knee
+    100054: ControlledCharacter_01:curve1
+    100056: ControlledCharacter_01:default_cube
+    100058: ControlledCharacter_01:group1
+    100060: ControlledCharacter_01:group2
+    100062: ControlledCharacter_01:group3
+    100064: ControlledCharacter_01:group4
+    100066: ControlledCharacter_01:grp_CtrlCurves
+    100068: ControlledCharacter_01:grp_L_ElbowCtrl
+    100070: ControlledCharacter_01:grp_L_KneeCtrl
+    100072: ControlledCharacter_01:grp_R_ElbowCtrl
+    100074: ControlledCharacter_01:grp_R_KneeCtrl
+    100076: ControlledCharacter_01:grp_Root
+    100078: ControlledCharacter_01:ikHandle_L_Ankle
+    100080: ControlledCharacter_01:ikHandle_L_Arm
+    100082: ControlledCharacter_01:ikHandle_L_Ball
+    100084: ControlledCharacter_01:ikHandle_L_Toe
+    100086: ControlledCharacter_01:ikHandle_Neck
+    100088: ControlledCharacter_01:ikHandle_R_Ankle
+    100090: ControlledCharacter_01:ikHandle_R_Arm
+    100092: ControlledCharacter_01:ikHandle_R_Ball
+    100094: ControlledCharacter_01:ikHandle_R_Toe
+    100096: ControlledCharacter_01:ikHandle_Spine
+    100098: ControlledCharacter_01:jnt_ChinBase
+    100100: ControlledCharacter_01:jnt_ChinTip
+    100102: ControlledCharacter_01:jnt_Head
+    100104: ControlledCharacter_01:jnt_HeadTop
+    100106: ControlledCharacter_01:jnt_Hip
+    100108: ControlledCharacter_01:jnt_L_Ankle
+    100110: ControlledCharacter_01:jnt_L_Ball
+    100112: ControlledCharacter_01:jnt_L_Elbow
+    100114: ControlledCharacter_01:jnt_L_Forearm
+    100116: ControlledCharacter_01:jnt_L_Hip
+    100118: ControlledCharacter_01:jnt_L_Index1
+    100120: ControlledCharacter_01:jnt_L_Index2
+    100122: ControlledCharacter_01:jnt_L_Index3
+    100124: ControlledCharacter_01:jnt_L_Index4
+    100126: ControlledCharacter_01:jnt_L_Knee
+    100128: ControlledCharacter_01:jnt_L_Middle1
+    100130: ControlledCharacter_01:jnt_L_Middle2
+    100132: ControlledCharacter_01:jnt_L_Middle3
+    100134: ControlledCharacter_01:jnt_L_Middle4
+    100136: ControlledCharacter_01:jnt_L_Pinky1
+    100138: ControlledCharacter_01:jnt_L_Pinky2
+    100140: ControlledCharacter_01:jnt_L_Pinky3
+    100142: ControlledCharacter_01:jnt_L_Pinky4
+    100144: ControlledCharacter_01:jnt_L_Ring1
+    100146: ControlledCharacter_01:jnt_L_Ring2
+    100148: ControlledCharacter_01:jnt_L_Ring3
+    100150: ControlledCharacter_01:jnt_L_Ring4
+    100152: ControlledCharacter_01:jnt_L_Shoulder
+    100154: ControlledCharacter_01:jnt_L_Thumb1
+    100156: ControlledCharacter_01:jnt_L_Thumb2
+    100158: ControlledCharacter_01:jnt_L_Thumb3
+    100160: ControlledCharacter_01:jnt_L_Thumb4
+    100162: ControlledCharacter_01:jnt_L_Toe
+    100164: ControlledCharacter_01:jnt_L_Wrist
+    100166: ControlledCharacter_01:jnt_Neck
+    100168: ControlledCharacter_01:jnt_NeckBase
+    100170: ControlledCharacter_01:jnt_R_Ankle
+    100172: ControlledCharacter_01:jnt_R_Ball
+    100174: ControlledCharacter_01:jnt_R_Elbow
+    100176: ControlledCharacter_01:jnt_R_Forearm
+    100178: ControlledCharacter_01:jnt_R_Hip
+    100180: ControlledCharacter_01:jnt_R_Knee
+    100182: ControlledCharacter_01:jnt_R_Shoulder
+    100184: ControlledCharacter_01:jnt_R_Toe
+    100186: ControlledCharacter_01:jnt_Root
+    100188: ControlledCharacter_01:jnt_Spine1
+    100190: ControlledCharacter_01:jnt_Spine2
+    100192: ControlledCharacter_01:jnt_Spine3
+    100194: ControlledCharacter_01:RFL_L_Ankle
+    100196: ControlledCharacter_01:RFL_L_Ball
+    100198: ControlledCharacter_01:RFL_L_Base
+    100200: ControlledCharacter_01:RFL_L_Toe
+    100202: ControlledCharacter_01:RFL_R_Ankle
+    100204: ControlledCharacter_01:RFL_R_Ball
+    100206: ControlledCharacter_01:RFL_R_Base
+    100208: ControlledCharacter_01:RFL_R_Toe
+    100210: cord1a
+    100212: cord1b
+    100214: cord2a
+    100216: cord2b
+    100218: directionalLight1
+    100220: directionalLight2
+    100222: Eye1
+    100224: Eye2
+    100226: joint1
+    100228: joint2
+    100230: joint3
+    100232: joint4
+    100234: joint5
+    100236: joint6
+    100238: left
+    100240: Model
+    100242: Model 1
+    100244: pasted__pCylinder3
+    100246: pasted__pCylinder4
+    100248: pCylinder3
+    100250: pCylinder4
+    100252: //RootNode
+    100254: right1
+    100256: Strap1
+    100258: Strap2
+    100260: Vest
+    400000: ambientLight1
+    400002: back
+    400004: BandannaModel
+    400006: BatteriesGroup
+    400008: bottom1
+    400010: Connector
+    400012: Connector2
+    400014: ControlledCharacter_01:clusterAbs
+    400016: ControlledCharacter_01:clusterChest
+    400018: ControlledCharacter_01:clusterHip
+    400020: ControlledCharacter_01:clusterNeckbase
+    400022: ControlledCharacter_01:ctrl_Abs
+    400024: ControlledCharacter_01:ctrl_Back
+    400026: ControlledCharacter_01:ctrl_Chest
+    400028: ControlledCharacter_01:ctrl_Global
+    400030: ControlledCharacter_01:ctrl_Hips
+    400032: ControlledCharacter_01:ctrl_Hipsway
+    400034: ControlledCharacter_01:ctrl_L_Arm
+    400036: ControlledCharacter_01:ctrl_L_Elbow
+    400038: ControlledCharacter_01:ctrl_L_Foot
+    400040: ControlledCharacter_01:ctrl_L_Knee
+    400042: ControlledCharacter_01:ctrl_L_Wrist
+    400044: ControlledCharacter_01:ctrl_Neck
+    400046: ControlledCharacter_01:ctrl_R_Arm
+    400048: ControlledCharacter_01:ctrl_R_Elbow
+    400050: ControlledCharacter_01:ctrl_R_Foot
+    400052: ControlledCharacter_01:ctrl_R_Knee
+    400054: ControlledCharacter_01:curve1
+    400056: ControlledCharacter_01:default_cube
+    400058: ControlledCharacter_01:group1
+    400060: ControlledCharacter_01:group2
+    400062: ControlledCharacter_01:group3
+    400064: ControlledCharacter_01:group4
+    400066: ControlledCharacter_01:grp_CtrlCurves
+    400068: ControlledCharacter_01:grp_L_ElbowCtrl
+    400070: ControlledCharacter_01:grp_L_KneeCtrl
+    400072: ControlledCharacter_01:grp_R_ElbowCtrl
+    400074: ControlledCharacter_01:grp_R_KneeCtrl
+    400076: ControlledCharacter_01:grp_Root
+    400078: ControlledCharacter_01:ikHandle_L_Ankle
+    400080: ControlledCharacter_01:ikHandle_L_Arm
+    400082: ControlledCharacter_01:ikHandle_L_Ball
+    400084: ControlledCharacter_01:ikHandle_L_Toe
+    400086: ControlledCharacter_01:ikHandle_Neck
+    400088: ControlledCharacter_01:ikHandle_R_Ankle
+    400090: ControlledCharacter_01:ikHandle_R_Arm
+    400092: ControlledCharacter_01:ikHandle_R_Ball
+    400094: ControlledCharacter_01:ikHandle_R_Toe
+    400096: ControlledCharacter_01:ikHandle_Spine
+    400098: ControlledCharacter_01:jnt_ChinBase
+    400100: ControlledCharacter_01:jnt_ChinTip
+    400102: ControlledCharacter_01:jnt_Head
+    400104: ControlledCharacter_01:jnt_HeadTop
+    400106: ControlledCharacter_01:jnt_Hip
+    400108: ControlledCharacter_01:jnt_L_Ankle
+    400110: ControlledCharacter_01:jnt_L_Ball
+    400112: ControlledCharacter_01:jnt_L_Elbow
+    400114: ControlledCharacter_01:jnt_L_Forearm
+    400116: ControlledCharacter_01:jnt_L_Hip
+    400118: ControlledCharacter_01:jnt_L_Index1
+    400120: ControlledCharacter_01:jnt_L_Index2
+    400122: ControlledCharacter_01:jnt_L_Index3
+    400124: ControlledCharacter_01:jnt_L_Index4
+    400126: ControlledCharacter_01:jnt_L_Knee
+    400128: ControlledCharacter_01:jnt_L_Middle1
+    400130: ControlledCharacter_01:jnt_L_Middle2
+    400132: ControlledCharacter_01:jnt_L_Middle3
+    400134: ControlledCharacter_01:jnt_L_Middle4
+    400136: ControlledCharacter_01:jnt_L_Pinky1
+    400138: ControlledCharacter_01:jnt_L_Pinky2
+    400140: ControlledCharacter_01:jnt_L_Pinky3
+    400142: ControlledCharacter_01:jnt_L_Pinky4
+    400144: ControlledCharacter_01:jnt_L_Ring1
+    400146: ControlledCharacter_01:jnt_L_Ring2
+    400148: ControlledCharacter_01:jnt_L_Ring3
+    400150: ControlledCharacter_01:jnt_L_Ring4
+    400152: ControlledCharacter_01:jnt_L_Shoulder
+    400154: ControlledCharacter_01:jnt_L_Thumb1
+    400156: ControlledCharacter_01:jnt_L_Thumb2
+    400158: ControlledCharacter_01:jnt_L_Thumb3
+    400160: ControlledCharacter_01:jnt_L_Thumb4
+    400162: ControlledCharacter_01:jnt_L_Toe
+    400164: ControlledCharacter_01:jnt_L_Wrist
+    400166: ControlledCharacter_01:jnt_Neck
+    400168: ControlledCharacter_01:jnt_NeckBase
+    400170: ControlledCharacter_01:jnt_R_Ankle
+    400172: ControlledCharacter_01:jnt_R_Ball
+    400174: ControlledCharacter_01:jnt_R_Elbow
+    400176: ControlledCharacter_01:jnt_R_Forearm
+    400178: ControlledCharacter_01:jnt_R_Hip
+    400180: ControlledCharacter_01:jnt_R_Knee
+    400182: ControlledCharacter_01:jnt_R_Shoulder
+    400184: ControlledCharacter_01:jnt_R_Toe
+    400186: ControlledCharacter_01:jnt_Root
+    400188: ControlledCharacter_01:jnt_Spine1
+    400190: ControlledCharacter_01:jnt_Spine2
+    400192: ControlledCharacter_01:jnt_Spine3
+    400194: ControlledCharacter_01:RFL_L_Ankle
+    400196: ControlledCharacter_01:RFL_L_Ball
+    400198: ControlledCharacter_01:RFL_L_Base
+    400200: ControlledCharacter_01:RFL_L_Toe
+    400202: ControlledCharacter_01:RFL_R_Ankle
+    400204: ControlledCharacter_01:RFL_R_Ball
+    400206: ControlledCharacter_01:RFL_R_Base
+    400208: ControlledCharacter_01:RFL_R_Toe
+    400210: cord1a
+    400212: cord1b
+    400214: cord2a
+    400216: cord2b
+    400218: directionalLight1
+    400220: directionalLight2
+    400222: Eye1
+    400224: Eye2
+    400226: joint1
+    400228: joint2
+    400230: joint3
+    400232: joint4
+    400234: joint5
+    400236: joint6
+    400238: left
+    400240: Model
+    400242: Model 1
+    400244: pasted__pCylinder3
+    400246: pasted__pCylinder4
+    400248: pCylinder3
+    400250: pCylinder4
+    400252: //RootNode
+    400254: right1
+    400256: Strap1
+    400258: Strap2
+    400260: Vest
+    4300000: pasted__pCylinder3
+    4300002: pasted__pCylinder4
+    4300004: pCylinder3
+    4300006: pCylinder4
+    4300008: Strap1
+    4300010: Strap2
+    4300012: Connector2
+    4300014: Connector
+    4300016: cord1a
+    4300018: cord2a
+    4300020: cord2b
+    4300022: cord1b
+    4300024: Vest
+    4300026: Model
+    4300028: BandannaModel
+    4300030: Eye1
+    4300032: Eye2
+    7400000: Punch
+    9500000: //RootNode
+    13700000: BandannaModel
+    13700002: Connector
+    13700004: Connector2
+    13700006: cord1a
+    13700008: cord1b
+    13700010: cord2a
+    13700012: cord2b
+    13700014: Eye1
+    13700016: Eye2
+    13700018: Model 1
+    13700020: pasted__pCylinder3
+    13700022: pasted__pCylinder4
+    13700024: pCylinder3
+    13700026: pCylinder4
+    13700028: Strap1
+    13700030: Strap2
+    13700032: Vest
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Punch
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ambientLight1
+        weight: 1
+      - path: back
+        weight: 1
+      - path: bottom1
+        weight: 1
+      - path: ControlledCharacter_01:ctrl_Global
+        weight: 1
+      - path: ControlledCharacter_01:default_cube
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips/ControlledCharacter_01:ctrl_Abs
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips/ControlledCharacter_01:ctrl_Back
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips/ControlledCharacter_01:ctrl_Back/ControlledCharacter_01:ctrl_Neck
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips/ControlledCharacter_01:ctrl_Chest
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_Hips/ControlledCharacter_01:ctrl_Hipsway
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Arm
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe/ControlledCharacter_01:ikHandle_L_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe/ControlledCharacter_01:RFL_L_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe/ControlledCharacter_01:RFL_L_Ball/ControlledCharacter_01:ikHandle_L_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe/ControlledCharacter_01:RFL_L_Ball/ControlledCharacter_01:RFL_L_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Foot/ControlledCharacter_01:RFL_L_Base/ControlledCharacter_01:RFL_L_Toe/ControlledCharacter_01:RFL_L_Ball/ControlledCharacter_01:RFL_L_Ankle/ControlledCharacter_01:ikHandle_L_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_L_Wrist
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Arm
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe/ControlledCharacter_01:ikHandle_R_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe/ControlledCharacter_01:RFL_R_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe/ControlledCharacter_01:RFL_R_Ball/ControlledCharacter_01:ikHandle_R_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe/ControlledCharacter_01:RFL_R_Ball/ControlledCharacter_01:RFL_R_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:ctrl_R_Foot/ControlledCharacter_01:RFL_R_Base/ControlledCharacter_01:RFL_R_Toe/ControlledCharacter_01:RFL_R_Ball/ControlledCharacter_01:RFL_R_Ankle/ControlledCharacter_01:ikHandle_R_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_L_ElbowCtrl
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_L_ElbowCtrl/ControlledCharacter_01:ctrl_L_Elbow
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_L_KneeCtrl
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_L_KneeCtrl/ControlledCharacter_01:ctrl_L_Knee
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_R_ElbowCtrl
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_R_ElbowCtrl/ControlledCharacter_01:ctrl_R_Elbow
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_R_KneeCtrl
+        weight: 1
+      - path: ControlledCharacter_01:grp_CtrlCurves/ControlledCharacter_01:grp_R_KneeCtrl/ControlledCharacter_01:ctrl_R_Knee
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:curve1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group1/ControlledCharacter_01:clusterNeckbase
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group2/ControlledCharacter_01:clusterChest
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group3/ControlledCharacter_01:clusterAbs
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:group4/ControlledCharacter_01:clusterHip
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_L_Hip
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_L_Hip/ControlledCharacter_01:jnt_L_Knee
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_L_Hip/ControlledCharacter_01:jnt_L_Knee/ControlledCharacter_01:jnt_L_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_L_Hip/ControlledCharacter_01:jnt_L_Knee/ControlledCharacter_01:jnt_L_Ankle/ControlledCharacter_01:jnt_L_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_L_Hip/ControlledCharacter_01:jnt_L_Knee/ControlledCharacter_01:jnt_L_Ankle/ControlledCharacter_01:jnt_L_Ball/ControlledCharacter_01:jnt_L_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_R_Hip
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_R_Hip/ControlledCharacter_01:jnt_R_Knee
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_R_Hip/ControlledCharacter_01:jnt_R_Knee/ControlledCharacter_01:jnt_R_Ankle
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_R_Hip/ControlledCharacter_01:jnt_R_Knee/ControlledCharacter_01:jnt_R_Ankle/ControlledCharacter_01:jnt_R_Ball
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_R_Hip/ControlledCharacter_01:jnt_R_Knee/ControlledCharacter_01:jnt_R_Ankle/ControlledCharacter_01:jnt_R_Ball/ControlledCharacter_01:jnt_R_Toe
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Index1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Index1/ControlledCharacter_01:jnt_L_Index2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Index1/ControlledCharacter_01:jnt_L_Index2/ControlledCharacter_01:jnt_L_Index3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Index1/ControlledCharacter_01:jnt_L_Index2/ControlledCharacter_01:jnt_L_Index3/ControlledCharacter_01:jnt_L_Index4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Middle1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Middle1/ControlledCharacter_01:jnt_L_Middle2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Middle1/ControlledCharacter_01:jnt_L_Middle2/ControlledCharacter_01:jnt_L_Middle3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Middle1/ControlledCharacter_01:jnt_L_Middle2/ControlledCharacter_01:jnt_L_Middle3/ControlledCharacter_01:jnt_L_Middle4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Pinky1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Pinky1/ControlledCharacter_01:jnt_L_Pinky2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Pinky1/ControlledCharacter_01:jnt_L_Pinky2/ControlledCharacter_01:jnt_L_Pinky3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Pinky1/ControlledCharacter_01:jnt_L_Pinky2/ControlledCharacter_01:jnt_L_Pinky3/ControlledCharacter_01:jnt_L_Pinky4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Ring1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Ring1/ControlledCharacter_01:jnt_L_Ring2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Ring1/ControlledCharacter_01:jnt_L_Ring2/ControlledCharacter_01:jnt_L_Ring3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Ring1/ControlledCharacter_01:jnt_L_Ring2/ControlledCharacter_01:jnt_L_Ring3/ControlledCharacter_01:jnt_L_Ring4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Thumb1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Thumb1/ControlledCharacter_01:jnt_L_Thumb2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Thumb1/ControlledCharacter_01:jnt_L_Thumb2/ControlledCharacter_01:jnt_L_Thumb3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_L_Shoulder/ControlledCharacter_01:jnt_L_Elbow/ControlledCharacter_01:jnt_L_Forearm/ControlledCharacter_01:jnt_L_Wrist/ControlledCharacter_01:jnt_L_Thumb1/ControlledCharacter_01:jnt_L_Thumb2/ControlledCharacter_01:jnt_L_Thumb3/ControlledCharacter_01:jnt_L_Thumb4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase/ControlledCharacter_01:jnt_Neck
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase/ControlledCharacter_01:jnt_Neck/ControlledCharacter_01:jnt_Head
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase/ControlledCharacter_01:jnt_Neck/ControlledCharacter_01:jnt_Head/ControlledCharacter_01:jnt_HeadTop
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase/ControlledCharacter_01:jnt_Neck/ControlledCharacter_01:jnt_Head/ControlledCharacter_01:jnt_HeadTop/ControlledCharacter_01:jnt_ChinBase
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_NeckBase/ControlledCharacter_01:jnt_Neck/ControlledCharacter_01:jnt_Head/ControlledCharacter_01:jnt_HeadTop/ControlledCharacter_01:jnt_ChinBase/ControlledCharacter_01:jnt_ChinTip
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint1
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint1/joint2
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint1/joint2/joint3
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint4
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint4/joint5
+        weight: 1
+      - path: ControlledCharacter_01:grp_Root/ControlledCharacter_01:jnt_Root/ControlledCharacter_01:jnt_Hip/ControlledCharacter_01:jnt_Spine1/ControlledCharacter_01:jnt_Spine2/ControlledCharacter_01:jnt_Spine3/ControlledCharacter_01:jnt_R_Shoulder/ControlledCharacter_01:jnt_R_Elbow/ControlledCharacter_01:jnt_R_Forearm/joint4/joint5/joint6
+        weight: 1
+      - path: ControlledCharacter_01:ikHandle_L_Arm
+        weight: 1
+      - path: ControlledCharacter_01:ikHandle_Neck
+        weight: 1
+      - path: ControlledCharacter_01:ikHandle_R_Arm
+        weight: 1
+      - path: ControlledCharacter_01:ikHandle_Spine
+        weight: 1
+      - path: directionalLight1
+        weight: 1
+      - path: directionalLight2
+        weight: 1
+      - path: left
+        weight: 1
+      - path: Model
+        weight: 1
+      - path: Model/BandannaModel
+        weight: 1
+      - path: Model/BatteriesGroup
+        weight: 1
+      - path: Model/BatteriesGroup/Connector
+        weight: 1
+      - path: Model/BatteriesGroup/Connector2
+        weight: 1
+      - path: Model/BatteriesGroup/cord1a
+        weight: 1
+      - path: Model/BatteriesGroup/cord1b
+        weight: 1
+      - path: Model/BatteriesGroup/cord2a
+        weight: 1
+      - path: Model/BatteriesGroup/cord2b
+        weight: 1
+      - path: Model/BatteriesGroup/pasted__pCylinder3
+        weight: 1
+      - path: Model/BatteriesGroup/pasted__pCylinder4
+        weight: 1
+      - path: Model/BatteriesGroup/pCylinder3
+        weight: 1
+      - path: Model/BatteriesGroup/pCylinder4
+        weight: 1
+      - path: Model/BatteriesGroup/Strap1
+        weight: 1
+      - path: Model/BatteriesGroup/Strap2
+        weight: 1
+      - path: Model/Eye1
+        weight: 1
+      - path: Model/Eye2
+        weight: 1
+      - path: Model/Model 1
+        weight: 1
+      - path: Model/Vest
+        weight: 1
+      - path: right1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

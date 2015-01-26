@@ -4,6 +4,7 @@ using System.Collections;
 public class attacks : MonoBehaviour {
 
 	public TwoDCharControl character;
+	public Animator model;
 	Animator anim;
 
 	float currentDamage;
@@ -30,6 +31,7 @@ public class attacks : MonoBehaviour {
 			isAttacking = false;
 			canAttack = true;
 			anim.SetBool("isAttack", false );
+			model.SetBool("isAttack", false);
 			anim.SetBool("isSpecialAttack", false );
 		}
 
@@ -89,7 +91,14 @@ public class attacks : MonoBehaviour {
 
 		if(hit.gameObject.tag == "Switch")
 		{
-			hit.gameObject.GetComponent<SwitchScript>().activate();
+			if(!hit.gameObject.GetComponent<SwitchScript>().isOn)
+			{
+				hit.gameObject.GetComponent<SwitchScript>().activate();
+			}
+			else if(hit.gameObject.GetComponent<SwitchScript>().isOn)
+			{
+				hit.gameObject.GetComponent<SwitchScript>().deactivate();
+			}
 		}
 	}
 
@@ -108,6 +117,7 @@ public class attacks : MonoBehaviour {
 			switch(attDirection)
 			{
 				case 0://No Input
+					model.SetBool("isAttack", true);
 					anim.SetBool("isAttack", true );
 					anim.SetInteger ("animDirection", 0);
 					currentDamage = 10.0f;

@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 7c2bf9cc481b868408c89d4b1dcb3751
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: belt
+    100002: //RootNode
+    100004: roller1
+    100006: roller10
+    100008: roller2
+    100010: roller3
+    100012: roller4
+    100014: roller5
+    100016: roller6
+    100018: roller7
+    100020: roller8
+    100022: roller9
+    100024: sunDirection
+    100026: roller11
+    100028: roller12
+    100030: roller13
+    100032: roller14
+    100034: roller15
+    100036: roller16
+    100038: roller17
+    100040: roller18
+    400000: belt
+    400002: //RootNode
+    400004: roller1
+    400006: roller10
+    400008: roller2
+    400010: roller3
+    400012: roller4
+    400014: roller5
+    400016: roller6
+    400018: roller7
+    400020: roller8
+    400022: roller9
+    400024: sunDirection
+    400026: roller11
+    400028: roller12
+    400030: roller13
+    400032: roller14
+    400034: roller15
+    400036: roller16
+    400038: roller17
+    400040: roller18
+    2300000: belt
+    2300002: roller1
+    2300004: roller10
+    2300006: roller2
+    2300008: roller3
+    2300010: roller4
+    2300012: roller5
+    2300014: roller6
+    2300016: roller7
+    2300018: roller8
+    2300020: roller9
+    2300022: roller11
+    2300024: roller12
+    2300026: roller13
+    2300028: roller14
+    2300030: roller15
+    2300032: roller16
+    2300034: roller17
+    2300036: roller18
+    3300000: belt
+    3300002: roller1
+    3300004: roller10
+    3300006: roller2
+    3300008: roller3
+    3300010: roller4
+    3300012: roller5
+    3300014: roller6
+    3300016: roller7
+    3300018: roller8
+    3300020: roller9
+    3300022: roller11
+    3300024: roller12
+    3300026: roller13
+    3300028: roller14
+    3300030: roller15
+    3300032: roller16
+    3300034: roller17
+    3300036: roller18
+    4300000: belt
+    4300002: roller1
+    4300004: roller2
+    4300006: roller3
+    4300008: roller4
+    4300010: roller5
+    4300012: roller6
+    4300014: roller7
+    4300016: roller8
+    4300018: roller9
+    4300020: roller10
+    4300022: roller11
+    4300024: roller12
+    4300026: roller13
+    4300028: roller14
+    4300030: roller15
+    4300032: roller16
+    4300034: roller17
+    4300036: roller18
+    7400000: moving
+    7400002: Rolling
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Rolling
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: belt
+        weight: 1
+      - path: roller9
+        weight: 1
+      - path: roller10
+        weight: 1
+      - path: roller11
+        weight: 1
+      - path: roller12
+        weight: 1
+      - path: roller13
+        weight: 1
+      - path: roller14
+        weight: 1
+      - path: roller15
+        weight: 1
+      - path: roller16
+        weight: 1
+      - path: roller17
+        weight: 1
+      - path: roller18
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

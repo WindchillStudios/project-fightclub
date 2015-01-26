@@ -86,14 +86,14 @@ public class Health : MonoBehaviour {
 
 	void takeDeath(GameObject attacker)
 	{
-		deathNote.text = this.gameObject.name + " was killed by " + attacker.name;
+		//deathNote.text = this.gameObject.name + " was killed by " + attacker.name;
 		isDead = true;
 		deaths ++;
 	}
 
 	void respawn(){
-		GameObject[] spawnLocs = GameObject.FindGameObjectsWithTag("Respawner");
-		int pickSpawn = Random.Range (0, spawnLocs.Length-1);
+		GameObject[] spawnLocs = GameObject.FindGameObjectsWithTag("Respawn");
+		int pickSpawn = Random.Range (0, spawnLocs.Length);
 
 		this.gameObject.transform.position = spawnLocs [pickSpawn].transform.position;
 		health = maxHealth;
