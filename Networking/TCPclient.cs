@@ -12,29 +12,28 @@ public class TCPclient : MonoBehaviour {
 	string input, stringData;
 	byte[] writeData;
 	TcpClient server;
-	public Movement playerMove; //The controller script.
+	public Movement playerMove;
 	bool runThread;
 	bool thereIsData = false;
 	bool dataToWrite = false;
-	/*OPEN THE SERVER CONNECTION IN START*/
+
 	void Start(){
 		Debug.Log ("Hi");
 		server = new TcpClient ("localhost", 8001);
 		if (server.Connected) {
 			Debug.Log ("Connected");
 			runThread = true;
-			new Thread (OpenStream).Start();	
+			new Thread (OpenStream).Start();
+			prepareString ("Game");
 		}
 	}
-	/*CHECKING ON EVERY UPDATE TO SEE IF THERE IS DATA TO BE READ TO OR SENT FROM THE SERVER*/
+
 	void Update(){
-		//Checking for data to be used.
 		if(thereIsData == true){
 			Debug.Log ("thereisdata");
-			playerMove.playerInput(stringData); //THIS IS WHERE THE INFORMATION IS PASSED OFF TO THE CONTROLLER SCRIPT.
+			playerMove.playerInput(stringData);
 			thereIsData = false;
 		}
-		//Checking for data to be sent to the server.
 		if(dataToWrite){
 			NetworkStream ns2 = server.GetStream();
 			Debug.Log ("Data to be wrote");
@@ -47,13 +46,13 @@ public class TCPclient : MonoBehaviour {
 			}
 		}
 	}
-	//Prior to sending TO the server, this function encodes a string into bytes.
+
 	public void prepareString(string outputString){
 		Debug.Log ("String prep");
 		writeData = Encoding.ASCII.GetBytes(outputString);
 		dataToWrite = true;
 	}
-	//A separate thread that is always waiting for information from the server.
+
 	private void OpenStream(){
 		Debug.Log ("STREAM!");
 		NetworkStream ns = server.GetStream ();
