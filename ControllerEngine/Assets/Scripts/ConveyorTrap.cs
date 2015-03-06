@@ -31,6 +31,6 @@ public class ConveyorTrap : TrapScript {
 	}
 
 	public override void doTrap(GameObject player){
-		player.GetComponent<TwoDCharControl> ().knockBack(new Vector3(direction,0,0));
+		player.GetComponent<Character> ().extMovement(new Vector3(direction,0,0));
 	}
 }

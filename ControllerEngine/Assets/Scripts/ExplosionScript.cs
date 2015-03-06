@@ -22,8 +22,8 @@ public class ExplosionScript : MonoBehaviour {
 		if(hit.gameObject.tag == "Player")
 		{
 			Vector3 direction = hit.ClosestPointOnBounds(this.transform.position);
-			hit.gameObject.GetComponent<TwoDCharControl>().knockBack(direction);
-			hit.gameObject.GetComponent<Health>().takeDamage(10,this.gameObject);
+			hit.gameObject.GetComponent<Character>().knockBack(direction);
+			hit.gameObject.GetComponent<Character>().takeDamage(10,this.gameObject);
 		}
 	}
 }

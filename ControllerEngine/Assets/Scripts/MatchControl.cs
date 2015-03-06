@@ -4,7 +4,12 @@ using System.Collections;
 public class MatchControl : MonoBehaviour {
 
 	public GameObject[] players;
+	public GameObject[] characters;
 	GameObject[] spawnLocs;
+
+	public GameObject Liara;
+	public GameObject Durain;
+	public GameObject Magna;
 
 	public OSC_Receiver_C heartRate;
 
@@ -36,7 +41,8 @@ public class MatchControl : MonoBehaviour {
 		getHeartRates();
 		avHeartRate = getAvHeart ();
 		heartRateTrapSystem ();
-	
+
+		ifSingle ();
 	}
 
 	void getHeartRates(){
@@ -84,13 +90,23 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void SpawnPlayers(){
+
 		for(int i = 0; i < players.Length; i++)
 		{
-			GameObject newPlayer;
-
+			spawnLocs = GameObject.FindGameObjectsWithTag ("Respawn");
+					
 			int pickSpawn = Random.Range (0, spawnLocs.Length);
-			newPlayer = Instantiate(players[i], spawnLocs[pickSpawn].transform.position, spawnLocs[pickSpawn].transform.rotation) as GameObject;
-			newPlayer.GetComponent<TwoDCharControl>().playerNumber = i+1;
+			spawnLocs[pickSpawn].GetComponentInChildren<ParticleSystem>().Play();
+			players[i] = Instantiate(players[i], spawnLocs[pickSpawn].transform.position, spawnLocs[pickSpawn].transform.rotation) as GameObject;
+			players[i].GetComponent<Character>().playerNumber = i+1;
+			spawnLocs[pickSpawn].tag = "Despawn";
+		}
+
+		spawnLocs = GameObject.FindGameObjectsWithTag ("Despawn");
+
+		foreach(GameObject spawn in spawnLocs)
+		{
+			spawn.tag = "Respawn";
 		}
 	}
 
@@ -115,5 +131,32 @@ public class MatchControl : MonoBehaviour {
 		isHeartTrapActive = true;
 
 		trap.activate();
+	}
+
+	void ifSingle(){
+		if(players.Length < 2)
+		{
+			Vector3 lastPos = players[0].transform.position;
+			Quaternion lastRot = players[0].transform.rotation;
+			
+			if(Input.GetKey(KeyCode.Z))
+			{
+				Destroy(players[0]);
+				players[0] = Instantiate(Liara, lastPos, lastRot)  as GameObject;
+				players[0].GetComponent<Character>().playerNumber = 1;
+			}
+			if(Input.GetKey(KeyCode.X))
+			{
+				Destroy(players[0]);
+				players[0] = Instantiate(Durain, lastPos, lastRot)  as GameObject;
+				players[0].GetComponent<Character>().playerNumber = 1;			
+			}
+			if(Input.GetKey(KeyCode.C))
+			{
+				Destroy(players[0]);
+				players[0] = Instantiate(Magna, lastPos, lastRot)  as GameObject;
+				players[0].GetComponent<Character>().playerNumber = 1;
+			}
+		}
 	}
 }

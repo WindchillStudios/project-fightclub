@@ -5,11 +5,13 @@ public class CameraControl : MonoBehaviour {
 
 	public bool isCameraMove;
 
+	GameObject gameController;
+
 	GameObject[] players;
+
 	Vector3 camLocation;
 	Vector3 newCamLocation;
 	Vector3 lastCamLocation;
-
 	Vector3 cameraDirection;
 
 	GameObject mostLeft;
@@ -24,14 +26,12 @@ public class CameraControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lastCamLocation = new Vector3(0,0,0);
-
+		gameController = GameObject.FindGameObjectWithTag ("Control");
+		players = gameController.GetComponent<MatchControl>().players;
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		if (players == null) {
-			players = GameObject.FindGameObjectsWithTag ("Player");
-		}
 
 		if(mostLeft == null)
 			mostLeft = players[0];
@@ -44,46 +44,50 @@ public class CameraControl : MonoBehaviour {
 	void getCameraPos(){
 		if(isCameraMove){
 
-			/******Get Horizontal/Vertical******/
-					
-			foreach (GameObject player in players)
+			if(players.Length > 1)
 			{
-				if(player.activeSelf)
-					camLocation += player.transform.position;
+				/******Get Horizontal/Vertical******/
+						
+				foreach (GameObject player in players)
+				{
+					if(player.activeSelf)
+						camLocation += player.transform.position;
 
-				if(player.transform.position.x < mostLeft.transform.position.x)
-					mostLeft = player;
-				
-				if(player.transform.position.x > mostRight.transform.position.x)
-					mostRight = player;
+					if(player.transform.position.x < mostLeft.transform.position.x)
+						mostLeft = player;
+					
+					if(player.transform.position.x > mostRight.transform.position.x)
+						mostRight = player;
+				}
+
+				camLocation = camLocation / players.Length;
+				//camLocation = camLocation - lastCamLocation * 0.75f;
+
+				/******Get Depth******/
+
+				fightDistance = mostRight.transform.position.x - mostLeft.transform.position.x;
+
+				camLocation.z = -fightDistance;
+
+				/******Finalize******/
+
+				yClamp = Mathf.Clamp(camLocation.y, -1, 10);
+				xClamp = Mathf.Clamp(camLocation.x, -30, 30);
+				zClamp = Mathf.Clamp(camLocation.z, -50, -15);
+
+
+				newCamLocation = new Vector3(xClamp,yClamp,zClamp);
+
+				cameraDirection = newCamLocation - lastCamLocation;
+
+				this.transform.Translate(cameraDirection/10);
+
+				lastCamLocation = this.transform.position;
+		
 			}
-
-			Debug.Log(mostLeft + " " + mostRight);
-			
-			camLocation = camLocation / players.Length;
-			//camLocation = camLocation - lastCamLocation * 0.75f;
-
-			/******Get Depth******/
-
-			fightDistance = mostRight.transform.position.x - mostLeft.transform.position.x;
-
-			camLocation.z = -fightDistance;
-
-			/******Finalize******/
-
-			yClamp = Mathf.Clamp(camLocation.y, -1, 10);
-			xClamp = Mathf.Clamp(camLocation.x, -30, 30);
-			zClamp = Mathf.Clamp(camLocation.z, -50, -15);
-
-
-			newCamLocation = new Vector3(xClamp,yClamp,zClamp);
-
-			cameraDirection = newCamLocation - lastCamLocation;
-
-			this.transform.Translate(cameraDirection/10);
-
-			lastCamLocation = this.transform.position;
-	
+			else{
+				this.transform.position = new Vector3(players[0].transform.position.x, players[0].transform.position.y + 2.5f, -10);
+			}
 		}
 		else{
 			this.camera.transform.position = new Vector3(0,5,-35);
