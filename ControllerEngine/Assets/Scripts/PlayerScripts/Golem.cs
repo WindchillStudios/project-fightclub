@@ -13,10 +13,10 @@ public class Golem : Character {
 	
 	void Start () {
 		
-		maxJump = 20;
-		maxSpeed = 10;
+		maxJump = 40;
+		maxSpeed = 15;
 		maxHealth = 110;
-		
+
 		base.Start ();
 	}
 	

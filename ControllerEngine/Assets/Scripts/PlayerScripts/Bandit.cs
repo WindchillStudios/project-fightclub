@@ -13,8 +13,8 @@ public class Bandit : Character {
 	
 	void Start () {
 		
-		maxJump = 22;
-		maxSpeed = 12;
+		maxJump = 25;
+		maxSpeed = 17;
 		maxHealth = 90;
 		
 		base.Start ();

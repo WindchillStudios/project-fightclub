@@ -19,7 +19,7 @@ public class Paladin : Character {
 
 	void Start () {
 		
-		maxJump = 20;
+		maxJump = 35;
 		maxSpeed = 15;
 		maxHealth = 110;
 		chargeTime = 0.5f;
@@ -94,22 +94,43 @@ public class Paladin : Character {
 			model.SetTrigger("charging");
 		}
 
-		if(isCharged && !(Input.GetAxis("SpecialAttack" + playerNumber) > 0) && !canSpecial)
-		{
-			state_ = State.STATE_IDLE;
-			canSpecial = true;
+		if(isMobileControlled){
+			if(isCharged && (actionInput != "Spcl") && !canSpecial)
+			{
+				state_ = State.STATE_IDLE;
+				canSpecial = true;
+			}
+		}
+		else{
+			if(isCharged && !(Input.GetAxis("SpecialAttack" + playerNumber) > 0) && !canSpecial)
+			{
+				state_ = State.STATE_IDLE;
+				canSpecial = true;
+			}
 		}
 
 		if(!isCharged)
 		{
 			if(charging){
-				if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
-					chargeTimer += 0.1f * Time.deltaTime;
-					model.SetInteger("attackState", 3);
+				if(isMobileControlled){
+					if(actionInput == "Spcl"){
+						chargeTimer += 0.1f * Time.deltaTime;
+						model.SetInteger("attackState", 3);
+					}
+					else{
+						charging = false;
+						model.SetTrigger("charging");
+					}
 				}
 				else{
-					charging = false;
-					model.SetTrigger("charging");
+					if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
+						chargeTimer += 0.1f * Time.deltaTime;
+						model.SetInteger("attackState", 3);
+					}
+					else{
+						charging = false;
+						model.SetTrigger("charging");
+					}
 				}
 			}
 		}
@@ -128,7 +149,7 @@ public class Paladin : Character {
 				attForce =  new Vector2 (facing*5,5);
 				charAttacks.GetCurrentAttack (attForce, currentDamage);
 			
-				model.SetInteger("attackState", 0);
+				model.SetInteger("attackState", 4);
 				canSpecial = false;
 				isCharged = false;
 			}

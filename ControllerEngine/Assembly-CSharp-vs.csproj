@@ -46,28 +46,35 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\OldAttacks.cs" />
+     <Compile Include="Assets\Scripts\AsteroidRotation.cs" />
      <Compile Include="Assets\Scripts\AsteroidScript.cs" />
      <Compile Include="Assets\Scripts\Breakable.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\ConveyorTrap.cs" />
      <Compile Include="Assets\Scripts\DamagerStats.cs" />
      <Compile Include="Assets\Scripts\ExplosionScript.cs" />
+     <Compile Include="Assets\Scripts\Game Control\MainMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Game Control\MatchControl.cs" />
+     <Compile Include="Assets\Scripts\Game Control\TCPclient.cs" />
+     <Compile Include="Assets\Scripts\Game Control\charSelector.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\HazardSpawner.cs" />
+     <Compile Include="Assets\Scripts\IntroEnd.cs" />
      <Compile Include="Assets\Scripts\LazerScript.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
-     <Compile Include="Assets\Scripts\MatchControl.cs" />
      <Compile Include="Assets\Scripts\OSC_Receiver_C.cs" />
+     <Compile Include="Assets\Scripts\OldAttacks.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Bandit.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Character.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\Dragon.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Golem.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Health.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Paladin.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\TwoDCharControl.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\attacks.cs" />
      <Compile Include="Assets\Scripts\SwitchScript.cs" />
+     <Compile Include="Assets\Scripts\TrapContainer.cs" />
      <Compile Include="Assets\Scripts\TrapScript.cs" />
+     <Compile Include="Assets\Scripts\craneTrap.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />

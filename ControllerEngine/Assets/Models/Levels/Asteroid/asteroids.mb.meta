@@ -1,0 +1,1816 @@
+fileFormatVersion: 2
+guid: fe369f00af13aad489965846160379d9
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: asteroid
+    100002: asteroid 1
+    100004: asteroid1
+    100006: asteroid1 1
+    100008: asteroid10
+    100010: asteroid10 1
+    100012: asteroid11
+    100014: asteroid11 1
+    100016: asteroid12
+    100018: asteroid12 1
+    100020: asteroid13
+    100022: asteroid13 1
+    100024: asteroid14
+    100026: asteroid14 1
+    100028: asteroid15
+    100030: asteroid15 1
+    100032: asteroid16
+    100034: asteroid16 1
+    100036: asteroid17
+    100038: asteroid17 1
+    100040: asteroid18
+    100042: asteroid18 1
+    100044: asteroid19
+    100046: asteroid19 1
+    100048: asteroid2
+    100050: asteroid2 1
+    100052: asteroid20
+    100054: asteroid20 1
+    100056: asteroid21
+    100058: asteroid21 1
+    100060: asteroid22
+    100062: asteroid22 1
+    100064: asteroid23
+    100066: asteroid23 1
+    100068: asteroid24
+    100070: asteroid24 1
+    100072: asteroid25
+    100074: asteroid25 1
+    100076: asteroid26
+    100078: asteroid26 1
+    100080: asteroid27
+    100082: asteroid27 1
+    100084: asteroid28
+    100086: asteroid28 1
+    100088: asteroid29
+    100090: asteroid29 1
+    100092: asteroid3
+    100094: asteroid3 1
+    100096: asteroid30
+    100098: asteroid30 1
+    100100: asteroid31
+    100102: asteroid31 1
+    100104: asteroid32
+    100106: asteroid32 1
+    100108: asteroid33
+    100110: asteroid33 1
+    100112: asteroid34
+    100114: asteroid34 1
+    100116: asteroid35
+    100118: asteroid35 1
+    100120: asteroid36
+    100122: asteroid36 1
+    100124: asteroid37
+    100126: asteroid37 1
+    100128: asteroid38
+    100130: asteroid38 1
+    100132: asteroid39
+    100134: asteroid39 1
+    100136: asteroid4
+    100138: asteroid4 1
+    100140: asteroid40
+    100142: asteroid40 1
+    100144: asteroid41
+    100146: asteroid41 1
+    100148: asteroid42
+    100150: asteroid42 1
+    100152: asteroid43
+    100154: asteroid43 1
+    100156: asteroid44
+    100158: asteroid44 1
+    100160: asteroid45
+    100162: asteroid45 1
+    100164: asteroid46
+    100166: asteroid46 1
+    100168: asteroid47
+    100170: asteroid47 1
+    100172: asteroid48
+    100174: asteroid48 1
+    100176: asteroid49
+    100178: asteroid49 1
+    100180: asteroid5
+    100182: asteroid5 1
+    100184: asteroid50
+    100186: asteroid50 1
+    100188: asteroid51
+    100190: asteroid51 1
+    100192: asteroid52
+    100194: asteroid52 1
+    100196: asteroid53
+    100198: asteroid53 1
+    100200: asteroid54
+    100202: asteroid54 1
+    100204: asteroid55
+    100206: asteroid55 1
+    100208: asteroid56
+    100210: asteroid56 1
+    100212: asteroid57
+    100214: asteroid57 1
+    100216: asteroid58
+    100218: asteroid58 1
+    100220: asteroid59
+    100222: asteroid59 1
+    100224: asteroid6
+    100226: asteroid6 1
+    100228: asteroid60
+    100230: asteroid60 1
+    100232: asteroid61
+    100234: asteroid61 1
+    100236: asteroid62
+    100238: asteroid62 1
+    100240: asteroid63
+    100242: asteroid63 1
+    100244: asteroid64
+    100246: asteroid64 1
+    100248: asteroid65
+    100250: asteroid65 1
+    100252: asteroid66
+    100254: asteroid66 1
+    100256: asteroid67
+    100258: asteroid67 1
+    100260: asteroid68
+    100262: asteroid68 1
+    100264: asteroid69
+    100266: asteroid69 1
+    100268: asteroid7
+    100270: asteroid7 1
+    100272: asteroid8
+    100274: asteroid8 1
+    100276: asteroid9
+    100278: asteroid9 1
+    100280: asteroids
+    100282: //RootNode
+    100284: asteroids2
+    100286: asteroid100
+    100288: asteroid101
+    100290: asteroid102
+    100292: asteroid103
+    100294: asteroid104
+    100296: asteroid105
+    100298: asteroid106
+    100300: asteroid107
+    100302: asteroid108
+    100304: asteroid109
+    100306: asteroid110
+    100308: asteroid111
+    100310: asteroid112
+    100312: asteroid113
+    100314: asteroid114
+    100316: asteroid115
+    100318: asteroid116
+    100320: asteroid117
+    100322: asteroid118
+    100324: asteroid119
+    100326: asteroid120
+    100328: asteroid121
+    100330: asteroid122
+    100332: asteroid123
+    100334: asteroid124
+    100336: asteroid125
+    100338: asteroid126
+    100340: asteroid127
+    100342: asteroid128
+    100344: asteroid129
+    100346: asteroid130
+    100348: asteroid131
+    100350: asteroid132
+    100352: asteroid133
+    100354: asteroid134
+    100356: asteroid135
+    100358: asteroid136
+    100360: asteroid137
+    100362: asteroid138
+    100364: asteroid139
+    100366: asteroid140
+    100368: asteroid141
+    100370: asteroid142
+    100372: asteroid143
+    100374: asteroid144
+    100376: asteroid145
+    100378: asteroid146
+    100380: asteroid147
+    100382: asteroid148
+    100384: asteroid149
+    100386: asteroid150
+    100388: asteroid151
+    100390: asteroid152
+    100392: asteroid153
+    100394: asteroid154
+    100396: asteroid155
+    100398: asteroid156
+    100400: asteroid157
+    100402: asteroid158
+    100404: asteroid159
+    100406: asteroid160
+    100408: asteroid161
+    100410: asteroid162
+    100412: asteroid163
+    100414: asteroid164
+    100416: asteroid165
+    100418: asteroid166
+    100420: asteroid167
+    100422: asteroid168
+    100424: asteroid169
+    100426: asteroid170
+    100428: asteroid171
+    100430: asteroid172
+    100432: asteroid173
+    100434: asteroid174
+    100436: asteroid175
+    100438: asteroid176
+    100440: asteroid177
+    100442: asteroid178
+    100444: asteroid179
+    100446: asteroid180
+    100448: asteroid181
+    100450: asteroid182
+    100452: asteroid183
+    100454: asteroid184
+    100456: asteroid185
+    100458: asteroid186
+    100460: asteroid187
+    100462: asteroid188
+    100464: asteroid189
+    100466: asteroid190
+    100468: asteroid191
+    100470: asteroid192
+    100472: asteroid193
+    100474: asteroid194
+    100476: asteroid195
+    100478: asteroid196
+    100480: asteroid197
+    100482: asteroid198
+    100484: asteroid199
+    100486: asteroid200
+    100488: asteroid201
+    100490: asteroid202
+    100492: asteroid203
+    100494: asteroid204
+    100496: asteroid205
+    100498: asteroid206
+    100500: asteroid207
+    100502: asteroid208
+    100504: asteroid209
+    100506: asteroid210
+    100508: asteroid211
+    100510: asteroid212
+    100512: asteroid213
+    100514: asteroid214
+    100516: asteroid215
+    100518: asteroid216
+    100520: asteroid217
+    100522: asteroid218
+    100524: asteroid219
+    100526: asteroid220
+    100528: asteroid221
+    100530: asteroid222
+    100532: asteroid223
+    100534: asteroid224
+    100536: asteroid225
+    100538: asteroid226
+    100540: asteroid227
+    100542: asteroid228
+    100544: asteroid229
+    100546: asteroid230
+    100548: asteroid231
+    100550: asteroid232
+    100552: asteroid233
+    100554: asteroid234
+    100556: asteroid235
+    100558: asteroid236
+    100560: asteroid237
+    100562: asteroid238
+    100564: asteroid239
+    100566: asteroid240
+    100568: asteroid241
+    100570: asteroid242
+    100572: asteroid243
+    100574: asteroid244
+    100576: asteroid245
+    100578: asteroid246
+    100580: asteroid247
+    100582: asteroid248
+    100584: asteroid249
+    100586: asteroid250
+    100588: asteroid251
+    100590: asteroid252
+    100592: asteroid253
+    100594: asteroid254
+    100596: asteroid255
+    100598: asteroid256
+    100600: asteroid257
+    100602: asteroid258
+    100604: asteroid259
+    100606: asteroid260
+    100608: asteroid261
+    100610: asteroid262
+    100612: asteroid263
+    100614: asteroid264
+    100616: asteroid265
+    100618: asteroid266
+    100620: asteroid267
+    100622: asteroid268
+    100624: asteroid269
+    100626: asteroid270
+    100628: asteroid271
+    100630: asteroid272
+    100632: asteroid273
+    100634: asteroid274
+    100636: asteroid275
+    100638: asteroid276
+    100640: asteroid277
+    100642: asteroid278
+    100644: asteroid279
+    100646: asteroid70
+    100648: asteroid71
+    100650: asteroid72
+    100652: asteroid73
+    100654: asteroid74
+    100656: asteroid75
+    100658: asteroid76
+    100660: asteroid77
+    100662: asteroid78
+    100664: asteroid79
+    100666: asteroid80
+    100668: asteroid81
+    100670: asteroid82
+    100672: asteroid83
+    100674: asteroid84
+    100676: asteroid85
+    100678: asteroid86
+    100680: asteroid87
+    100682: asteroid88
+    100684: asteroid89
+    100686: asteroid90
+    100688: asteroid91
+    100690: asteroid92
+    100692: asteroid93
+    100694: asteroid94
+    100696: asteroid95
+    100698: asteroid96
+    100700: asteroid97
+    100702: asteroid98
+    100704: asteroid99
+    400000: asteroid
+    400002: asteroid 1
+    400004: asteroid1
+    400006: asteroid1 1
+    400008: asteroid10
+    400010: asteroid10 1
+    400012: asteroid11
+    400014: asteroid11 1
+    400016: asteroid12
+    400018: asteroid12 1
+    400020: asteroid13
+    400022: asteroid13 1
+    400024: asteroid14
+    400026: asteroid14 1
+    400028: asteroid15
+    400030: asteroid15 1
+    400032: asteroid16
+    400034: asteroid16 1
+    400036: asteroid17
+    400038: asteroid17 1
+    400040: asteroid18
+    400042: asteroid18 1
+    400044: asteroid19
+    400046: asteroid19 1
+    400048: asteroid2
+    400050: asteroid2 1
+    400052: asteroid20
+    400054: asteroid20 1
+    400056: asteroid21
+    400058: asteroid21 1
+    400060: asteroid22
+    400062: asteroid22 1
+    400064: asteroid23
+    400066: asteroid23 1
+    400068: asteroid24
+    400070: asteroid24 1
+    400072: asteroid25
+    400074: asteroid25 1
+    400076: asteroid26
+    400078: asteroid26 1
+    400080: asteroid27
+    400082: asteroid27 1
+    400084: asteroid28
+    400086: asteroid28 1
+    400088: asteroid29
+    400090: asteroid29 1
+    400092: asteroid3
+    400094: asteroid3 1
+    400096: asteroid30
+    400098: asteroid30 1
+    400100: asteroid31
+    400102: asteroid31 1
+    400104: asteroid32
+    400106: asteroid32 1
+    400108: asteroid33
+    400110: asteroid33 1
+    400112: asteroid34
+    400114: asteroid34 1
+    400116: asteroid35
+    400118: asteroid35 1
+    400120: asteroid36
+    400122: asteroid36 1
+    400124: asteroid37
+    400126: asteroid37 1
+    400128: asteroid38
+    400130: asteroid38 1
+    400132: asteroid39
+    400134: asteroid39 1
+    400136: asteroid4
+    400138: asteroid4 1
+    400140: asteroid40
+    400142: asteroid40 1
+    400144: asteroid41
+    400146: asteroid41 1
+    400148: asteroid42
+    400150: asteroid42 1
+    400152: asteroid43
+    400154: asteroid43 1
+    400156: asteroid44
+    400158: asteroid44 1
+    400160: asteroid45
+    400162: asteroid45 1
+    400164: asteroid46
+    400166: asteroid46 1
+    400168: asteroid47
+    400170: asteroid47 1
+    400172: asteroid48
+    400174: asteroid48 1
+    400176: asteroid49
+    400178: asteroid49 1
+    400180: asteroid5
+    400182: asteroid5 1
+    400184: asteroid50
+    400186: asteroid50 1
+    400188: asteroid51
+    400190: asteroid51 1
+    400192: asteroid52
+    400194: asteroid52 1
+    400196: asteroid53
+    400198: asteroid53 1
+    400200: asteroid54
+    400202: asteroid54 1
+    400204: asteroid55
+    400206: asteroid55 1
+    400208: asteroid56
+    400210: asteroid56 1
+    400212: asteroid57
+    400214: asteroid57 1
+    400216: asteroid58
+    400218: asteroid58 1
+    400220: asteroid59
+    400222: asteroid59 1
+    400224: asteroid6
+    400226: asteroid6 1
+    400228: asteroid60
+    400230: asteroid60 1
+    400232: asteroid61
+    400234: asteroid61 1
+    400236: asteroid62
+    400238: asteroid62 1
+    400240: asteroid63
+    400242: asteroid63 1
+    400244: asteroid64
+    400246: asteroid64 1
+    400248: asteroid65
+    400250: asteroid65 1
+    400252: asteroid66
+    400254: asteroid66 1
+    400256: asteroid67
+    400258: asteroid67 1
+    400260: asteroid68
+    400262: asteroid68 1
+    400264: asteroid69
+    400266: asteroid69 1
+    400268: asteroid7
+    400270: asteroid7 1
+    400272: asteroid8
+    400274: asteroid8 1
+    400276: asteroid9
+    400278: asteroid9 1
+    400280: //RootNode
+    400282: asteroids
+    400284: asteroids2
+    400286: asteroid100
+    400288: asteroid101
+    400290: asteroid102
+    400292: asteroid103
+    400294: asteroid104
+    400296: asteroid105
+    400298: asteroid106
+    400300: asteroid107
+    400302: asteroid108
+    400304: asteroid109
+    400306: asteroid110
+    400308: asteroid111
+    400310: asteroid112
+    400312: asteroid113
+    400314: asteroid114
+    400316: asteroid115
+    400318: asteroid116
+    400320: asteroid117
+    400322: asteroid118
+    400324: asteroid119
+    400326: asteroid120
+    400328: asteroid121
+    400330: asteroid122
+    400332: asteroid123
+    400334: asteroid124
+    400336: asteroid125
+    400338: asteroid126
+    400340: asteroid127
+    400342: asteroid128
+    400344: asteroid129
+    400346: asteroid130
+    400348: asteroid131
+    400350: asteroid132
+    400352: asteroid133
+    400354: asteroid134
+    400356: asteroid135
+    400358: asteroid136
+    400360: asteroid137
+    400362: asteroid138
+    400364: asteroid139
+    400366: asteroid140
+    400368: asteroid141
+    400370: asteroid142
+    400372: asteroid143
+    400374: asteroid144
+    400376: asteroid145
+    400378: asteroid146
+    400380: asteroid147
+    400382: asteroid148
+    400384: asteroid149
+    400386: asteroid150
+    400388: asteroid151
+    400390: asteroid152
+    400392: asteroid153
+    400394: asteroid154
+    400396: asteroid155
+    400398: asteroid156
+    400400: asteroid157
+    400402: asteroid158
+    400404: asteroid159
+    400406: asteroid160
+    400408: asteroid161
+    400410: asteroid162
+    400412: asteroid163
+    400414: asteroid164
+    400416: asteroid165
+    400418: asteroid166
+    400420: asteroid167
+    400422: asteroid168
+    400424: asteroid169
+    400426: asteroid170
+    400428: asteroid171
+    400430: asteroid172
+    400432: asteroid173
+    400434: asteroid174
+    400436: asteroid175
+    400438: asteroid176
+    400440: asteroid177
+    400442: asteroid178
+    400444: asteroid179
+    400446: asteroid180
+    400448: asteroid181
+    400450: asteroid182
+    400452: asteroid183
+    400454: asteroid184
+    400456: asteroid185
+    400458: asteroid186
+    400460: asteroid187
+    400462: asteroid188
+    400464: asteroid189
+    400466: asteroid190
+    400468: asteroid191
+    400470: asteroid192
+    400472: asteroid193
+    400474: asteroid194
+    400476: asteroid195
+    400478: asteroid196
+    400480: asteroid197
+    400482: asteroid198
+    400484: asteroid199
+    400486: asteroid200
+    400488: asteroid201
+    400490: asteroid202
+    400492: asteroid203
+    400494: asteroid204
+    400496: asteroid205
+    400498: asteroid206
+    400500: asteroid207
+    400502: asteroid208
+    400504: asteroid209
+    400506: asteroid210
+    400508: asteroid211
+    400510: asteroid212
+    400512: asteroid213
+    400514: asteroid214
+    400516: asteroid215
+    400518: asteroid216
+    400520: asteroid217
+    400522: asteroid218
+    400524: asteroid219
+    400526: asteroid220
+    400528: asteroid221
+    400530: asteroid222
+    400532: asteroid223
+    400534: asteroid224
+    400536: asteroid225
+    400538: asteroid226
+    400540: asteroid227
+    400542: asteroid228
+    400544: asteroid229
+    400546: asteroid230
+    400548: asteroid231
+    400550: asteroid232
+    400552: asteroid233
+    400554: asteroid234
+    400556: asteroid235
+    400558: asteroid236
+    400560: asteroid237
+    400562: asteroid238
+    400564: asteroid239
+    400566: asteroid240
+    400568: asteroid241
+    400570: asteroid242
+    400572: asteroid243
+    400574: asteroid244
+    400576: asteroid245
+    400578: asteroid246
+    400580: asteroid247
+    400582: asteroid248
+    400584: asteroid249
+    400586: asteroid250
+    400588: asteroid251
+    400590: asteroid252
+    400592: asteroid253
+    400594: asteroid254
+    400596: asteroid255
+    400598: asteroid256
+    400600: asteroid257
+    400602: asteroid258
+    400604: asteroid259
+    400606: asteroid260
+    400608: asteroid261
+    400610: asteroid262
+    400612: asteroid263
+    400614: asteroid264
+    400616: asteroid265
+    400618: asteroid266
+    400620: asteroid267
+    400622: asteroid268
+    400624: asteroid269
+    400626: asteroid270
+    400628: asteroid271
+    400630: asteroid272
+    400632: asteroid273
+    400634: asteroid274
+    400636: asteroid275
+    400638: asteroid276
+    400640: asteroid277
+    400642: asteroid278
+    400644: asteroid279
+    400646: asteroid70
+    400648: asteroid71
+    400650: asteroid72
+    400652: asteroid73
+    400654: asteroid74
+    400656: asteroid75
+    400658: asteroid76
+    400660: asteroid77
+    400662: asteroid78
+    400664: asteroid79
+    400666: asteroid80
+    400668: asteroid81
+    400670: asteroid82
+    400672: asteroid83
+    400674: asteroid84
+    400676: asteroid85
+    400678: asteroid86
+    400680: asteroid87
+    400682: asteroid88
+    400684: asteroid89
+    400686: asteroid90
+    400688: asteroid91
+    400690: asteroid92
+    400692: asteroid93
+    400694: asteroid94
+    400696: asteroid95
+    400698: asteroid96
+    400700: asteroid97
+    400702: asteroid98
+    400704: asteroid99
+    2300000: asteroid
+    2300002: asteroid 1
+    2300004: asteroid1
+    2300006: asteroid1 1
+    2300008: asteroid10
+    2300010: asteroid10 1
+    2300012: asteroid11
+    2300014: asteroid11 1
+    2300016: asteroid12
+    2300018: asteroid12 1
+    2300020: asteroid13
+    2300022: asteroid13 1
+    2300024: asteroid14
+    2300026: asteroid14 1
+    2300028: asteroid15
+    2300030: asteroid15 1
+    2300032: asteroid16
+    2300034: asteroid16 1
+    2300036: asteroid17
+    2300038: asteroid17 1
+    2300040: asteroid18
+    2300042: asteroid18 1
+    2300044: asteroid19
+    2300046: asteroid19 1
+    2300048: asteroid2
+    2300050: asteroid2 1
+    2300052: asteroid20
+    2300054: asteroid20 1
+    2300056: asteroid21
+    2300058: asteroid21 1
+    2300060: asteroid22
+    2300062: asteroid22 1
+    2300064: asteroid23
+    2300066: asteroid23 1
+    2300068: asteroid24
+    2300070: asteroid24 1
+    2300072: asteroid25
+    2300074: asteroid25 1
+    2300076: asteroid26
+    2300078: asteroid26 1
+    2300080: asteroid27
+    2300082: asteroid27 1
+    2300084: asteroid28
+    2300086: asteroid28 1
+    2300088: asteroid29
+    2300090: asteroid29 1
+    2300092: asteroid3
+    2300094: asteroid3 1
+    2300096: asteroid30
+    2300098: asteroid30 1
+    2300100: asteroid31
+    2300102: asteroid31 1
+    2300104: asteroid32
+    2300106: asteroid32 1
+    2300108: asteroid33
+    2300110: asteroid33 1
+    2300112: asteroid34
+    2300114: asteroid34 1
+    2300116: asteroid35
+    2300118: asteroid35 1
+    2300120: asteroid36
+    2300122: asteroid36 1
+    2300124: asteroid37
+    2300126: asteroid37 1
+    2300128: asteroid38
+    2300130: asteroid38 1
+    2300132: asteroid39
+    2300134: asteroid39 1
+    2300136: asteroid4
+    2300138: asteroid4 1
+    2300140: asteroid40
+    2300142: asteroid40 1
+    2300144: asteroid41
+    2300146: asteroid41 1
+    2300148: asteroid42
+    2300150: asteroid42 1
+    2300152: asteroid43
+    2300154: asteroid43 1
+    2300156: asteroid44
+    2300158: asteroid44 1
+    2300160: asteroid45
+    2300162: asteroid45 1
+    2300164: asteroid46
+    2300166: asteroid46 1
+    2300168: asteroid47
+    2300170: asteroid47 1
+    2300172: asteroid48
+    2300174: asteroid48 1
+    2300176: asteroid49
+    2300178: asteroid49 1
+    2300180: asteroid5
+    2300182: asteroid5 1
+    2300184: asteroid50
+    2300186: asteroid50 1
+    2300188: asteroid51
+    2300190: asteroid51 1
+    2300192: asteroid52
+    2300194: asteroid52 1
+    2300196: asteroid53
+    2300198: asteroid53 1
+    2300200: asteroid54
+    2300202: asteroid54 1
+    2300204: asteroid55
+    2300206: asteroid55 1
+    2300208: asteroid56
+    2300210: asteroid56 1
+    2300212: asteroid57
+    2300214: asteroid57 1
+    2300216: asteroid58
+    2300218: asteroid58 1
+    2300220: asteroid59
+    2300222: asteroid59 1
+    2300224: asteroid6
+    2300226: asteroid6 1
+    2300228: asteroid60
+    2300230: asteroid60 1
+    2300232: asteroid61
+    2300234: asteroid61 1
+    2300236: asteroid62
+    2300238: asteroid62 1
+    2300240: asteroid63
+    2300242: asteroid63 1
+    2300244: asteroid64
+    2300246: asteroid64 1
+    2300248: asteroid65
+    2300250: asteroid65 1
+    2300252: asteroid66
+    2300254: asteroid66 1
+    2300256: asteroid67
+    2300258: asteroid67 1
+    2300260: asteroid68
+    2300262: asteroid68 1
+    2300264: asteroid69
+    2300266: asteroid69 1
+    2300268: asteroid7
+    2300270: asteroid7 1
+    2300272: asteroid8
+    2300274: asteroid8 1
+    2300276: asteroid9
+    2300278: asteroid9 1
+    2300280: asteroid100
+    2300282: asteroid101
+    2300284: asteroid102
+    2300286: asteroid103
+    2300288: asteroid104
+    2300290: asteroid105
+    2300292: asteroid106
+    2300294: asteroid107
+    2300296: asteroid108
+    2300298: asteroid109
+    2300300: asteroid110
+    2300302: asteroid111
+    2300304: asteroid112
+    2300306: asteroid113
+    2300308: asteroid114
+    2300310: asteroid115
+    2300312: asteroid116
+    2300314: asteroid117
+    2300316: asteroid118
+    2300318: asteroid119
+    2300320: asteroid120
+    2300322: asteroid121
+    2300324: asteroid122
+    2300326: asteroid123
+    2300328: asteroid124
+    2300330: asteroid125
+    2300332: asteroid126
+    2300334: asteroid127
+    2300336: asteroid128
+    2300338: asteroid129
+    2300340: asteroid130
+    2300342: asteroid131
+    2300344: asteroid132
+    2300346: asteroid133
+    2300348: asteroid134
+    2300350: asteroid135
+    2300352: asteroid136
+    2300354: asteroid137
+    2300356: asteroid138
+    2300358: asteroid139
+    2300360: asteroid140
+    2300362: asteroid141
+    2300364: asteroid142
+    2300366: asteroid143
+    2300368: asteroid144
+    2300370: asteroid145
+    2300372: asteroid146
+    2300374: asteroid147
+    2300376: asteroid148
+    2300378: asteroid149
+    2300380: asteroid150
+    2300382: asteroid151
+    2300384: asteroid152
+    2300386: asteroid153
+    2300388: asteroid154
+    2300390: asteroid155
+    2300392: asteroid156
+    2300394: asteroid157
+    2300396: asteroid158
+    2300398: asteroid159
+    2300400: asteroid160
+    2300402: asteroid161
+    2300404: asteroid162
+    2300406: asteroid163
+    2300408: asteroid164
+    2300410: asteroid165
+    2300412: asteroid166
+    2300414: asteroid167
+    2300416: asteroid168
+    2300418: asteroid169
+    2300420: asteroid170
+    2300422: asteroid171
+    2300424: asteroid172
+    2300426: asteroid173
+    2300428: asteroid174
+    2300430: asteroid175
+    2300432: asteroid176
+    2300434: asteroid177
+    2300436: asteroid178
+    2300438: asteroid179
+    2300440: asteroid180
+    2300442: asteroid181
+    2300444: asteroid182
+    2300446: asteroid183
+    2300448: asteroid184
+    2300450: asteroid185
+    2300452: asteroid186
+    2300454: asteroid187
+    2300456: asteroid188
+    2300458: asteroid189
+    2300460: asteroid190
+    2300462: asteroid191
+    2300464: asteroid192
+    2300466: asteroid193
+    2300468: asteroid194
+    2300470: asteroid195
+    2300472: asteroid196
+    2300474: asteroid197
+    2300476: asteroid198
+    2300478: asteroid199
+    2300480: asteroid200
+    2300482: asteroid201
+    2300484: asteroid202
+    2300486: asteroid203
+    2300488: asteroid204
+    2300490: asteroid205
+    2300492: asteroid206
+    2300494: asteroid207
+    2300496: asteroid208
+    2300498: asteroid209
+    2300500: asteroid210
+    2300502: asteroid211
+    2300504: asteroid212
+    2300506: asteroid213
+    2300508: asteroid214
+    2300510: asteroid215
+    2300512: asteroid216
+    2300514: asteroid217
+    2300516: asteroid218
+    2300518: asteroid219
+    2300520: asteroid220
+    2300522: asteroid221
+    2300524: asteroid222
+    2300526: asteroid223
+    2300528: asteroid224
+    2300530: asteroid225
+    2300532: asteroid226
+    2300534: asteroid227
+    2300536: asteroid228
+    2300538: asteroid229
+    2300540: asteroid230
+    2300542: asteroid231
+    2300544: asteroid232
+    2300546: asteroid233
+    2300548: asteroid234
+    2300550: asteroid235
+    2300552: asteroid236
+    2300554: asteroid237
+    2300556: asteroid238
+    2300558: asteroid239
+    2300560: asteroid240
+    2300562: asteroid241
+    2300564: asteroid242
+    2300566: asteroid243
+    2300568: asteroid244
+    2300570: asteroid245
+    2300572: asteroid246
+    2300574: asteroid247
+    2300576: asteroid248
+    2300578: asteroid249
+    2300580: asteroid250
+    2300582: asteroid251
+    2300584: asteroid252
+    2300586: asteroid253
+    2300588: asteroid254
+    2300590: asteroid255
+    2300592: asteroid256
+    2300594: asteroid257
+    2300596: asteroid258
+    2300598: asteroid259
+    2300600: asteroid260
+    2300602: asteroid261
+    2300604: asteroid262
+    2300606: asteroid263
+    2300608: asteroid264
+    2300610: asteroid265
+    2300612: asteroid266
+    2300614: asteroid267
+    2300616: asteroid268
+    2300618: asteroid269
+    2300620: asteroid270
+    2300622: asteroid271
+    2300624: asteroid272
+    2300626: asteroid273
+    2300628: asteroid274
+    2300630: asteroid275
+    2300632: asteroid276
+    2300634: asteroid277
+    2300636: asteroid278
+    2300638: asteroid279
+    2300640: asteroid70
+    2300642: asteroid71
+    2300644: asteroid72
+    2300646: asteroid73
+    2300648: asteroid74
+    2300650: asteroid75
+    2300652: asteroid76
+    2300654: asteroid77
+    2300656: asteroid78
+    2300658: asteroid79
+    2300660: asteroid80
+    2300662: asteroid81
+    2300664: asteroid82
+    2300666: asteroid83
+    2300668: asteroid84
+    2300670: asteroid85
+    2300672: asteroid86
+    2300674: asteroid87
+    2300676: asteroid88
+    2300678: asteroid89
+    2300680: asteroid90
+    2300682: asteroid91
+    2300684: asteroid92
+    2300686: asteroid93
+    2300688: asteroid94
+    2300690: asteroid95
+    2300692: asteroid96
+    2300694: asteroid97
+    2300696: asteroid98
+    2300698: asteroid99
+    3300000: asteroid
+    3300002: asteroid 1
+    3300004: asteroid1
+    3300006: asteroid1 1
+    3300008: asteroid10
+    3300010: asteroid10 1
+    3300012: asteroid11
+    3300014: asteroid11 1
+    3300016: asteroid12
+    3300018: asteroid12 1
+    3300020: asteroid13
+    3300022: asteroid13 1
+    3300024: asteroid14
+    3300026: asteroid14 1
+    3300028: asteroid15
+    3300030: asteroid15 1
+    3300032: asteroid16
+    3300034: asteroid16 1
+    3300036: asteroid17
+    3300038: asteroid17 1
+    3300040: asteroid18
+    3300042: asteroid18 1
+    3300044: asteroid19
+    3300046: asteroid19 1
+    3300048: asteroid2
+    3300050: asteroid2 1
+    3300052: asteroid20
+    3300054: asteroid20 1
+    3300056: asteroid21
+    3300058: asteroid21 1
+    3300060: asteroid22
+    3300062: asteroid22 1
+    3300064: asteroid23
+    3300066: asteroid23 1
+    3300068: asteroid24
+    3300070: asteroid24 1
+    3300072: asteroid25
+    3300074: asteroid25 1
+    3300076: asteroid26
+    3300078: asteroid26 1
+    3300080: asteroid27
+    3300082: asteroid27 1
+    3300084: asteroid28
+    3300086: asteroid28 1
+    3300088: asteroid29
+    3300090: asteroid29 1
+    3300092: asteroid3
+    3300094: asteroid3 1
+    3300096: asteroid30
+    3300098: asteroid30 1
+    3300100: asteroid31
+    3300102: asteroid31 1
+    3300104: asteroid32
+    3300106: asteroid32 1
+    3300108: asteroid33
+    3300110: asteroid33 1
+    3300112: asteroid34
+    3300114: asteroid34 1
+    3300116: asteroid35
+    3300118: asteroid35 1
+    3300120: asteroid36
+    3300122: asteroid36 1
+    3300124: asteroid37
+    3300126: asteroid37 1
+    3300128: asteroid38
+    3300130: asteroid38 1
+    3300132: asteroid39
+    3300134: asteroid39 1
+    3300136: asteroid4
+    3300138: asteroid4 1
+    3300140: asteroid40
+    3300142: asteroid40 1
+    3300144: asteroid41
+    3300146: asteroid41 1
+    3300148: asteroid42
+    3300150: asteroid42 1
+    3300152: asteroid43
+    3300154: asteroid43 1
+    3300156: asteroid44
+    3300158: asteroid44 1
+    3300160: asteroid45
+    3300162: asteroid45 1
+    3300164: asteroid46
+    3300166: asteroid46 1
+    3300168: asteroid47
+    3300170: asteroid47 1
+    3300172: asteroid48
+    3300174: asteroid48 1
+    3300176: asteroid49
+    3300178: asteroid49 1
+    3300180: asteroid5
+    3300182: asteroid5 1
+    3300184: asteroid50
+    3300186: asteroid50 1
+    3300188: asteroid51
+    3300190: asteroid51 1
+    3300192: asteroid52
+    3300194: asteroid52 1
+    3300196: asteroid53
+    3300198: asteroid53 1
+    3300200: asteroid54
+    3300202: asteroid54 1
+    3300204: asteroid55
+    3300206: asteroid55 1
+    3300208: asteroid56
+    3300210: asteroid56 1
+    3300212: asteroid57
+    3300214: asteroid57 1
+    3300216: asteroid58
+    3300218: asteroid58 1
+    3300220: asteroid59
+    3300222: asteroid59 1
+    3300224: asteroid6
+    3300226: asteroid6 1
+    3300228: asteroid60
+    3300230: asteroid60 1
+    3300232: asteroid61
+    3300234: asteroid61 1
+    3300236: asteroid62
+    3300238: asteroid62 1
+    3300240: asteroid63
+    3300242: asteroid63 1
+    3300244: asteroid64
+    3300246: asteroid64 1
+    3300248: asteroid65
+    3300250: asteroid65 1
+    3300252: asteroid66
+    3300254: asteroid66 1
+    3300256: asteroid67
+    3300258: asteroid67 1
+    3300260: asteroid68
+    3300262: asteroid68 1
+    3300264: asteroid69
+    3300266: asteroid69 1
+    3300268: asteroid7
+    3300270: asteroid7 1
+    3300272: asteroid8
+    3300274: asteroid8 1
+    3300276: asteroid9
+    3300278: asteroid9 1
+    3300280: asteroid100
+    3300282: asteroid101
+    3300284: asteroid102
+    3300286: asteroid103
+    3300288: asteroid104
+    3300290: asteroid105
+    3300292: asteroid106
+    3300294: asteroid107
+    3300296: asteroid108
+    3300298: asteroid109
+    3300300: asteroid110
+    3300302: asteroid111
+    3300304: asteroid112
+    3300306: asteroid113
+    3300308: asteroid114
+    3300310: asteroid115
+    3300312: asteroid116
+    3300314: asteroid117
+    3300316: asteroid118
+    3300318: asteroid119
+    3300320: asteroid120
+    3300322: asteroid121
+    3300324: asteroid122
+    3300326: asteroid123
+    3300328: asteroid124
+    3300330: asteroid125
+    3300332: asteroid126
+    3300334: asteroid127
+    3300336: asteroid128
+    3300338: asteroid129
+    3300340: asteroid130
+    3300342: asteroid131
+    3300344: asteroid132
+    3300346: asteroid133
+    3300348: asteroid134
+    3300350: asteroid135
+    3300352: asteroid136
+    3300354: asteroid137
+    3300356: asteroid138
+    3300358: asteroid139
+    3300360: asteroid140
+    3300362: asteroid141
+    3300364: asteroid142
+    3300366: asteroid143
+    3300368: asteroid144
+    3300370: asteroid145
+    3300372: asteroid146
+    3300374: asteroid147
+    3300376: asteroid148
+    3300378: asteroid149
+    3300380: asteroid150
+    3300382: asteroid151
+    3300384: asteroid152
+    3300386: asteroid153
+    3300388: asteroid154
+    3300390: asteroid155
+    3300392: asteroid156
+    3300394: asteroid157
+    3300396: asteroid158
+    3300398: asteroid159
+    3300400: asteroid160
+    3300402: asteroid161
+    3300404: asteroid162
+    3300406: asteroid163
+    3300408: asteroid164
+    3300410: asteroid165
+    3300412: asteroid166
+    3300414: asteroid167
+    3300416: asteroid168
+    3300418: asteroid169
+    3300420: asteroid170
+    3300422: asteroid171
+    3300424: asteroid172
+    3300426: asteroid173
+    3300428: asteroid174
+    3300430: asteroid175
+    3300432: asteroid176
+    3300434: asteroid177
+    3300436: asteroid178
+    3300438: asteroid179
+    3300440: asteroid180
+    3300442: asteroid181
+    3300444: asteroid182
+    3300446: asteroid183
+    3300448: asteroid184
+    3300450: asteroid185
+    3300452: asteroid186
+    3300454: asteroid187
+    3300456: asteroid188
+    3300458: asteroid189
+    3300460: asteroid190
+    3300462: asteroid191
+    3300464: asteroid192
+    3300466: asteroid193
+    3300468: asteroid194
+    3300470: asteroid195
+    3300472: asteroid196
+    3300474: asteroid197
+    3300476: asteroid198
+    3300478: asteroid199
+    3300480: asteroid200
+    3300482: asteroid201
+    3300484: asteroid202
+    3300486: asteroid203
+    3300488: asteroid204
+    3300490: asteroid205
+    3300492: asteroid206
+    3300494: asteroid207
+    3300496: asteroid208
+    3300498: asteroid209
+    3300500: asteroid210
+    3300502: asteroid211
+    3300504: asteroid212
+    3300506: asteroid213
+    3300508: asteroid214
+    3300510: asteroid215
+    3300512: asteroid216
+    3300514: asteroid217
+    3300516: asteroid218
+    3300518: asteroid219
+    3300520: asteroid220
+    3300522: asteroid221
+    3300524: asteroid222
+    3300526: asteroid223
+    3300528: asteroid224
+    3300530: asteroid225
+    3300532: asteroid226
+    3300534: asteroid227
+    3300536: asteroid228
+    3300538: asteroid229
+    3300540: asteroid230
+    3300542: asteroid231
+    3300544: asteroid232
+    3300546: asteroid233
+    3300548: asteroid234
+    3300550: asteroid235
+    3300552: asteroid236
+    3300554: asteroid237
+    3300556: asteroid238
+    3300558: asteroid239
+    3300560: asteroid240
+    3300562: asteroid241
+    3300564: asteroid242
+    3300566: asteroid243
+    3300568: asteroid244
+    3300570: asteroid245
+    3300572: asteroid246
+    3300574: asteroid247
+    3300576: asteroid248
+    3300578: asteroid249
+    3300580: asteroid250
+    3300582: asteroid251
+    3300584: asteroid252
+    3300586: asteroid253
+    3300588: asteroid254
+    3300590: asteroid255
+    3300592: asteroid256
+    3300594: asteroid257
+    3300596: asteroid258
+    3300598: asteroid259
+    3300600: asteroid260
+    3300602: asteroid261
+    3300604: asteroid262
+    3300606: asteroid263
+    3300608: asteroid264
+    3300610: asteroid265
+    3300612: asteroid266
+    3300614: asteroid267
+    3300616: asteroid268
+    3300618: asteroid269
+    3300620: asteroid270
+    3300622: asteroid271
+    3300624: asteroid272
+    3300626: asteroid273
+    3300628: asteroid274
+    3300630: asteroid275
+    3300632: asteroid276
+    3300634: asteroid277
+    3300636: asteroid278
+    3300638: asteroid279
+    3300640: asteroid70
+    3300642: asteroid71
+    3300644: asteroid72
+    3300646: asteroid73
+    3300648: asteroid74
+    3300650: asteroid75
+    3300652: asteroid76
+    3300654: asteroid77
+    3300656: asteroid78
+    3300658: asteroid79
+    3300660: asteroid80
+    3300662: asteroid81
+    3300664: asteroid82
+    3300666: asteroid83
+    3300668: asteroid84
+    3300670: asteroid85
+    3300672: asteroid86
+    3300674: asteroid87
+    3300676: asteroid88
+    3300678: asteroid89
+    3300680: asteroid90
+    3300682: asteroid91
+    3300684: asteroid92
+    3300686: asteroid93
+    3300688: asteroid94
+    3300690: asteroid95
+    3300692: asteroid96
+    3300694: asteroid97
+    3300696: asteroid98
+    3300698: asteroid99
+    4300000: asteroid37
+    4300002: asteroid38
+    4300004: asteroid39
+    4300006: asteroid40
+    4300008: asteroid41
+    4300010: asteroid42
+    4300012: asteroid43
+    4300014: asteroid44
+    4300016: asteroid45
+    4300018: asteroid46
+    4300020: asteroid47
+    4300022: asteroid48
+    4300024: asteroid49
+    4300026: asteroid50
+    4300028: asteroid51
+    4300030: asteroid52
+    4300032: asteroid54
+    4300034: asteroid53
+    4300036: asteroid55
+    4300038: asteroid56
+    4300040: asteroid57
+    4300042: asteroid58
+    4300044: asteroid59
+    4300046: asteroid60
+    4300048: asteroid61
+    4300050: asteroid62
+    4300052: asteroid63
+    4300054: asteroid64
+    4300056: asteroid65
+    4300058: asteroid66
+    4300060: asteroid67
+    4300062: asteroid68
+    4300064: asteroid69
+    4300066: asteroid36
+    4300068: asteroid35
+    4300070: asteroid34
+    4300072: asteroid33
+    4300074: asteroid32
+    4300076: asteroid31
+    4300078: asteroid30
+    4300080: asteroid29
+    4300082: asteroid28
+    4300084: asteroid27
+    4300086: asteroid26
+    4300088: asteroid25
+    4300090: asteroid24
+    4300092: asteroid23
+    4300094: asteroid22
+    4300096: asteroid21
+    4300098: asteroid20
+    4300100: asteroid19
+    4300102: asteroid18
+    4300104: asteroid17
+    4300106: asteroid16
+    4300108: asteroid15
+    4300110: asteroid14
+    4300112: asteroid13
+    4300114: asteroid12
+    4300116: asteroid11
+    4300118: asteroid10
+    4300120: asteroid9
+    4300122: asteroid8
+    4300124: asteroid7
+    4300126: asteroid6
+    4300128: asteroid5
+    4300130: asteroid4
+    4300132: asteroid3
+    4300134: asteroid2
+    4300136: asteroid1
+    4300138: asteroid
+    4300140: asteroid37
+    4300142: asteroid38
+    4300144: asteroid39
+    4300146: asteroid40
+    4300148: asteroid41
+    4300150: asteroid42
+    4300152: asteroid43
+    4300154: asteroid44
+    4300156: asteroid45
+    4300158: asteroid46
+    4300160: asteroid47
+    4300162: asteroid48
+    4300164: asteroid49
+    4300166: asteroid50
+    4300168: asteroid51
+    4300170: asteroid52
+    4300172: asteroid54
+    4300174: asteroid53
+    4300176: asteroid55
+    4300178: asteroid56
+    4300180: asteroid57
+    4300182: asteroid58
+    4300184: asteroid59
+    4300186: asteroid60
+    4300188: asteroid61
+    4300190: asteroid62
+    4300192: asteroid63
+    4300194: asteroid64
+    4300196: asteroid65
+    4300198: asteroid66
+    4300200: asteroid67
+    4300202: asteroid68
+    4300204: asteroid69
+    4300206: asteroid36
+    4300208: asteroid35
+    4300210: asteroid34
+    4300212: asteroid33
+    4300214: asteroid32
+    4300216: asteroid31
+    4300218: asteroid30
+    4300220: asteroid29
+    4300222: asteroid28
+    4300224: asteroid27
+    4300226: asteroid26
+    4300228: asteroid25
+    4300230: asteroid24
+    4300232: asteroid23
+    4300234: asteroid22
+    4300236: asteroid21
+    4300238: asteroid20
+    4300240: asteroid19
+    4300242: asteroid18
+    4300244: asteroid17
+    4300246: asteroid16
+    4300248: asteroid15
+    4300250: asteroid14
+    4300252: asteroid13
+    4300254: asteroid12
+    4300256: asteroid11
+    4300258: asteroid10
+    4300260: asteroid9
+    4300262: asteroid8
+    4300264: asteroid7
+    4300266: asteroid6
+    4300268: asteroid5
+    4300270: asteroid4
+    4300272: asteroid3
+    4300274: asteroid2
+    4300276: asteroid1
+    4300278: asteroid
+    4300280: asteroid70
+    4300282: asteroid71
+    4300284: asteroid72
+    4300286: asteroid73
+    4300288: asteroid74
+    4300290: asteroid75
+    4300292: asteroid76
+    4300294: asteroid77
+    4300296: asteroid78
+    4300298: asteroid79
+    4300300: asteroid80
+    4300302: asteroid81
+    4300304: asteroid82
+    4300306: asteroid83
+    4300308: asteroid84
+    4300310: asteroid85
+    4300312: asteroid86
+    4300314: asteroid87
+    4300316: asteroid88
+    4300318: asteroid89
+    4300320: asteroid90
+    4300322: asteroid91
+    4300324: asteroid92
+    4300326: asteroid93
+    4300328: asteroid94
+    4300330: asteroid95
+    4300332: asteroid96
+    4300334: asteroid97
+    4300336: asteroid98
+    4300338: asteroid99
+    4300340: asteroid100
+    4300342: asteroid101
+    4300344: asteroid102
+    4300346: asteroid103
+    4300348: asteroid104
+    4300350: asteroid105
+    4300352: asteroid106
+    4300354: asteroid107
+    4300356: asteroid108
+    4300358: asteroid109
+    4300360: asteroid110
+    4300362: asteroid111
+    4300364: asteroid112
+    4300366: asteroid113
+    4300368: asteroid114
+    4300370: asteroid115
+    4300372: asteroid116
+    4300374: asteroid117
+    4300376: asteroid118
+    4300378: asteroid119
+    4300380: asteroid120
+    4300382: asteroid121
+    4300384: asteroid122
+    4300386: asteroid123
+    4300388: asteroid124
+    4300390: asteroid125
+    4300392: asteroid126
+    4300394: asteroid127
+    4300396: asteroid128
+    4300398: asteroid129
+    4300400: asteroid130
+    4300402: asteroid131
+    4300404: asteroid132
+    4300406: asteroid133
+    4300408: asteroid134
+    4300410: asteroid135
+    4300412: asteroid136
+    4300414: asteroid137
+    4300416: asteroid138
+    4300418: asteroid139
+    4300420: asteroid140
+    4300422: asteroid141
+    4300424: asteroid142
+    4300426: asteroid143
+    4300428: asteroid144
+    4300430: asteroid145
+    4300432: asteroid146
+    4300434: asteroid147
+    4300436: asteroid148
+    4300438: asteroid149
+    4300440: asteroid150
+    4300442: asteroid151
+    4300444: asteroid152
+    4300446: asteroid153
+    4300448: asteroid154
+    4300450: asteroid155
+    4300452: asteroid156
+    4300454: asteroid157
+    4300456: asteroid158
+    4300458: asteroid159
+    4300460: asteroid160
+    4300462: asteroid161
+    4300464: asteroid162
+    4300466: asteroid163
+    4300468: asteroid164
+    4300470: asteroid165
+    4300472: asteroid166
+    4300474: asteroid167
+    4300476: asteroid168
+    4300478: asteroid169
+    4300480: asteroid170
+    4300482: asteroid171
+    4300484: asteroid172
+    4300486: asteroid173
+    4300488: asteroid174
+    4300490: asteroid175
+    4300492: asteroid176
+    4300494: asteroid177
+    4300496: asteroid178
+    4300498: asteroid179
+    4300500: asteroid180
+    4300502: asteroid181
+    4300504: asteroid182
+    4300506: asteroid183
+    4300508: asteroid184
+    4300510: asteroid185
+    4300512: asteroid186
+    4300514: asteroid187
+    4300516: asteroid188
+    4300518: asteroid189
+    4300520: asteroid190
+    4300522: asteroid191
+    4300524: asteroid192
+    4300526: asteroid193
+    4300528: asteroid194
+    4300530: asteroid195
+    4300532: asteroid196
+    4300534: asteroid197
+    4300536: asteroid198
+    4300538: asteroid199
+    4300540: asteroid200
+    4300542: asteroid201
+    4300544: asteroid202
+    4300546: asteroid203
+    4300548: asteroid204
+    4300550: asteroid205
+    4300552: asteroid206
+    4300554: asteroid207
+    4300556: asteroid208
+    4300558: asteroid209
+    4300560: asteroid210
+    4300562: asteroid211
+    4300564: asteroid212
+    4300566: asteroid213
+    4300568: asteroid214
+    4300570: asteroid215
+    4300572: asteroid216
+    4300574: asteroid217
+    4300576: asteroid218
+    4300578: asteroid219
+    4300580: asteroid220
+    4300582: asteroid221
+    4300584: asteroid222
+    4300586: asteroid223
+    4300588: asteroid224
+    4300590: asteroid225
+    4300592: asteroid226
+    4300594: asteroid227
+    4300596: asteroid228
+    4300598: asteroid229
+    4300600: asteroid230
+    4300602: asteroid231
+    4300604: asteroid232
+    4300606: asteroid233
+    4300608: asteroid234
+    4300610: asteroid235
+    4300612: asteroid236
+    4300614: asteroid237
+    4300616: asteroid238
+    4300618: asteroid239
+    4300620: asteroid240
+    4300622: asteroid241
+    4300624: asteroid242
+    4300626: asteroid243
+    4300628: asteroid244
+    4300630: asteroid245
+    4300632: asteroid246
+    4300634: asteroid247
+    4300636: asteroid248
+    4300638: asteroid249
+    4300640: asteroid250
+    4300642: asteroid251
+    4300644: asteroid252
+    4300646: asteroid253
+    4300648: asteroid254
+    4300650: asteroid255
+    4300652: asteroid256
+    4300654: asteroid257
+    4300656: asteroid258
+    4300658: asteroid259
+    4300660: asteroid260
+    4300662: asteroid261
+    4300664: asteroid262
+    4300666: asteroid263
+    4300668: asteroid264
+    4300670: asteroid265
+    4300672: asteroid266
+    4300674: asteroid267
+    4300676: asteroid268
+    4300678: asteroid269
+    4300680: asteroid270
+    4300682: asteroid271
+    4300684: asteroid272
+    4300686: asteroid273
+    4300688: asteroid274
+    4300690: asteroid275
+    4300692: asteroid276
+    4300694: asteroid277
+    4300696: asteroid278
+    4300698: asteroid279
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

@@ -6,12 +6,6 @@ public class TrapScript : MonoBehaviour {
 	public bool isActive = false;
 	public GameObject target;
 
-	void Start(){
-	}
-
-	void Update(){
-	}
-
 	public void activate () {
 		if(!isActive)
 		{

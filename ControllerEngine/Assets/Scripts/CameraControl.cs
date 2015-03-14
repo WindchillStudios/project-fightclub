@@ -27,17 +27,17 @@ public class CameraControl : MonoBehaviour {
 	void Start () {
 		lastCamLocation = new Vector3(0,0,0);
 		gameController = GameObject.FindGameObjectWithTag ("Control");
-		players = gameController.GetComponent<MatchControl>().players;
-	}
-	
-	// Update is called once per frame
-	void LateUpdate () {
-
+		players = GameObject.FindGameObjectsWithTag ("Player");
+		
 		if(mostLeft == null)
 			mostLeft = players[0];
 		if(mostRight == null)
 			mostRight = players[0];
 
+	}
+	
+	// Update is called once per frame
+	void LateUpdate () {
 		getCameraPos ();
 	}
 
@@ -50,14 +50,17 @@ public class CameraControl : MonoBehaviour {
 						
 				foreach (GameObject player in players)
 				{
-					if(player.activeSelf)
-						camLocation += player.transform.position;
+					if(player != null){
+						if(player.activeSelf){
+							camLocation += player.transform.position;
+						}
 
-					if(player.transform.position.x < mostLeft.transform.position.x)
-						mostLeft = player;
-					
-					if(player.transform.position.x > mostRight.transform.position.x)
-						mostRight = player;
+						if(player.transform.position.x < mostLeft.transform.position.x)
+							mostLeft = player;
+						
+						if(player.transform.position.x > mostRight.transform.position.x)
+							mostRight = player;
+					}
 				}
 
 				camLocation = camLocation / players.Length;
@@ -67,22 +70,24 @@ public class CameraControl : MonoBehaviour {
 
 				fightDistance = mostRight.transform.position.x - mostLeft.transform.position.x;
 
-				camLocation.z = -fightDistance;
+				camLocation.z = -fightDistance/2;
 
 				/******Finalize******/
 
 				yClamp = Mathf.Clamp(camLocation.y, -1, 10);
-				xClamp = Mathf.Clamp(camLocation.x, -30, 30);
 				zClamp = Mathf.Clamp(camLocation.z, -50, -15);
 
+				yClamp += 3;
 
-				newCamLocation = new Vector3(xClamp,yClamp,zClamp);
+				newCamLocation = new Vector3(camLocation.x,yClamp,zClamp);
 
 				cameraDirection = newCamLocation - lastCamLocation;
 
 				this.transform.Translate(cameraDirection/10);
 
 				lastCamLocation = this.transform.position;
+
+				camLocation = Vector3.zero;
 		
 			}
 			else{

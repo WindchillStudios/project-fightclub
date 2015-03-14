@@ -27,7 +27,9 @@ public class OSC_Receiver_C : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		textOutput.text = "BPM: " + message;
+		if(textOutput){
+			textOutput.text = "BPM: " + message;
+		}
 	}
 
 	public void ListenEvent(OscMessage oscMessage)

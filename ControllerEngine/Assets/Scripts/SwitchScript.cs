@@ -5,11 +5,16 @@ public class SwitchScript : MonoBehaviour {
 
 	public GameObject mechanism;
 	public bool isOn = false;
+	bool canSwitch;
 	Animator anim;
 
 	void Start()
 	{
 		anim = this.GetComponent<Animator> ();
+	}
+
+	void switchable(){
+		canSwitch = true;
 	}
 
 	// Use this for initialization
@@ -20,9 +25,12 @@ public class SwitchScript : MonoBehaviour {
 			{
 				if(!mechanism.GetComponent<TrapScript>().isActive)
 				{
-					isOn = true;
-					anim.SetBool("isOn",true);
-					mechanism.GetComponent<TrapScript>().activate();
+					if(canSwitch){
+						canSwitch = false;
+						isOn = true;
+						anim.SetBool("isOn",true);
+						mechanism.GetComponent<TrapScript>().activate();
+					}
 				}
 			}
 		}
@@ -33,9 +41,12 @@ public class SwitchScript : MonoBehaviour {
 		{
 			if(mechanism.GetComponent<TrapScript>().isActive)
 			{
-				isOn = false;
-				anim.SetBool("isOn",false);
-				mechanism.GetComponent<TrapScript>().deactivate();
+				if(canSwitch){
+					canSwitch = false;
+					isOn = false;
+					anim.SetBool("isOn",false);
+					mechanism.GetComponent<TrapScript>().deactivate();
+				}
 			}
 		}
 	}

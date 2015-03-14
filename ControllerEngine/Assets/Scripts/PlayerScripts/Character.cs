@@ -28,6 +28,12 @@ public class Character : MonoBehaviour {
 	public State state_;
 	public lifeState lifeState_;
 
+	/******Input*********/
+
+	public bool isMobileControlled;
+	float moveInput;
+	public string actionInput;
+
 	/******Heatlh*********/
 
 	float health;
@@ -102,10 +108,17 @@ public class Character : MonoBehaviour {
 		maxGravity = -20.0f;
 		gravity = maxGravity;
 		canDash = true;
+
+		isMobileControlled = false;
 	}
 
-	// Update is called once per frame
+
+	/************* Update ******************/
+
 	void Update () {
+
+		moveInput = moveInput / 50;
+
 //		Debug.Log (state_ + "_" + playerNumber);
 
 		updateMovement ();
@@ -125,6 +138,28 @@ public class Character : MonoBehaviour {
 		body.Move (movement);
 	}
 
+	/************* Read Controller Input ******************/
+
+	public void readInput(string type, string conInput){
+
+		bool result;
+
+		if(type == "M"){
+			result = float.TryParse(conInput, out moveInput);
+			if(!result){
+				Debug.Log("Unexpected result is " + conInput);
+			}
+		}
+		else if(type == "A"){
+			actionInput = conInput;
+		}
+		else{
+			Debug.Log("No Input");
+			moveInput = Input.GetAxis("Horizontal" + playerNumber);
+		}
+	}
+
+
 	void handleCharState()
 	{
 		switch(state_)
@@ -134,10 +169,13 @@ public class Character : MonoBehaviour {
 		
 		case State.STATE_IDLE:
 
-			if (Input.GetAxis ("Horizontal" + playerNumber) == 0)
-				model.SetInteger("state", 0);
-			else
-				model.SetInteger("state", 1);
+
+			if(body.isGrounded){
+				if (moveInput == 0)
+					model.SetInteger("state", 0);
+				else
+					model.SetInteger("state", 1);
+			}
 
 			canAttack = true;
 			canMove = true;
@@ -153,7 +191,6 @@ public class Character : MonoBehaviour {
 
 		case State.STATE_JUMPING:
 			model.SetInteger("state", 2);
-
 
 			canAttack = true;
 			canMove = true;
@@ -314,7 +351,7 @@ public class Character : MonoBehaviour {
 			getInputMovement ();
 			
 			if(!onRSlope && !onLSlope)
-				horizontalMove = currentSpeed * direction;
+				horizontalMove = currentSpeed * moveInput;
 		}
 		else
 		{
@@ -390,15 +427,15 @@ public class Character : MonoBehaviour {
 
 		/* ------ GET DIRECTION INPUTS -----*/
 		
-		if (Input.GetAxis ("Horizontal" + playerNumber) != 0)
+		if (moveInput != 0)
 		{
 			attDirection = 1;
 		}
-		else if (Input.GetAxis ("Vertical" + playerNumber) > 0)
+		else if (moveInput > 0)
 		{
 			attDirection = 2;
 		}
-		else if (Input.GetAxis ("Vertical" + playerNumber) < 0)
+		else if (moveInput < 0)
 		{
 			attDirection = 3;
 		}
@@ -409,15 +446,33 @@ public class Character : MonoBehaviour {
 
 		if(canAttack)
 		{
-			if(Input.GetAxis("Attack" + playerNumber) > 0)
-			{
-				state_ = State.STATE_ATTACKING;
-				DoAttack(false, attDirection);
+			if(isMobileControlled){
+				if(actionInput == "Attk")
+				{
+					state_ = State.STATE_ATTACKING;
+					DoAttack(false, attDirection);
+
+					actionInput = "Idle";
+				}
+				else if(actionInput == "Spcl")
+				{
+					//state_ = State.STATE_ATTACKING;
+					//DoAttack(true, attDirection);
+
+					actionInput = "Idle";
+				}
 			}
-			else if(Input.GetAxis("SpecialAttack" + playerNumber) > 0)
-			{
-				state_ = State.STATE_ATTACKING;
-				DoAttack(true, attDirection);
+			else{
+				if(Input.GetAxis("Attack" + playerNumber) > 0)
+				{
+					state_ = State.STATE_ATTACKING;
+					DoAttack(false, attDirection);
+				}
+				else if(Input.GetAxis("SpecialAttack" + playerNumber) > 0)
+				{
+					state_ = State.STATE_ATTACKING;
+					DoAttack(true, attDirection);
+				}
 			}
 		}
 	}
@@ -484,14 +539,17 @@ public class Character : MonoBehaviour {
 	void getInputMovement(){
 		
 		// HORIZONTAL ///
-		
-		direction = Input.GetAxis ("Horizontal" + playerNumber) ;
-		if(direction != 0)
+
+		if(!isMobileControlled){
+			moveInput = Input.GetAxis("Horizontal" + playerNumber);
+		}
+
+		if(moveInput != 0)
 		{
-			if(direction > 0){
+			if(moveInput > 0){
 				body.transform.eulerAngles = new Vector3 (0, 90, 0);
 			}
-			else if(direction < 0){
+			else if(moveInput < 0){
 				body.transform.eulerAngles = new Vector3 (0, 270, 0);
 			}
 			
@@ -504,14 +562,28 @@ public class Character : MonoBehaviour {
 		}
 
 		// DASHING ///
-
-		if(Input.GetAxis("Dash"  + playerNumber) > 0)
-		{
-			if(canDash)
+		if(isMobileControlled){
+			if(actionInput == "DshL")
 			{
-				dashCool = 0.0f;
-				dashTimer = 0.0f;
-				state_ = State.STATE_DASH;
+				actionInput = "Idle";
+
+				if(canDash)
+				{
+					dashCool = 0.0f;
+					dashTimer = 0.0f;
+					state_ = State.STATE_DASH;
+				}
+			}
+		}
+		else{
+			if(Input.GetAxis("Dash"  + playerNumber) > 0)
+			{
+				if(canDash)
+				{
+					dashCool = 0.0f;
+					dashTimer = 0.0f;
+					state_ = State.STATE_DASH;
+				}
 			}
 		}
 
@@ -528,10 +600,22 @@ public class Character : MonoBehaviour {
 		}
 		
 		// VERTICAL ///
-		
-		if (Input.GetAxis ("Jump"  + playerNumber) > 0) {
-			if(canJump){
-				state_ = State.STATE_JUMPING;
+
+		if(isMobileControlled){
+			if (actionInput == "Jump") {
+
+				actionInput = "Idle";
+
+				if(canJump){
+					state_ = State.STATE_JUMPING;
+				}
+			}
+		}
+		else{			
+			if (Input.GetAxis ("Jump"  + playerNumber) > 0) {
+				if(canJump){
+					state_ = State.STATE_JUMPING;
+				}
 			}
 		}
 	}
