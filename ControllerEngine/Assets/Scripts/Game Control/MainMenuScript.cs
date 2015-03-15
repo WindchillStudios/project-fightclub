@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class MainMenuScript : MonoBehaviour {
+public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 	public GameObject logo;
 	public GameObject text;
@@ -10,14 +11,21 @@ public class MainMenuScript : MonoBehaviour {
 	ParticleSystem[] logoParticles;
 
 	public GameObject[] LevelBackList;
+	GameObject backLev;
 
 	GameObject[] CharList;
 	public GameObject charSelectorFab;
 	bool charsLoaded;
 
-	public GameObject levelSelect;
-	Selectable curLevel;
+	public EventSystem MenuEvents;
 
+	public GameObject levelSelectGui;
+	Selectable curLevel;
+	bool isSelected;
+	string toSubmit;
+
+	public GameObject charSelectGui;
+	
 	MatchControl matchController;
 
 	GUI mainMenuGUI;
@@ -43,7 +51,7 @@ public class MainMenuScript : MonoBehaviour {
 
 		int randomLevel = Random.Range (0, (LevelBackList.Length));
 
-		GameObject curLev = Instantiate (LevelBackList [randomLevel], levelPos, this.transform.rotation) as GameObject;
+		backLev = Instantiate (LevelBackList [randomLevel], levelPos, this.transform.rotation) as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -66,6 +74,8 @@ public class MainMenuScript : MonoBehaviour {
 
 		case MenuState.MENU_CHARSELECT:
 
+			charSelectGui.SetActive(true);
+
 			if(!charsLoaded){
 				for(int i = 0; i < 4; i++){
 					CharList[i] = Instantiate(charSelectorFab, new Vector3(((i*3)+22),16,(2*i-10)), charSelectorFab.transform.rotation) as GameObject;
@@ -80,6 +90,7 @@ public class MainMenuScript : MonoBehaviour {
 
 			for(int i=0; i < CharList.Length; i++){
 				if(CharList[i].GetComponent<charSelector>().isSelected){
+					text.SetActive(true);
 					if(Input.GetAxis("Jump" + (i+1)) > 0){
 						menu = MenuState.MENU_LVLSELECT;
 					}
@@ -88,13 +99,57 @@ public class MainMenuScript : MonoBehaviour {
 			break;
 
 		case MenuState.MENU_LVLSELECT:
+
+			/* ---- End Character Select ---- */
+
+			charSelectGui.SetActive(false);
+			text.SetActive(false);
+
 			foreach(GameObject charSel in CharList){
 				charSel.SetActive(false);
 			}
-			levelSelect.SetActive(true);
 
+			/* ---- Start Level Select ---- */
+
+			levelSelectGui.SetActive(true);
+			if(!isSelected){
+				curLevel = Selectable.allSelectables[0];
+				curLevel.Select();
+
+				isSelected = true;
+			}
+
+			if(MenuEvents.currentSelectedGameObject){
+				curLevel = MenuEvents.currentSelectedGameObject.GetComponent<Selectable>();
+			}
+
+			float mobiDirectionInput = mobiLevelSelect();
+
+			if(mobiDirectionInput > 0){
+				if(curLevel.FindSelectableOnRight() != null){
+					curLevel = curLevel.FindSelectableOnRight();
+					curLevel.Select();
+				}
+			}
+			else if(mobiDirectionInput < 0){
+				if(curLevel.FindSelectableOnLeft() != null){
+					curLevel = curLevel.FindSelectableOnLeft();
+					curLevel.Select();
+				}
+			}
+
+			if(MenuEvents.currentSelectedGameObject){
+				toSubmit = MenuEvents.currentSelectedGameObject.name;
+			}
+
+			mobiSubmitLevel(toSubmit);
+		
 			break;
 		}
+	}
+
+	public void OnSubmit(BaseEventData data){
+		Application.LoadLevel (toSubmit);	
 	}
 
 	void mobiSelect(){
@@ -122,6 +177,44 @@ public class MainMenuScript : MonoBehaviour {
 			else if(mobiData[2] == "Confirm"){
 				CharList[mobiPlayer].GetComponent<charSelector>().selectCharacter();
 				CharList[mobiPlayer].GetComponent<Character>().isMobileControlled = true;
+			}
+		}
+	}
+
+	float mobiLevelSelect(){
+		string[] mobiData = matchController.mobileInput;
+
+		if(mobiData.Length > 1){
+			if (mobiData [1] == "M") {
+
+				bool result;
+				float numOutput;
+
+				result = float.TryParse(mobiData [2], out numOutput);
+				if(!result){
+					Debug.Log("Unexpected result is " + mobiData[2]);
+				}
+
+				return numOutput;
+			}
+			else{
+				return 0;
+			}
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	void mobiSubmitLevel(string levelName){
+		
+		string[] mobiData = matchController.mobileInput;
+		
+		if(mobiData.Length > 1){
+			if (mobiData [1] == "A") {
+				if(mobiData[2] == "Spcl"){
+					Application.LoadLevel(levelName);
+				}
 			}
 		}
 	}

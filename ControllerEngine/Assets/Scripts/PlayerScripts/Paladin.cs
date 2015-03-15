@@ -10,12 +10,12 @@ public class Paladin : Character {
 
 	/* --- Paladin Specific --- */
 
-	public float chargeTimer;
+ 	float chargeTimer;
 	float chargeTime;
-	public bool isCharged;
-	public bool charging;
-	public bool canSpecial;
-	public bool isSpecial;
+	bool isCharged;
+	bool charging;
+	bool canSpecial;
+	bool isSpecial;
 
 	void Start () {
 		

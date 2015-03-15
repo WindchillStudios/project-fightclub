@@ -4,9 +4,7 @@ using System.Collections;
 public class CameraControl : MonoBehaviour {
 
 	public bool isCameraMove;
-
-	GameObject gameController;
-
+	
 	GameObject[] players;
 
 	Vector3 camLocation;
@@ -26,7 +24,6 @@ public class CameraControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lastCamLocation = new Vector3(0,0,0);
-		gameController = GameObject.FindGameObjectWithTag ("Control");
 		players = GameObject.FindGameObjectsWithTag ("Player");
 		
 		if(mostLeft == null)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MatchControl : MonoBehaviour {
 
@@ -32,6 +33,16 @@ public class MatchControl : MonoBehaviour {
 
 	public string[] mobileInput;
 
+	/* ---- Level Gui ---- */
+
+	public float[] playerHealths;
+	Canvas levelGui;
+	public GameObject[] playerBoxes;
+	Image[] healthBars;
+
+	/* ---- Game Scoring ---- */
+
+
 	// Use this for initialization
 	void Start () {
 		players = new GameObject[4];
@@ -51,6 +62,7 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void onLevelLoad(){
+	
 		if (GameObject.FindObjectOfType<TrapContainer> ())
 		{
 			aoeTraps = GameObject.FindObjectOfType<TrapContainer> ().allAoeTraps;
@@ -58,23 +70,35 @@ public class MatchControl : MonoBehaviour {
 		}
 		heartRate = GameObject.FindObjectOfType<OSC_Receiver_C> ();
 		spawnLocs = GameObject.FindGameObjectsWithTag ("Respawn");
+
 		SpawnPlayers ();
+
+		levelGui = FindObjectOfType<Canvas> ();
+
+		foreach(GameObject player in players){
+			if(player){
+				int num = (player.GetComponent<Character>().playerNumber - 1);
+				GameObject p = Instantiate(playerBoxes[num]) as GameObject;
+				p.transform.SetParent(levelGui.transform, false);
+			}
+		}
+
+		GameObject[] healthBarObjs = GameObject.FindGameObjectsWithTag ("healthBar");
+		int hLength = healthBarObjs.Length;
+		healthBars = new Image[hLength];
+
+		for (int i = 0; i < healthBars.Length; i++){
+			healthBars[i] = healthBarObjs[i].GetComponent<Image>();
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKeyDown(KeyCode.Alpha2)){
-			Application.LoadLevel("AsteroidMine");
-		}
-		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			Application.LoadLevel("TrainingRoom");
-		}
-
-
 		if (Application.loadedLevelName != "MainMenu") {
 			ifSingle ();
 			getHeartRates();
+			updateHud();
 			avHeartRate = getAvHeart ();
 			heartRateTrapSystem ();
 		}
@@ -92,10 +116,6 @@ public class MatchControl : MonoBehaviour {
 		controlData = curInput.Split(":"[0]);
 
 		mobileInput = controlData;
-
-		foreach (string data in mobileInput){
-			Debug.Log (data);
-		}
 
 		if(controlData.Length >= 3){
 
@@ -213,6 +233,20 @@ public class MatchControl : MonoBehaviour {
 		isHeartTrapActive = true;
 
 		trap.activate();
+	}
+
+	void updateHud(){
+		for(int i = 0; i < players.Length; i++){
+			if(players[i] != null){
+				playerHealths = new float[players.Length];
+				playerHealths[i] = players[i].GetComponent<Character>().getHealth();
+				float healthScale = playerHealths[i] / players[i].GetComponent<Character>().maxHealth;
+				Debug.Log(players[i] + " : " + healthScale);
+				healthBars[i].transform.localScale = new Vector3(1,healthScale,1);
+			}
+		}
+
+
 	}
 
 	void ifSingle(){

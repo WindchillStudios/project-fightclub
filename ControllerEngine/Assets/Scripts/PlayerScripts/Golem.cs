@@ -22,16 +22,9 @@ public class Golem : Character {
 	
 	public override void DoAttack(bool isSpecial, int attDirection){
 		
-		float cancelStart = 0;
-		float cancelEnd = 0;
-		float cancelTimer = 0;
-		
-		cancelTimer += 1 * Time.deltaTime;
-		
+
 		if (isSpecial)
 		{
-			cancelStart = 2;
-			cancelEnd = 15;
 			attackNum = 2;
 			currentDamage = 20.0f;
 			attForce = new Vector2(direction*5f,0);
@@ -45,32 +38,28 @@ public class Golem : Character {
 				attackNum = 0;
 				currentDamage = 10.0f;
 				attForce = new Vector2(direction*1f,0);
-				cancelStart = 1f;
-				cancelEnd = 3f;
+
 				break;
 				
 			case 1://No Input
 				attackNum = 0;
 				currentDamage = 10.0f;
 				attForce = new Vector2(direction*1f,0);
-				cancelStart = 1f;
-				cancelEnd = 3f;
+
 				break;
 				
 			case 2://Up Input
 				attackNum = 0;
 				currentDamage = 10.0f;
 				attForce = new Vector2(0,-1f);
-				cancelStart = 0.1f * Time.deltaTime;
-				cancelEnd = 0.4f * Time.deltaTime;
+
 				break;
 				
 			case 3://Down Input
 				attackNum = 0;
 				currentDamage = 10.0f;
 				attForce = new Vector2(direction*1f,0);
-				cancelStart = 0.1f * Time.deltaTime;
-				cancelEnd = 0.4f * Time.deltaTime;
+
 				break;
 				
 			default:

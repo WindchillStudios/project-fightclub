@@ -518,6 +518,10 @@ public class Character : MonoBehaviour {
 		isHurt = false;
 	}
 
+	public float getHealth(){
+		return health;
+	}
+
 	/* ------- FINDING KNOCKBACK ------- */
 
 	public void knockBack(Vector3 force)
