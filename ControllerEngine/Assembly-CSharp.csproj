@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\SwitchScript.cs" />
      <Compile Include="Assets\Scripts\TrapContainer.cs" />
      <Compile Include="Assets\Scripts\TrapScript.cs" />
+     <Compile Include="Assets\Scripts\boulderScript.cs" />
      <Compile Include="Assets\Scripts\craneTrap.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Skyboxes\_skybox info.txt" />

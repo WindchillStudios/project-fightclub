@@ -10,19 +10,21 @@ public class Paladin : Character {
 
 	/* --- Paladin Specific --- */
 
- 	float chargeTimer;
+ 	public float chargeTimer;
+	ParticleSystem attackEffects;
 	float chargeTime;
-	bool isCharged;
-	bool charging;
-	bool canSpecial;
+	public bool isCharged;
+	public bool charging;
+	public bool canSpecial;
 	bool isSpecial;
 
 	void Start () {
 		
-		maxJump = 35;
+		maxJump = 25;
 		maxSpeed = 15;
 		maxHealth = 110;
 		chargeTime = 0.5f;
+		attackEffects = GetComponentInChildren<ParticleSystem> ();
 
 		base.Start ();
 	}
@@ -62,9 +64,16 @@ public class Paladin : Character {
 				break;
 			
 			case 4:
-				attackNum = 1;
+				if(attackNum < 1){
+					attackNum = attackNum + 1;
+				}
+				else{
+					canListen = false;
+				}
+				
 				currentDamage = 10.0f;
 				attForce = new Vector2(1,1);
+
 				break;
 
 			default:
@@ -84,6 +93,18 @@ public class Paladin : Character {
 				{
 					isSpecial = false;
 				}
+			}
+		}
+
+		if (charging || isCharged) {
+			Debug.Log(attackEffects);
+			if(!attackEffects.isPlaying){
+				attackEffects.Play();
+			}
+		}
+		else{
+			if(attackEffects.isPlaying){
+				attackEffects.Stop();
 			}
 		}
 
@@ -111,11 +132,13 @@ public class Paladin : Character {
 
 		if(!isCharged)
 		{
+
 			if(charging){
+
 				if(isMobileControlled){
 					if(actionInput == "Spcl"){
 						chargeTimer += 0.1f * Time.deltaTime;
-						model.SetInteger("attackState", 3);
+						model.SetInteger("attackState", 5);
 					}
 					else{
 						charging = false;
@@ -125,13 +148,16 @@ public class Paladin : Character {
 				else{
 					if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
 						chargeTimer += 0.1f * Time.deltaTime;
-						model.SetInteger("attackState", 3);
+						model.SetInteger("attackState", 5);
 					}
 					else{
 						charging = false;
 						model.SetTrigger("charging");
 					}
 				}
+			}
+			else{
+				attackEffects.Stop();
 			}
 		}
 		else
@@ -149,7 +175,7 @@ public class Paladin : Character {
 				attForce =  new Vector2 (facing*5,5);
 				charAttacks.GetCurrentAttack (attForce, currentDamage);
 			
-				model.SetInteger("attackState", 4);
+				model.SetInteger("attackState", 6);
 				canSpecial = false;
 				isCharged = false;
 			}
@@ -158,7 +184,7 @@ public class Paladin : Character {
 		{
 			if(!charging)
 			{
-				model.SetInteger("attackState", 2);
+				model.SetInteger("attackState", 4);
 				charging = true;
 			}
 		}

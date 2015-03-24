@@ -40,7 +40,7 @@ public class TCPclient : MonoBehaviour {
 
 	void Update(){
 		if(thereIsData == true){
-			Debug.Log ("TCP " + stringData);
+			//Debug.Log ("TCP " + stringData);
 
 			gameController.getInput(stringData);
 			thereIsData = false;

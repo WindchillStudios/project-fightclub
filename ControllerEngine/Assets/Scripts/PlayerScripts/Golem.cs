@@ -7,28 +7,52 @@ public class Golem : Character {
 	Vector2 attForce;
 	int type;
 	int attackNum;
-	
+
 	/* --- Golem Specific --- */
 
-	
+	public GameObject boulder;
+	public bool canShoot;
+	public float shotDelay;
+	public float currentShot;
+	Vector3 handSpawner;
+
 	void Start () {
 		
-		maxJump = 40;
+		maxJump = 25;
 		maxSpeed = 15;
 		maxHealth = 110;
 
+		shotDelay = 6;
+		canShoot = true;
+
 		base.Start ();
 	}
-	
+
+	public override void updateSpecial(){
+		handSpawner = new Vector3 ((this.transform.position.x + facing*2),this.transform.position.y+3,this.transform.position.z);
+
+		if(!canShoot){
+			if(currentShot < shotDelay){
+				currentShot += 1 * Time.deltaTime;
+			}
+			else{
+				canShoot = true;
+				currentShot = 0;
+			}
+		}
+	}
+
 	public override void DoAttack(bool isSpecial, int attDirection){
 		
 
 		if (isSpecial)
 		{
-			attackNum = 2;
 			currentDamage = 20.0f;
 			attForce = new Vector2(direction*5f,0);
-			DoSpecial();
+
+			if(canShoot){
+				DoSpecial();
+			}
 		}
 		else
 		{
@@ -61,7 +85,19 @@ public class Golem : Character {
 				attForce = new Vector2(direction*1f,0);
 
 				break;
-				
+
+			case 4:
+				if(attackNum < 2){
+					attackNum = attackNum + 1;
+				}
+				else{
+					canListen = false;
+				}
+
+				currentDamage = 10.0f;
+				attForce = new Vector2(1,1);
+				break;
+			
 			default:
 				break;
 			}
@@ -73,7 +109,12 @@ public class Golem : Character {
 	
 	void DoSpecial()
 	{
-		model.SetInteger("attackState", 2);
+		//Debug.Log ("Special");
+		GameObject newBoulder = Instantiate (boulder, handSpawner, this.transform.rotation) as GameObject;
+		newBoulder.GetComponent<boulderScript> ().parentNumber = this.playerNumber;
+		newBoulder.GetComponent<Rigidbody> ().AddForce (20 * facing, 0, 0, ForceMode.Impulse);
+		model.SetInteger("attackState", 3);
+		canShoot = false;
 	}
 	
 	void DoBasic()

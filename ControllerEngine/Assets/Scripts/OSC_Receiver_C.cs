@@ -11,7 +11,8 @@ public class OSC_Receiver_C : MonoBehaviour {
 	public GUIText textOutput;
 	public Transform spawnObj;
 
-	public int message;
+	public int message1;
+	public int message2;
 
 	// Use this for initialization
 	void Start () {
@@ -22,20 +23,23 @@ public class OSC_Receiver_C : MonoBehaviour {
 		handler.init(udp);
 		
 		// Listen to the channels set in the Processing sketch
-		handler.SetAddressHandler("/bpmNum", ListenEvent);
+		handler.SetAddressHandler("/pulseVals", ListenEvent);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+//		Debug.Log ("BPM1: " + message1 + "BPM2 " + message2);
+
 		if(textOutput){
-			textOutput.text = "BPM: " + message;
+			textOutput.text = "BPM: " + message1 + "BPM2 " + message2;
 		}
 	}
 
 	public void ListenEvent(OscMessage oscMessage)
 	{	
 		// Make the data available 
-		message = (int)oscMessage.Values[0];
-		
-	} 
+		message1 = (int)oscMessage.Values[0];
+		message2 = (int)oscMessage.Values [2];
+	}
 }

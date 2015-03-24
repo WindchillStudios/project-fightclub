@@ -7,6 +7,8 @@ public class charSelector : MonoBehaviour {
 
 	public GameObject AnimControl;
 
+	public AudioClip[] selectAudio;
+
 	public int playerNumber;
 	public GameObject[] availableChars;
 	GameObject curChar;
@@ -28,7 +30,10 @@ public class charSelector : MonoBehaviour {
 			if(Input.GetAxis("Horizontal" + playerNumber) > 0){
 
 				if(!AnimControl.GetComponent<Animator>().IsInTransition(0)){
-				   charRotateNum ++;
+
+					this.GetComponent<AudioSource>().Stop(); 
+
+					charRotateNum ++;
 					if(charRotateNum > 4)
 					{
 						charRotateNum = 0;
@@ -37,6 +42,9 @@ public class charSelector : MonoBehaviour {
 			}
 			else if(Input.GetAxis("Horizontal" + playerNumber) < 0){
 				if(!AnimControl.GetComponent<Animator>().IsInTransition(0)){
+
+					this.GetComponent<AudioSource>().Stop(); 
+					
 					charRotateNum --;
 					if(charRotateNum < 0)
 					{
@@ -54,10 +62,28 @@ public class charSelector : MonoBehaviour {
 	}
 	
 	public void selectCharacter(){
-		isSelected = true;
-		partSelect.Play();
+
 		if(charRotateNum > 0){
+			isSelected = true;
+			partSelect.Play();
 			matchControl.players [playerNumber-1] = availableChars [charRotateNum-1];
+
+			switch (charRotateNum) {
+			case 1:
+				this.GetComponent<AudioSource>().PlayOneShot(selectAudio[0]); 
+				break;
+			case 2:
+				this.GetComponent<AudioSource>().PlayOneShot(selectAudio[1]); 
+				break;
+			case 3:
+				this.GetComponent<AudioSource>().PlayOneShot(selectAudio[2]); 
+				break;
+			case 4:
+				this.GetComponent<AudioSource>().PlayOneShot(selectAudio[3]); 
+				break;
+			default:
+				break;
+			}
 		}
 		else
 			isSelected = false;

@@ -10,26 +10,33 @@ public class Bandit : Character {
 	
 	/* --- Bandit Specific --- */
 
-	bool isHeld;
+	public bool isHeld;
+	public bool canSpecial;
+	public float chargeDamage;
 	
 	void Start () {
 		
-		maxJump = 25;
+		maxJump = 27;
 		maxSpeed = 17;
 		maxHealth = 90;
-		
+
+		canSpecial = true;
+
 		base.Start ();
 	}
 	
 	public override void DoAttack(bool isSpecial, int attDirection){
 
-		
 		if (isSpecial)
 		{
-			attackNum = 2;
-			currentDamage = 20.0f;
+			chargeDamage = 10.0f;
 			attForce = new Vector2(direction*5f,0);
-			DoSpecial();
+			if(canSpecial)
+			{
+				DoSpecial();
+			}
+			else
+				state_ = State.STATE_IDLE;
 		}
 		else
 		{
@@ -63,6 +70,20 @@ public class Bandit : Character {
 
 				break;
 				
+			case 4:
+				if(attackNum < 2){
+					attackNum = attackNum + 1;
+				}
+				else{
+					canListen = false;
+				}
+				
+				currentDamage = 10.0f;
+				attForce = new Vector2(1,1);
+				Debug.Log(attackNum);
+
+				break;
+
 			default:
 				break;
 			}
@@ -71,12 +92,51 @@ public class Bandit : Character {
 		
 		charAttacks.GetCurrentAttack (attForce, currentDamage);
 	}
-	
+
+	public override void updateSpecial(){
+
+		if (isHeld) {
+			chargeDamage += 10 * Time.deltaTime;
+		}
+		else if(!isHeld){
+			canSpecial = true;
+			charAttacks.GetCurrentAttack (attForce, chargeDamage);
+			model.SetInteger("attackState",4);
+		}
+
+		if(model.GetCurrentAnimatorStateInfo(0).IsName("Special")){
+			canSpecial = false;
+
+			if(isMobileControlled){
+				if(actionInput == "Spcl"){
+					isHeld = true;
+				}
+				else{
+					Debug.Log("1");
+					isHeld = false;
+				}
+			}
+			else{
+				if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
+					isHeld = true;
+				}
+				else{
+					Debug.Log("2");
+					isHeld = false;
+				}
+			}
+		}
+		else{
+			Debug.Log("3");
+			isHeld = false;
+		}
+	}
+
 	void DoSpecial()
 	{
-		model.SetInteger("attackState", 2);
+		model.SetInteger("attackState", 3);
 	}
-	
+
 	void DoBasic()
 	{
 		model.SetInteger ("attackState", attackNum);

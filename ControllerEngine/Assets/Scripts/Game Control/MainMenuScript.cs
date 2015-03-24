@@ -176,7 +176,6 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			}
 			else if(mobiData[2] == "Confirm"){
 				CharList[mobiPlayer].GetComponent<charSelector>().selectCharacter();
-				CharList[mobiPlayer].GetComponent<Character>().isMobileControlled = true;
 			}
 		}
 	}

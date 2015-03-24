@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class MatchControl : MonoBehaviour {
 
-	bool isMenu;
+	/* ----	Players ---- */
 
 	public GameObject[] players;
 	GameObject[] spawnLocs;
+	float countdownTimer;
+	bool isCountdown;
 
 	public GameObject Liara;
 	public GameObject Durain;
@@ -17,7 +19,8 @@ public class MatchControl : MonoBehaviour {
 
 	public int[] playerHeartRates;
 
-	//Heart Rate Traps //
+	/* ----	Heart Rate Traps ---- */
+
 	public float aoeTrapFrequency;
 	public GameObject[] aoeTraps;
 
@@ -38,7 +41,11 @@ public class MatchControl : MonoBehaviour {
 	public float[] playerHealths;
 	Canvas levelGui;
 	public GameObject[] playerBoxes;
-	Image[] healthBars;
+	public Image[] healthBars;
+
+	/* ---- Audio ---- */
+
+	public AudioClip[] music;
 
 	/* ---- Game Scoring ---- */
 
@@ -46,23 +53,32 @@ public class MatchControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		players = new GameObject[4];
-		DontDestroyOnLoad (this);
+		DontDestroyOnLoad (this.gameObject);
+		countdownTimer = 4;
 	}
 
 	void Awake(){
+		if (music.Length > 0) {
+			setMusic ();
+		}
+
 		if (Application.loadedLevelName != "MainMenu") {
 			onLevelLoad ();
 		}
 	}
 
 	void OnLevelWasLoaded(){
+		if (music.Length > 0) {
+			setMusic ();
+		}
+
 		if (Application.loadedLevelName != "MainMenu") {
 			onLevelLoad ();
 		}
 	}
 
 	void onLevelLoad(){
-	
+
 		if (GameObject.FindObjectOfType<TrapContainer> ())
 		{
 			aoeTraps = GameObject.FindObjectOfType<TrapContainer> ().allAoeTraps;
@@ -72,11 +88,16 @@ public class MatchControl : MonoBehaviour {
 		spawnLocs = GameObject.FindGameObjectsWithTag ("Respawn");
 
 		SpawnPlayers ();
+		isCountdown = true;
 
 		levelGui = FindObjectOfType<Canvas> ();
 
 		foreach(GameObject player in players){
+
 			if(player){
+			
+				player.GetComponent<Character>().setFrozen(true);
+
 				int num = (player.GetComponent<Character>().playerNumber - 1);
 				GameObject p = Instantiate(playerBoxes[num]) as GameObject;
 				p.transform.SetParent(levelGui.transform, false);
@@ -84,16 +105,22 @@ public class MatchControl : MonoBehaviour {
 		}
 
 		GameObject[] healthBarObjs = GameObject.FindGameObjectsWithTag ("healthBar");
-		int hLength = healthBarObjs.Length;
-		healthBars = new Image[hLength];
+		healthBars = new Image[healthBarObjs.Length];
 
-		for (int i = 0; i < healthBars.Length; i++){
+		for (int i = 0; i < healthBarObjs.Length; i++){
 			healthBars[i] = healthBarObjs[i].GetComponent<Image>();
 		}
+
+		playerHealths = new float[healthBars.Length];
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			Application.LoadLevel("MainMenu");
+			Destroy(this.gameObject);
+		}
 
 		if (Application.loadedLevelName != "MainMenu") {
 			ifSingle ();
@@ -101,6 +128,33 @@ public class MatchControl : MonoBehaviour {
 			updateHud();
 			avHeartRate = getAvHeart ();
 			heartRateTrapSystem ();
+		}
+
+		if(isCountdown){
+
+			if(countdownTimer > 0){
+				countdownTimer -= Time.fixedDeltaTime;
+				if(countdownTimer > 1){
+					levelGui.GetComponentInChildren<Text>().text = Mathf.Floor(countdownTimer).ToString();
+				}
+				else if(countdownTimer > 0){
+					levelGui.GetComponentInChildren<Text>().text = "Fight!";
+				}
+			}
+			else{
+				levelGui.GetComponentInChildren<Text>().text = "";
+
+				foreach(GameObject player in players){
+
+					if(player != null){
+						player.GetComponent<Character>().setFrozen(false);
+					}
+				}
+				isCountdown = false;
+			}
+		}
+		else{
+			countdownTimer = 4;
 		}
 	}
 
@@ -138,7 +192,7 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void getHeartRates(){
-		int curHeart = heartRate.message;
+		int curHeart = heartRate.message1;
 
 		if(playerHeartRates.Length > 0)
 			playerHeartRates[0] = curHeart;
@@ -236,17 +290,44 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void updateHud(){
-		for(int i = 0; i < players.Length; i++){
-			if(players[i] != null){
-				playerHealths = new float[players.Length];
-				playerHealths[i] = players[i].GetComponent<Character>().getHealth();
-				float healthScale = playerHealths[i] / players[i].GetComponent<Character>().maxHealth;
-				Debug.Log(players[i] + " : " + healthScale);
-				healthBars[i].transform.localScale = new Vector3(1,healthScale,1);
+
+		int playCount = 0;
+
+		foreach (GameObject player in players) {
+
+			if(player != null){
+				playerHealths[playCount] = player.GetComponent<Character>().getHealth();
+				playerHealths[playCount] = playerHealths[playCount] / player.GetComponent<Character>().maxHealth;
+
+				playCount = playCount + 1;
 			}
 		}
 
+		for(int i = 0; i < playerHealths.Length; i++){
+			healthBars[i].transform.localScale = new Vector3(1,playerHealths[i],1);
+		}
 
+
+	}
+
+	void setMusic(){
+		
+		switch(Application.loadedLevelName){
+		case "MainMenu":
+			this.GetComponent<AudioSource>().clip = music[0];
+			this.GetComponent<AudioSource>().Play();
+			break;
+		case "AsteroidMine":
+			this.GetComponent<AudioSource>().clip = music[2];
+			this.GetComponent<AudioSource>().Play();
+			break;
+		case "TrainingRoom":
+			this.GetComponent<AudioSource>().clip = music[1];
+			this.GetComponent<AudioSource>().Play();
+			break;
+		default:
+			break;
+		}
 	}
 
 	void ifSingle(){

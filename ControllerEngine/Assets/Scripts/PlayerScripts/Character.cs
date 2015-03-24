@@ -10,6 +10,7 @@ public class Character : MonoBehaviour {
 	
 	public enum State
 	{
+		STATE_FROZEN,
 		STATE_IDLE,
 		STATE_RUNNING,
 		STATE_JUMPING,
@@ -46,6 +47,8 @@ public class Character : MonoBehaviour {
 	/*************Attacking***********/
 
 	public bool canAttack;
+	public bool canListen;
+	public bool isListening;
 
 	/************Movement*************/
 
@@ -108,14 +111,13 @@ public class Character : MonoBehaviour {
 		maxGravity = -20.0f;
 		gravity = maxGravity;
 		canDash = true;
-
-		isMobileControlled = false;
+		canListen = true;
 	}
 
 
 	/************* Update ******************/
 
-	void Update () {
+	void FixedUpdate () {
 
 		moveInput = moveInput / 50;
 
@@ -157,6 +159,8 @@ public class Character : MonoBehaviour {
 			Debug.Log("No Input");
 			moveInput = Input.GetAxis("Horizontal" + playerNumber);
 		}
+
+		Debug.Log (playerNumber + " : " + actionInput);
 	}
 
 
@@ -166,9 +170,22 @@ public class Character : MonoBehaviour {
 		{
 
 		/* --------- IDLE ---------- */
-		
-		case State.STATE_IDLE:
+		case State.STATE_FROZEN:
 
+			canMove = false;
+			canAttack = false;
+			canJump = false;
+
+			if(gravity > maxGravity){
+				gravity -= 2.0f;
+			}
+
+			verticalMove = gravity;
+			model.SetInteger("state",0);
+
+			break;
+
+		case State.STATE_IDLE:
 
 			if(body.isGrounded){
 				if (moveInput == 0)
@@ -245,16 +262,35 @@ public class Character : MonoBehaviour {
 
 			model.SetInteger("state", 6);
 
+			/*if(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
+				state_ = State.STATE_IDLE;
+
+			}*/
+
 			if(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
 			{
-				if(Input.GetAxis("Attack" + playerNumber) > 0){
-					DoAttack(false, 4);
-				}
+				Debug.Log(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack"));
 
-				if(model.IsInTransition(0))
-				{
+				if(model.IsInTransition(0)){
+					canListen = false;
+
 					if(!model.GetNextAnimatorStateInfo(0).IsTag("Attack")){
 						state_ = State.STATE_IDLE;
+					}
+				}
+				else{
+					canListen = true;
+				}
+
+				if(canListen){
+					if(Input.GetAxis("Attack" + playerNumber) > 0){
+						isListening = true;
+
+						if(isListening){
+							DoAttack(false, 4);
+							isListening = false;
+						}
+
 					}
 				}
 			}
@@ -456,8 +492,8 @@ public class Character : MonoBehaviour {
 				}
 				else if(actionInput == "Spcl")
 				{
-					//state_ = State.STATE_ATTACKING;
-					//DoAttack(true, attDirection);
+					state_ = State.STATE_ATTACKING;
+					DoAttack(true, attDirection);
 
 					actionInput = "Idle";
 				}
@@ -476,7 +512,6 @@ public class Character : MonoBehaviour {
 			}
 		}
 	}
-
 
 	public void takeDamage(float damage, GameObject attacker){
 
@@ -640,8 +675,16 @@ public class Character : MonoBehaviour {
 		}
 	}
 
+	public void setFrozen(bool isFrozen){
+		if (isFrozen) {
+			state_ = State.STATE_FROZEN;
+		}
+		else{
+			state_ = State.STATE_IDLE;
+		}
+	}
+
 	void OnControllerColliderHit(ControllerColliderHit hit){
-		
 		
 		// PHYSICS OBJECT INTERACTION ////////
 		
