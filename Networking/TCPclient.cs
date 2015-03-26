@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Net;
@@ -10,7 +11,10 @@ using System.Text;
 public class TCPclient : MonoBehaviour {
 
 	string input, stringData;
-	byte[] writeData;
+	Queue<string> inputs = new Queue<string>();	
+	Queue<byte[]> outputs = new Queue<byte[]>();
+	bool buffer1full, buffer2full, buffer3full, buffer4full;
+	byte[] writeData, writeBuffer1, writeBuffer2, writeBuffer3, writeBuffer4;
 	TcpClient server;
 	public Movement playerMove;
 	bool runThread;
@@ -31,7 +35,7 @@ public class TCPclient : MonoBehaviour {
 	void Update(){
 		if(thereIsData == true){
 			Debug.Log ("thereisdata");
-			playerMove.playerInput(stringData);
+			playerMove.playerInput(inputs.Dequeue ());
 			thereIsData = false;
 		}
 		if(dataToWrite){
@@ -39,8 +43,10 @@ public class TCPclient : MonoBehaviour {
 			Debug.Log ("Data to be wrote");
 			if(ns2.CanWrite){
 				Debug.Log ("CW");
-				ns2.Write(writeData,0,writeData.Length);
-				dataToWrite = false;
+				ns2.Write(outputs.Dequeue(),0,4);
+				if(outputs.Count == 0){
+					dataToWrite = false;
+				}
 			}else{
 				Debug.Log ("You can not write to the stream.");
 			}
@@ -49,7 +55,8 @@ public class TCPclient : MonoBehaviour {
 
 	public void prepareString(string outputString){
 		Debug.Log ("String prep");
-		writeData = Encoding.ASCII.GetBytes(outputString);
+		byte[] encodedString = Encoding.ASCII.GetBytes (outputString);
+		outputs.Enqueue(encodedString);
 		dataToWrite = true;
 	}
 
@@ -76,7 +83,7 @@ public class TCPclient : MonoBehaviour {
 				break;
 			}
 
-			stringData = Encoding.ASCII.GetString (data, 0, recv);
+			inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
 			Debug.Log(stringData + " stringdata");
 		}
 		Debug.Log("Disconnecting from server...");
