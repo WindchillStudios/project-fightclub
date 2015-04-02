@@ -36,7 +36,7 @@ public class attacks : MonoBehaviour {
 
 		if(hit.gameObject.GetComponent<Rigidbody>() && hit.gameObject.tag != "attackBox")
 		{
-			hit.gameObject.rigidbody.AddForce(new Vector3(character.direction,1,0)*50);
+			hit.gameObject.rigidbody.AddForce(new Vector3(character.facing,1,0)*50);
 		}
 
 		//FOR BREAKABLE LEVEL OBJECTS...////

@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 	public GameObject logo;
-	public GameObject text;
+	public GameObject confirmText;
+	public Text infoText;
 	Animator logoAnim;
 	ParticleSystem[] logoParticles;
 
 	public GameObject[] LevelBackList;
-	GameObject backLev;
 
 	GameObject[] CharList;
 	public GameObject charSelectorFab;
@@ -23,8 +23,11 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	Selectable curLevel;
 	bool isSelected;
 	string toSubmit;
+	float mobiDirectionInput;
 
 	public GameObject charSelectGui;
+
+	public GameObject optionSelectGui;
 	
 	MatchControl matchController;
 
@@ -35,7 +38,8 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	enum MenuState{
 		MENU_SPLASH,
 		MENU_CHARSELECT,
-		MENU_LVLSELECT
+		MENU_LVLSELECT,
+		MENU_OPTIONSELECT
 	}
 
 	MenuState menu;
@@ -51,7 +55,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 		int randomLevel = Random.Range (0, (LevelBackList.Length));
 
-		backLev = Instantiate (LevelBackList [randomLevel], levelPos, this.transform.rotation) as GameObject;
+		GameObject backLev = Instantiate (LevelBackList [randomLevel], levelPos, this.transform.rotation) as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -66,7 +70,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 					lParts.Stop();
 				}
 
-				text.SetActive(false);
+				confirmText.SetActive(false);
 				logoAnim.SetBool("isSplash", false);
 				menu = MenuState.MENU_CHARSELECT;
 			}
@@ -90,12 +94,16 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 			for(int i=0; i < CharList.Length; i++){
 				if(CharList[i].GetComponent<charSelector>().isSelected){
-					text.SetActive(true);
+					confirmText.SetActive(true);
+
+					mobiSubmitChar(i);
+
 					if(Input.GetAxis("Jump" + (i+1)) > 0){
 						menu = MenuState.MENU_LVLSELECT;
 					}
 				}
 			}
+		
 			break;
 
 		case MenuState.MENU_LVLSELECT:
@@ -103,7 +111,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			/* ---- End Character Select ---- */
 
 			charSelectGui.SetActive(false);
-			text.SetActive(false);
+			confirmText.SetActive(false);
 
 			foreach(GameObject charSel in CharList){
 				charSel.SetActive(false);
@@ -123,7 +131,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 				curLevel = MenuEvents.currentSelectedGameObject.GetComponent<Selectable>();
 			}
 
-			float mobiDirectionInput = mobiLevelSelect();
+			mobiDirectionInput = mobiLevelSelect();
 
 			if(mobiDirectionInput > 0){
 				if(curLevel.FindSelectableOnRight() != null){
@@ -142,14 +150,86 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 				toSubmit = MenuEvents.currentSelectedGameObject.name;
 			}
 
-			mobiSubmitLevel(toSubmit);
+			if(mobiSubmit()){
+				menu = MenuState.MENU_OPTIONSELECT;
+				isSelected = false;
+			}
+
+			break;
 		
+		case MenuState.MENU_OPTIONSELECT:
+
+			/* ---- End Level Select ---- */
+			
+			levelSelectGui.SetActive(false);
+
+			/* ---- Start Option Select ---- */
+			
+			optionSelectGui.SetActive(true);
+
+			if(!isSelected){
+				curLevel = Selectable.allSelectables[0];
+				curLevel.Select();
+				
+				isSelected = true;
+			}
+			
+			if(MenuEvents.currentSelectedGameObject){
+				curLevel = MenuEvents.currentSelectedGameObject.GetComponent<Selectable>();
+			}
+			
+			mobiDirectionInput = mobiLevelSelect();
+			
+			if(mobiDirectionInput > 0){
+				if(curLevel.FindSelectableOnRight() != null){
+					curLevel = curLevel.FindSelectableOnRight();
+					curLevel.Select();
+				}
+			}
+			else if(mobiDirectionInput < 0){
+				if(curLevel.FindSelectableOnLeft() != null){
+					curLevel = curLevel.FindSelectableOnLeft();
+					curLevel.Select();
+				}
+			}
+			
+			if(MenuEvents.currentSelectedGameObject){
+				switch(MenuEvents.currentSelectedGameObject.name){
+				case "Survival":
+					infoText.text = "5 Life Limit. Make 'em Count";
+					GameObject.FindObjectOfType<MatchControl>().setThisGameType(0);
+					break;
+				case "Timed":
+					infoText.text = "Show Your Worth. Clock's Tickin'";
+					GameObject.FindObjectOfType<MatchControl>().setThisGameType(1);
+					break;
+				case "Score":
+					infoText.text = "First to 10. Dominate the Competition";
+					GameObject.FindObjectOfType<MatchControl>().setThisGameType(2);
+					break;
+				default:
+					break;
+				}
+			}
+			
+			if(mobiSubmit()){
+				Application.LoadLevel(toSubmit);
+			}
+			
 			break;
 		}
 	}
 
 	public void OnSubmit(BaseEventData data){
-		Application.LoadLevel (toSubmit);	
+
+		if (menu == MenuState.MENU_LVLSELECT) {
+			menu = MenuState.MENU_OPTIONSELECT;
+			isSelected = false;
+		}
+		else if(menu == MenuState.MENU_OPTIONSELECT){
+			Debug.Log("Hello?");
+			Application.LoadLevel (toSubmit);	
+		}
 	}
 
 	void mobiSelect(){
@@ -205,14 +285,46 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 		}
 	}
 	
-	void mobiSubmitLevel(string levelName){
+	bool mobiSubmit(){
 		
 		string[] mobiData = matchController.mobileInput;
 		
 		if(mobiData.Length > 1){
 			if (mobiData [1] == "A") {
 				if(mobiData[2] == "Spcl"){
-					Application.LoadLevel(levelName);
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+
+	void mobiSubmitChar(int pNum){
+		
+		string[] mobiData = matchController.mobileInput;
+		
+		if(mobiData.Length > 1){
+			if (mobiData [1] == "A") {
+				if(mobiData[2] == "Attk"){
+
+					int mobiPlayer;
+					bool result;
+					result = int.TryParse(mobiData [0], out mobiPlayer);
+					if(!result){
+						Debug.Log("Unexpected result is " + mobiData[0]);
+					}
+
+					if(mobiPlayer == pNum){
+						menu = MenuState.MENU_LVLSELECT;
+					}
 				}
 			}
 		}

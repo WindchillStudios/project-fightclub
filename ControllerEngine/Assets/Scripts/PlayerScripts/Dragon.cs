@@ -14,7 +14,7 @@ public class Dragon : Character {
 	public bool canSpecial;
 	public float chargeDamage;
 	
-	void Start () {
+	new void Start () {
 		
 		maxJump = 25;
 		maxSpeed = 15;
@@ -29,65 +29,69 @@ public class Dragon : Character {
 		
 		if (isSpecial)
 		{
-			chargeDamage = 5.0f;
 			attForce = Vector2.zero;
+			currentDamage = 1.0f;
 
 			if(canSpecial)
 			{
 				DoSpecial();
 			}
-			else
+			else{
 				state_ = State.STATE_IDLE;
+			}
 		}
 		else
 		{
 			switch(attDirection)
 			{
 			case 0://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
+				attForce = new Vector2(facing*5f,5f);
 				
 				break;
 				
 			case 1://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
+				attForce = new Vector2(facing*1f,0);
 				
 				break;
 				
 			case 2://Up Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(0,-1f);
 				
 				break;
 				
 			case 3://Down Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
+				attForce = new Vector2(facing*1f,0);
 				
 				break;
 				
 			case 4:
-				if(attackNum < 2){
-					attackNum = attackNum + 1;
-				}
-				else{
-					canListen = false;
-				}
-				
+				model.SetTrigger("isCombo");
+				model.SetInteger("attackState", 0);
+
 				currentDamage = 10.0f;
-				attForce = new Vector2(1,1);
+				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
+					attForce = new Vector2(facing*5f,5f);
+				}
+				else if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")){
+					attForce = new Vector2(facing*15f,6f);
+				}
 
 				break;
 				
 			default:
 				break;
 			}
-			DoBasic();
+			if(!model.GetBool("isCombo")){
+				DoBasic();
+			}
 		}
 		
 		charAttacks.GetCurrentAttack (attForce, currentDamage);
@@ -99,14 +103,13 @@ public class Dragon : Character {
 			canSpecial = false;
 		}
 		else if(!isHeld) {
-			if(model.GetInteger("attackState") == 3){
+			if(model.GetCurrentAnimatorStateInfo(0).IsName("Special Spray")){
 				model.SetInteger("attackState", 4);
 			}
 			canSpecial = true;
 		}
-		Debug.Log ("isHeld " + isHeld);
 
-		if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
+		if(Input.GetAxis("SpecialAttack" + playerNumber) > 0 || actionInput == "Spcl"){
 			isHeld = true;
 		}
 		else{

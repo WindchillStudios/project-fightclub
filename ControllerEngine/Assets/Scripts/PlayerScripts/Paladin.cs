@@ -18,7 +18,7 @@ public class Paladin : Character {
 	public bool canSpecial;
 	bool isSpecial;
 
-	void Start () {
+	new void Start () {
 		
 		maxJump = 25;
 		maxSpeed = 15;
@@ -40,47 +40,53 @@ public class Paladin : Character {
 			switch(attDirection)
 			{
 			case 0://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(facing*10,3);
+				attForce = new Vector2(facing*5f,5f);
+				
 				break;
 				
 			case 1://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(facing*1f,0);
+				
 				break;
 				
 			case 2://Up Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(0,-1f);
+				
 				break;
 				
 			case 3://Down Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(facing*1f,0);
+				
 				break;
-			
+				
 			case 4:
-				if(attackNum < 1){
-					attackNum = attackNum + 1;
-				}
-				else{
-					canListen = false;
-				}
+				model.SetTrigger("isCombo");
+				model.SetInteger("attackState", 0);
 				
 				currentDamage = 10.0f;
-				attForce = new Vector2(1,1);
+				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
+					attForce = new Vector2(facing*5f,5f);
+				}
 
 				break;
-
+				
 			default:
 				break;
 			}
-			DoBasic();
+			if(!model.GetBool("isCombo")){
+				DoBasic();
+			}
 		}
+		
+		charAttacks.GetCurrentAttack (attForce, currentDamage);
 	}
 
 	public override void updateSpecial(){
@@ -115,45 +121,28 @@ public class Paladin : Character {
 			model.SetTrigger("charging");
 		}
 
-		if(isMobileControlled){
-			if(isCharged && (actionInput != "Spcl") && !canSpecial)
-			{
-				state_ = State.STATE_IDLE;
-				canSpecial = true;
-			}
+		if(isCharged && (actionInput != "Spcl") && !canSpecial)
+		{
+			state_ = State.STATE_IDLE;
+			canSpecial = true;
 		}
-		else{
-			if(isCharged && !(Input.GetAxis("SpecialAttack" + playerNumber) > 0) && !canSpecial)
-			{
-				state_ = State.STATE_IDLE;
-				canSpecial = true;
-			}
+		else if(isCharged && !(Input.GetAxis("SpecialAttack" + playerNumber) > 0) && !canSpecial)
+		{
+			state_ = State.STATE_IDLE;
+			canSpecial = true;
 		}
 
 		if(!isCharged)
 		{
-
 			if(charging){
 
-				if(isMobileControlled){
-					if(actionInput == "Spcl"){
-						chargeTimer += 0.1f * Time.deltaTime;
-						model.SetInteger("attackState", 5);
-					}
-					else{
-						charging = false;
-						model.SetTrigger("charging");
-					}
+				if(actionInput == "Spcl" || Input.GetAxis("SpecialAttack" + playerNumber) > 0){
+					chargeTimer += 0.1f * Time.deltaTime;
+					model.SetInteger("attackState", 5);
 				}
 				else{
-					if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
-						chargeTimer += 0.1f * Time.deltaTime;
-						model.SetInteger("attackState", 5);
-					}
-					else{
-						charging = false;
-						model.SetTrigger("charging");
-					}
+					charging = false;
+					model.SetTrigger("charging");
 				}
 			}
 			else{

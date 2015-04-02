@@ -14,7 +14,7 @@ public class Bandit : Character {
 	public bool canSpecial;
 	public float chargeDamage;
 	
-	void Start () {
+	new void Start () {
 		
 		maxJump = 27;
 		maxSpeed = 17;
@@ -30,64 +30,67 @@ public class Bandit : Character {
 		if (isSpecial)
 		{
 			chargeDamage = 10.0f;
-			attForce = new Vector2(direction*5f,0);
+
+			attForce = new Vector2(facing*5f,0);
 			if(canSpecial)
 			{
 				DoSpecial();
 			}
-			else
-				state_ = State.STATE_IDLE;
+			//else
+				//state_ = State.STATE_IDLE;
 		}
 		else
 		{
 			switch(attDirection)
 			{
 			case 0://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*5f,5f);
+				
 				break;
 				
 			case 1://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*1f,0);
+				
 				break;
 				
 			case 2://Up Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(0,-1f);
-
+				
 				break;
 				
 			case 3://Down Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*1f,0);
+				
 				break;
 				
 			case 4:
-				if(attackNum < 2){
-					attackNum = attackNum + 1;
-				}
-				else{
-					canListen = false;
-				}
+				model.SetTrigger("isCombo");
+				model.SetInteger("attackState", 0);
 				
 				currentDamage = 10.0f;
-				attForce = new Vector2(1,1);
-				Debug.Log(attackNum);
-
+				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
+					attForce = new Vector2(facing*5f,5f);
+				}
+				else if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")){
+					attForce = new Vector2(facing*15f,6f);
+				}
+				
 				break;
-
+				
 			default:
 				break;
 			}
-			DoBasic();
+			if(!model.GetBool("isCombo")){
+				DoBasic();
+			}
 		}
 		
 		charAttacks.GetCurrentAttack (attForce, currentDamage);
@@ -95,46 +98,56 @@ public class Bandit : Character {
 
 	public override void updateSpecial(){
 
-		if (isHeld) {
-			chargeDamage += 10 * Time.deltaTime;
-		}
-		else if(!isHeld){
-			canSpecial = true;
-			charAttacks.GetCurrentAttack (attForce, chargeDamage);
-			model.SetInteger("attackState",4);
+		if(model.IsInTransition(0)){
+			if (state_ != State.STATE_ATTACKING) {
+				canSpecial = true;
+				chargeDamage = 0.0f;
+			}
 		}
 
-		if(model.GetCurrentAnimatorStateInfo(0).IsName("Special")){
-			canSpecial = false;
-
-			if(isMobileControlled){
-				if(actionInput == "Spcl"){
-					isHeld = true;
-				}
-				else{
-					Debug.Log("1");
-					isHeld = false;
-				}
-			}
-			else{
-				if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
-					isHeld = true;
-				}
-				else{
-					Debug.Log("2");
-					isHeld = false;
-				}
-			}
+		if(Input.GetAxis("SpecialAttack" + playerNumber) > 0 || actionInput == "Spcl"){
+			isHeld = true;
 		}
 		else{
-			Debug.Log("3");
 			isHeld = false;
+		}
+
+		if (isHeld) {
+			if(model.GetInteger("attackState") == 3){
+				chargeDamage += 10 * Time.deltaTime;
+			}
+		}
+		else if(!isHeld){
+			charAttacks.GetCurrentAttack (attForce, chargeDamage);
+
+			if(model.GetInteger("attackState") == 3){
+				model.SetInteger("attackState",4);
+				model.SetTrigger("specialFinish");
+			}
+		}
+
+		if (model.GetCurrentAnimatorStateInfo (0).IsName ("Special")) {
+
+			charAttacks.GetCurrentAttack (attForce, chargeDamage);
+
+			if(model.IsInTransition(0)){
+
+				model.SetInteger("attackState",4);
+				model.SetTrigger("specialFinish");
+			}
+		}
+
+		if(model.GetInteger("attackState") == 4){
+			if(!model.GetBool("specialFinish")){
+				canSpecial = true;
+			}
 		}
 	}
 
 	void DoSpecial()
 	{
 		model.SetInteger("attackState", 3);
+		canSpecial = false;
 	}
 
 	void DoBasic()

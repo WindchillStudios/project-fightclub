@@ -4,6 +4,8 @@ using System.Collections;
 public class Character : MonoBehaviour {
 
 	public int playerNumber;
+	public int gameType;
+
 	public float maxHealth;
 	public float maxSpeed;
 	public float maxJump;
@@ -31,7 +33,7 @@ public class Character : MonoBehaviour {
 
 	/******Input*********/
 
-	public bool isMobileControlled;
+	float moviInput;
 	float moveInput;
 	public string actionInput;
 
@@ -41,8 +43,11 @@ public class Character : MonoBehaviour {
 	int invTimer;
 	float respawnTimer;
 	
-	int deaths;
 	bool isHurt;
+	bool canRespawn;
+	int lives = 5;
+	int deaths;
+	int kills;
 
 	/*************Attacking***********/
 
@@ -70,7 +75,6 @@ public class Character : MonoBehaviour {
 	//Horizontal
 	float currentSpeed = 0.0f;
 	float acceleration = 5.0f;
-	public float direction;
 	public float facing;
 	float horizontalMove;
 	
@@ -119,9 +123,9 @@ public class Character : MonoBehaviour {
 
 	void FixedUpdate () {
 
-		moveInput = moveInput / 50;
+		checkIdleReset ();
 
-//		Debug.Log (state_ + "_" + playerNumber);
+		moviInput = moviInput / 50;
 
 		updateMovement ();
 
@@ -147,7 +151,7 @@ public class Character : MonoBehaviour {
 		bool result;
 
 		if(type == "M"){
-			result = float.TryParse(conInput, out moveInput);
+			result = float.TryParse(conInput, out moviInput);
 			if(!result){
 				Debug.Log("Unexpected result is " + conInput);
 			}
@@ -155,21 +159,21 @@ public class Character : MonoBehaviour {
 		else if(type == "A"){
 			actionInput = conInput;
 		}
-		else{
-			Debug.Log("No Input");
-			moveInput = Input.GetAxis("Horizontal" + playerNumber);
-		}
-
-		Debug.Log (playerNumber + " : " + actionInput);
 	}
 
+	void checkIdleReset(){
+		if(model.GetCurrentAnimatorStateInfo(0).nameHash == Animator.StringToHash("Base Layer.Idle") && state_ != State.STATE_FROZEN){
+			model.SetBool("isCombo", false);
+			state_ = State.STATE_IDLE;
+			model.SetInteger("state", 0);
+		}
+	}
 
 	void handleCharState()
 	{
 		switch(state_)
 		{
 
-		/* --------- IDLE ---------- */
 		case State.STATE_FROZEN:
 
 			canMove = false;
@@ -184,6 +188,8 @@ public class Character : MonoBehaviour {
 			model.SetInteger("state",0);
 
 			break;
+
+		/* --------- IDLE ---------- */
 
 		case State.STATE_IDLE:
 
@@ -262,28 +268,26 @@ public class Character : MonoBehaviour {
 
 			model.SetInteger("state", 6);
 
-			/*if(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
-				state_ = State.STATE_IDLE;
-
-			}*/
-
 			if(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
 			{
-				Debug.Log(model.GetCurrentAnimatorStateInfo(0).IsTag("Attack"));
+				if(!model.GetNextAnimatorStateInfo(0).IsTag("Attack")){
+					if(model.IsInTransition(0)){
+						state_ = State.STATE_IDLE;
+					}
+				}
 
 				if(model.IsInTransition(0)){
 					canListen = false;
 
-					if(!model.GetNextAnimatorStateInfo(0).IsTag("Attack")){
-						state_ = State.STATE_IDLE;
-					}
+
 				}
 				else{
 					canListen = true;
 				}
 
 				if(canListen){
-					if(Input.GetAxis("Attack" + playerNumber) > 0){
+					if(Input.GetAxis("Attack" + playerNumber) > 0 || actionInput == "Attk")
+					{
 						isListening = true;
 
 						if(isListening){
@@ -331,12 +335,11 @@ public class Character : MonoBehaviour {
 			{					
 				if(knockForce.y > 0)
 				{
-					knockForce.y -= 0.1f;
+					knockForce.y -= 0.5f;
 				}
 				else
-				{
-					state_ = State.STATE_IDLE;
-					knockForce = new Vector3(0,0,0);
+				{					
+					knockForce = Vector3.zero;
 				}
 			}
 			else
@@ -364,11 +367,18 @@ public class Character : MonoBehaviour {
 			canAttack = false;
 			canMove = false;
 
-			respawnTimer += (1 * Time.deltaTime);
-			if(respawnTimer > 5)
-			{
-				respawnTimer = 0;
-				respawn();
+			checkRespawn();
+
+			if(canRespawn){
+				respawnTimer += (1 * Time.deltaTime);
+				if(respawnTimer > 5)
+				{
+					respawnTimer = 0;
+					respawn();
+				}
+			}
+			else{
+				this.gameObject.SetActive(false);
 			}
 			
 			break;
@@ -376,7 +386,14 @@ public class Character : MonoBehaviour {
 		}
 	}
 
-	/***********FUNCTIONS************/
+
+
+	/* -----------------------------------------------------------*/
+
+	/***********   | ----- |   FUNCTIONS   | ----- |   ************/
+
+	/* -----------------------------------------------------------*/
+
 
 	void updateMovement()
 	{
@@ -388,6 +405,10 @@ public class Character : MonoBehaviour {
 			
 			if(!onRSlope && !onLSlope)
 				horizontalMove = currentSpeed * moveInput;
+
+			if(state_ != State.STATE_KNOCKBACK){
+				knockForce = Vector3.zero;
+			}
 		}
 		else
 		{
@@ -428,7 +449,6 @@ public class Character : MonoBehaviour {
 			currentJump = 0.0f;
 			jumpAcceleration = maxJump;
 		}
-
 	}
 
 	void updateHealth()
@@ -482,33 +502,15 @@ public class Character : MonoBehaviour {
 
 		if(canAttack)
 		{
-			if(isMobileControlled){
-				if(actionInput == "Attk")
-				{
-					state_ = State.STATE_ATTACKING;
-					DoAttack(false, attDirection);
-
-					actionInput = "Idle";
-				}
-				else if(actionInput == "Spcl")
-				{
-					state_ = State.STATE_ATTACKING;
-					DoAttack(true, attDirection);
-
-					actionInput = "Idle";
-				}
+			if(actionInput == "Attk" || Input.GetAxis("Attack" + playerNumber) > 0)
+			{
+				state_ = State.STATE_ATTACKING;
+				DoAttack(false, attDirection);
 			}
-			else{
-				if(Input.GetAxis("Attack" + playerNumber) > 0)
-				{
-					state_ = State.STATE_ATTACKING;
-					DoAttack(false, attDirection);
-				}
-				else if(Input.GetAxis("SpecialAttack" + playerNumber) > 0)
-				{
-					state_ = State.STATE_ATTACKING;
-					DoAttack(true, attDirection);
-				}
+			else if(actionInput == "Spcl" || Input.GetAxis("SpecialAttack" + playerNumber) > 0)
+			{
+				state_ = State.STATE_ATTACKING;
+				DoAttack(true, attDirection);
 			}
 		}
 	}
@@ -535,10 +537,49 @@ public class Character : MonoBehaviour {
 	
 	void takeDeath(GameObject attacker)
 	{
+		if(attacker.GetComponent<Character>()){
+			attacker.GetComponent<Character> ().addKill ();
+		}
+
 		lifeState_ = lifeState.STATE_DEAD;
 		deaths ++;
+		lives--;
 	}
-	
+
+	public void addKill(){
+		kills++;
+	}
+	public int readKills(){
+		return kills;
+	}
+
+	void checkRespawn(){
+
+		switch(gameType){
+		
+		case 0: // Survival
+			if(lives > 0){
+				canRespawn = true;
+			}
+			else{
+				canRespawn = false;
+			}
+			break;
+
+		case 1: // TDM Timed
+			canRespawn = true;
+			break;
+		
+		case 2: // TDM Score
+			canRespawn = true;
+			break;
+		
+		default: // Default
+			canRespawn = true;
+			break;
+		}
+	}
+
 	void respawn(){
 
 		GameObject[] spawnLocs = GameObject.FindGameObjectsWithTag("Respawn");
@@ -555,6 +596,10 @@ public class Character : MonoBehaviour {
 
 	public float getHealth(){
 		return health;
+	}
+
+	public void setGameType(int gameTypeNum){
+		gameType = gameTypeNum;
 	}
 
 	/* ------- FINDING KNOCKBACK ------- */
@@ -576,12 +621,18 @@ public class Character : MonoBehaviour {
 	/* ------- FINDING INPUTS ------- */
 
 	void getInputMovement(){
-		
+
 		// HORIZONTAL ///
 
-		if(!isMobileControlled){
-			moveInput = Input.GetAxis("Horizontal" + playerNumber);
+		if(Input.GetAxis("Horizontal" + playerNumber) != 0){
+			moveInput = Input.GetAxis ("Horizontal" + playerNumber);
 		}
+		else if(moviInput != 0){
+			moveInput = moviInput;
+		}
+		else
+			moveInput = 0;
+
 
 		if(moveInput != 0)
 		{
@@ -601,29 +652,15 @@ public class Character : MonoBehaviour {
 		}
 
 		// DASHING ///
-		if(isMobileControlled){
-			if(actionInput == "DshL")
+		if(actionInput == "DshL" || Input.GetAxis("Dash"  + playerNumber) > 0)
+		{
+			if(canDash)
 			{
-				actionInput = "Idle";
-
-				if(canDash)
-				{
-					dashCool = 0.0f;
-					dashTimer = 0.0f;
-					state_ = State.STATE_DASH;
-				}
+				dashCool = 0.0f;
+				dashTimer = 0.0f;
+				state_ = State.STATE_DASH;
 			}
-		}
-		else{
-			if(Input.GetAxis("Dash"  + playerNumber) > 0)
-			{
-				if(canDash)
-				{
-					dashCool = 0.0f;
-					dashTimer = 0.0f;
-					state_ = State.STATE_DASH;
-				}
-			}
+			actionInput = "idle";
 		}
 
 		if(!canDash){
@@ -640,22 +677,11 @@ public class Character : MonoBehaviour {
 		
 		// VERTICAL ///
 
-		if(isMobileControlled){
-			if (actionInput == "Jump") {
-
-				actionInput = "Idle";
-
-				if(canJump){
-					state_ = State.STATE_JUMPING;
-				}
+		if (actionInput == "Jump" || Input.GetAxis ("Jump"  + playerNumber) > 0) {
+			if(canJump){
+				state_ = State.STATE_JUMPING;
 			}
-		}
-		else{			
-			if (Input.GetAxis ("Jump"  + playerNumber) > 0) {
-				if(canJump){
-					state_ = State.STATE_JUMPING;
-				}
-			}
+			actionInput = "idle";
 		}
 	}
 

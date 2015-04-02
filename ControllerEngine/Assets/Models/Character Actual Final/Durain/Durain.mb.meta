@@ -1,0 +1,2640 @@
+fileFormatVersion: 2
+guid: 69b6185f56d987144a85cd5cba1a1eba
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Belt
+    100002: camera1
+    100004: Chest
+    100006: cluster1Handle
+    100008: cluster2Handle
+    100010: cluster3Handle
+    100012: cluster4Handle
+    100014: ctrl_L_foot
+    100016: ctrl_R_foot
+    100018: curve_Spine
+    100020: //RootNode
+    100022: group
+    100024: group1
+    100026: group2
+    100028: group3
+    100030: group4
+    100032: group5
+    100034: handModel1:pCube1
+    100036: handModel1:pCube1 1
+    100038: handModel1:transform1
+    100040: handModel1:transform2
+    100042: head
+    100044: ikHandle_L_Ankle
+    100046: ikHandle_L_Arm
+    100048: ikHandle_L_Toe
+    100050: ikHandle_R_Ankle
+    100052: ikHandle_R_Arm
+    100054: ikHandle_R_Toe
+    100056: left
+    100058: left_ankle
+    100060: left_elbow
+    100062: left_forearm
+    100064: left_hip
+    100066: left_index1
+    100068: Left_index2
+    100070: Left_index2 1
+    100072: left_index3
+    100074: left_index4
+    100076: left_knee
+    100078: left_middle1
+    100080: left_middle2
+    100082: left_middle3
+    100084: left_middle4
+    100086: left_pinky1
+    100088: left_pinky2
+    100090: left_pinky3
+    100092: left_pinky4
+    100094: left_ring1
+    100096: left_ring2
+    100098: left_ring3
+    100100: left_ring4
+    100102: left_shoulder
+    100104: left_thumb1
+    100106: left_thumb2
+    100108: left_thumb3
+    100110: left_toe
+    100112: left_wrist
+    100114: Leg_Guard
+    100116: neck
+    100118: Neck_Guard
+    100120: Neck_Guard2
+    100122: nurbsCube1
+    100124: pasted__pCube1
+    100126: pasted__pCylinder1
+    100128: pasted__pCylinder7
+    100130: pasted__Shoulders
+    100132: pasted__Shoulders1
+    100134: pasted__transform6
+    100136: pasted__transform7
+    100138: pCube1
+    100140: pCube2
+    100142: pCube3
+    100144: pCube5
+    100146: pCube6
+    100148: pCube7
+    100150: pCube8
+    100152: pCylinder1
+    100154: pCylinder12
+    100156: pCylinder13
+    100158: pCylinder3
+    100160: pCylinder6
+    100162: pPipe10
+    100164: pPipe11
+    100166: pPipe12
+    100168: pPipe13
+    100170: pPipe14
+    100172: pPipe15
+    100174: pPipe3
+    100176: pPipe4
+    100178: pPipe5
+    100180: pPipe6
+    100182: pPipe7
+    100184: pPipe8
+    100186: pPipe9
+    100188: pSphere1
+    100190: pSphere3
+    100192: RFL_L_Ankle
+    100194: RFL_L_Base
+    100196: RFL_L_Toe
+    100198: RFL_R_Ankle
+    100200: RFL_R_Base
+    100202: RFL_R_Toe
+    100204: right_ankle
+    100206: right_elbow
+    100208: right_forearm
+    100210: right_hip
+    100212: right_index1
+    100214: right_index3
+    100216: right_index4
+    100218: right_knee
+    100220: right_middle1
+    100222: right_middle2
+    100224: right_middle3
+    100226: right_middle4
+    100228: right_pinky1
+    100230: right_pinky2
+    100232: right_pinky3
+    100234: right_pinky4
+    100236: right_ring1
+    100238: right_ring2
+    100240: right_ring3
+    100242: right_ring4
+    100244: right_shoulder
+    100246: right_thumb1
+    100248: right_thumb2
+    100250: right_thumb3
+    100252: right_toe
+    100254: right_wrist
+    100256: root
+    100258: spine1
+    100260: spine2
+    100262: spine3
+    100264: transform1
+    100266: transform10
+    100268: transform11
+    100270: transform12
+    100272: transform13
+    100274: transform14
+    100276: transform15
+    100278: transform16
+    100280: transform17
+    100282: transform18
+    100284: transform19
+    100286: transform2
+    100288: transform20
+    100290: transform21
+    100292: transform22
+    100294: transform23
+    100296: transform24
+    100298: transform25
+    100300: transform26
+    100302: transform27
+    100304: transform28
+    100306: transform29
+    100308: transform3
+    100310: transform30
+    100312: transform31
+    100314: transform4
+    100316: transform5
+    100318: transform6
+    100320: transform7
+    100322: transform8
+    100324: transform9
+    400000: Belt
+    400002: camera1
+    400004: Chest
+    400006: cluster1Handle
+    400008: cluster2Handle
+    400010: cluster3Handle
+    400012: cluster4Handle
+    400014: ctrl_L_foot
+    400016: ctrl_R_foot
+    400018: curve_Spine
+    400020: //RootNode
+    400022: group
+    400024: group1
+    400026: group2
+    400028: group3
+    400030: group4
+    400032: group5
+    400034: handModel1:pCube1
+    400036: handModel1:pCube1 1
+    400038: handModel1:transform1
+    400040: handModel1:transform2
+    400042: head
+    400044: ikHandle_L_Ankle
+    400046: ikHandle_L_Arm
+    400048: ikHandle_L_Toe
+    400050: ikHandle_R_Ankle
+    400052: ikHandle_R_Arm
+    400054: ikHandle_R_Toe
+    400056: left
+    400058: left_ankle
+    400060: left_elbow
+    400062: left_forearm
+    400064: left_hip
+    400066: left_index1
+    400068: Left_index2
+    400070: Left_index2 1
+    400072: left_index3
+    400074: left_index4
+    400076: left_knee
+    400078: left_middle1
+    400080: left_middle2
+    400082: left_middle3
+    400084: left_middle4
+    400086: left_pinky1
+    400088: left_pinky2
+    400090: left_pinky3
+    400092: left_pinky4
+    400094: left_ring1
+    400096: left_ring2
+    400098: left_ring3
+    400100: left_ring4
+    400102: left_shoulder
+    400104: left_thumb1
+    400106: left_thumb2
+    400108: left_thumb3
+    400110: left_toe
+    400112: left_wrist
+    400114: Leg_Guard
+    400116: neck
+    400118: Neck_Guard
+    400120: Neck_Guard2
+    400122: nurbsCube1
+    400124: pasted__pCube1
+    400126: pasted__pCylinder1
+    400128: pasted__pCylinder7
+    400130: pasted__Shoulders
+    400132: pasted__Shoulders1
+    400134: pasted__transform6
+    400136: pasted__transform7
+    400138: pCube1
+    400140: pCube2
+    400142: pCube3
+    400144: pCube5
+    400146: pCube6
+    400148: pCube7
+    400150: pCube8
+    400152: pCylinder1
+    400154: pCylinder12
+    400156: pCylinder13
+    400158: pCylinder3
+    400160: pCylinder6
+    400162: pPipe10
+    400164: pPipe11
+    400166: pPipe12
+    400168: pPipe13
+    400170: pPipe14
+    400172: pPipe15
+    400174: pPipe3
+    400176: pPipe4
+    400178: pPipe5
+    400180: pPipe6
+    400182: pPipe7
+    400184: pPipe8
+    400186: pPipe9
+    400188: pSphere1
+    400190: pSphere3
+    400192: RFL_L_Ankle
+    400194: RFL_L_Base
+    400196: RFL_L_Toe
+    400198: RFL_R_Ankle
+    400200: RFL_R_Base
+    400202: RFL_R_Toe
+    400204: right_ankle
+    400206: right_elbow
+    400208: right_forearm
+    400210: right_hip
+    400212: right_index1
+    400214: right_index3
+    400216: right_index4
+    400218: right_knee
+    400220: right_middle1
+    400222: right_middle2
+    400224: right_middle3
+    400226: right_middle4
+    400228: right_pinky1
+    400230: right_pinky2
+    400232: right_pinky3
+    400234: right_pinky4
+    400236: right_ring1
+    400238: right_ring2
+    400240: right_ring3
+    400242: right_ring4
+    400244: right_shoulder
+    400246: right_thumb1
+    400248: right_thumb2
+    400250: right_thumb3
+    400252: right_toe
+    400254: right_wrist
+    400256: root
+    400258: spine1
+    400260: spine2
+    400262: spine3
+    400264: transform1
+    400266: transform10
+    400268: transform11
+    400270: transform12
+    400272: transform13
+    400274: transform14
+    400276: transform15
+    400278: transform16
+    400280: transform17
+    400282: transform18
+    400284: transform19
+    400286: transform2
+    400288: transform20
+    400290: transform21
+    400292: transform22
+    400294: transform23
+    400296: transform24
+    400298: transform25
+    400300: transform26
+    400302: transform27
+    400304: transform28
+    400306: transform29
+    400308: transform3
+    400310: transform30
+    400312: transform31
+    400314: transform4
+    400316: transform5
+    400318: transform6
+    400320: transform7
+    400322: transform8
+    400324: transform9
+    2300000: pasted__Shoulders
+    2300002: pasted__Shoulders1
+    3300000: pasted__Shoulders
+    3300002: pasted__Shoulders1
+    4300000: pSphere3
+    4300002: pCube8
+    4300004: pasted__Shoulders1
+    4300006: pasted__Shoulders
+    7400000: Idle
+    7400002: Walk
+    7400004: Falling
+    7400006: Jumping
+    7400008: Hit
+    7400010: Death
+    7400012: Attack 1
+    7400014: Attack 2
+    7400016: Charge
+    7400018: Charging
+    7400020: Special
+    9500000: //RootNode
+    13700000: pCube8
+    13700002: pSphere3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Falling
+      takeName: Take 001
+      firstFrame: 236
+      lastFrame: 242
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jumping
+      takeName: Take 001
+      firstFrame: 89
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 133
+      lastFrame: 143
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack 1
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack 2
+      takeName: Take 001
+      firstFrame: 66
+      lastFrame: 86
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Charge
+      takeName: Take 001
+      firstFrame: 165
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Charging
+      takeName: Take 001
+      firstFrame: 213
+      lastFrame: 223
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Special
+      takeName: Take 001
+      firstFrame: 173
+      lastFrame: 201
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camera1
+        weight: 1
+      - path: ctrl_L_foot
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/ikHandle_L_Toe
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle
+        weight: 1
+      - path: ctrl_L_foot/RFL_L_Base/RFL_L_Toe/RFL_L_Ankle/ikHandle_L_Ankle
+        weight: 1
+      - path: ctrl_R_foot
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/ikHandle_R_Toe
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle
+        weight: 1
+      - path: ctrl_R_foot/RFL_R_Base/RFL_R_Toe/RFL_R_Ankle/ikHandle_R_Ankle
+        weight: 1
+      - path: curve_Spine
+        weight: 1
+      - path: ikHandle_L_Arm
+        weight: 1
+      - path: ikHandle_R_Arm
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/group5
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders
+        weight: 1
+      - path: pSphere3/group5/pasted__Shoulders1
+        weight: 1
+      - path: pSphere3/pCube8
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/group4
+        weight: 1
+      - path: root/group4/cluster1Handle
+        weight: 1
+      - path: root/group4/cluster2Handle
+        weight: 1
+      - path: root/group4/cluster3Handle
+        weight: 1
+      - path: root/group4/cluster4Handle
+        weight: 1
+      - path: root/left_hip
+        weight: 1
+      - path: root/left_hip/left_knee
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle
+        weight: 1
+      - path: root/left_hip/left_knee/left_ankle/left_toe
+        weight: 1
+      - path: root/right_hip
+        weight: 1
+      - path: root/right_hip/right_knee
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle
+        weight: 1
+      - path: root/right_hip/right_knee/right_ankle/right_toe
+        weight: 1
+      - path: root/spine1
+        weight: 1
+      - path: root/spine1/spine2
+        weight: 1
+      - path: root/spine1/spine2/spine3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_index1/Left_index2/left_index3/left_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_middle1/left_middle2/left_middle3/left_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_pinky1/left_pinky2/left_pinky3/left_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_ring1/left_ring2/left_ring3/left_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/left_shoulder/left_elbow/left_forearm/left_wrist/left_thumb1/left_thumb2/left_thumb3
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_index1/Left_index2
+          1/right_index3/right_index4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_middle1/right_middle2/right_middle3/right_middle4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_pinky1/right_pinky2/right_pinky3/right_pinky4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_ring1/right_ring2/right_ring3/right_ring4
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2
+        weight: 1
+      - path: root/spine1/spine2/spine3/right_shoulder/right_elbow/right_forearm/right_wrist/right_thumb1/right_thumb2/right_thumb3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

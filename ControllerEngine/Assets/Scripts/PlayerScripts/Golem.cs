@@ -16,7 +16,7 @@ public class Golem : Character {
 	public float currentShot;
 	Vector3 handSpawner;
 
-	void Start () {
+	new void Start () {
 		
 		maxJump = 25;
 		maxSpeed = 15;
@@ -48,7 +48,7 @@ public class Golem : Character {
 		if (isSpecial)
 		{
 			currentDamage = 20.0f;
-			attForce = new Vector2(direction*5f,0);
+			attForce = new Vector2(facing*5f,0);
 
 			if(canShoot){
 				DoSpecial();
@@ -59,49 +59,53 @@ public class Golem : Character {
 			switch(attDirection)
 			{
 			case 0://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*5f,5f);
+				
 				break;
 				
 			case 1://No Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*1f,0);
+				
 				break;
 				
 			case 2://Up Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
 				attForce = new Vector2(0,-1f);
-
+				
 				break;
 				
 			case 3://Down Input
-				attackNum = 0;
+				attackNum = 1;
 				currentDamage = 10.0f;
-				attForce = new Vector2(direction*1f,0);
-
+				attForce = new Vector2(facing*1f,0);
+				
 				break;
-
+				
 			case 4:
-				if(attackNum < 2){
-					attackNum = attackNum + 1;
-				}
-				else{
-					canListen = false;
-				}
-
+				model.SetTrigger("isCombo");
+				model.SetInteger("attackState", 0);
+				
 				currentDamage = 10.0f;
-				attForce = new Vector2(1,1);
+				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
+					attForce = new Vector2(facing*5f,5f);
+				}
+				else if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")){
+					attForce = new Vector2(facing*15f,6f);
+				}
+				
 				break;
-			
+				
 			default:
 				break;
 			}
-			DoBasic();
+			if(!model.GetBool("isCombo")){
+				DoBasic();
+			}
 		}
 		
 		charAttacks.GetCurrentAttack (attForce, currentDamage);

@@ -49,6 +49,9 @@ public class MatchControl : MonoBehaviour {
 
 	/* ---- Game Scoring ---- */
 
+	int selGameType;
+	int[] kills;
+
 
 	// Use this for initialization
 	void Start () {
@@ -117,7 +120,10 @@ public class MatchControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		updateWinConditions ();
+
 		if(Input.GetKeyDown(KeyCode.Escape)){
+			GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
 			Application.LoadLevel("MainMenu");
 			Destroy(this.gameObject);
 		}
@@ -188,7 +194,9 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void sendInput(int playNum, string type, string contrInput){
-		players[playNum].GetComponent<Character>().readInput(type, contrInput);
+		if(players.Length > 0){
+			players[playNum].GetComponent<Character>().readInput(type, contrInput);
+		}
 	}
 
 	void getHeartRates(){
@@ -229,7 +237,7 @@ public class MatchControl : MonoBehaviour {
 	void doAoeTrap(){
 		TrapScript trapController; 
 		
-		int randTrap = Random.Range (0, (aoeTraps.Length-1));
+		int randTrap = Random.Range (0, (aoeTraps.Length));
 		trapController = aoeTraps[randTrap].GetComponent<TrapScript>();
 		
 		if(canHeartTrap && !isHeartTrapActive)
@@ -254,6 +262,7 @@ public class MatchControl : MonoBehaviour {
 				spawnLocs[pickSpawn].GetComponentInChildren<ParticleSystem>().Play();
 				players[i] = Instantiate(players[i], spawnLocs[pickSpawn].transform.position, spawnLocs[pickSpawn].transform.rotation) as GameObject;
 				players[i].GetComponent<Character>().playerNumber = i+1;
+				players[i].GetComponent<Character>().setGameType(selGameType);
 				spawnLocs[pickSpawn].tag = "Despawn";
 			}
 		}
@@ -306,8 +315,28 @@ public class MatchControl : MonoBehaviour {
 		for(int i = 0; i < playerHealths.Length; i++){
 			healthBars[i].transform.localScale = new Vector3(1,playerHealths[i],1);
 		}
+	}
 
+	void updateWinConditions(){
+		switch(selGameType){
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			foreach(GameObject player in players){
+				if(player != null){
+					if(player.GetComponent<Character>().readKills() > 9){
+						Application.LoadLevel("Results");
+					}
+				}
+			}
+			break;
+		}
+	}
 
+	public void setThisGameType(int setType){
+		selGameType = setType;
 	}
 
 	void setMusic(){
