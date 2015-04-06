@@ -164,8 +164,9 @@ public class Character : MonoBehaviour {
 	void checkIdleReset(){
 		if(model.GetCurrentAnimatorStateInfo(0).nameHash == Animator.StringToHash("Base Layer.Idle") && state_ != State.STATE_FROZEN){
 			model.SetBool("isCombo", false);
-			state_ = State.STATE_IDLE;
-			model.SetInteger("state", 0);
+			if(state_ != State.STATE_JUMPING){
+				state_ = State.STATE_IDLE;
+			}
 		}
 	}
 
@@ -180,11 +181,15 @@ public class Character : MonoBehaviour {
 			canAttack = false;
 			canJump = false;
 
-			if(gravity > maxGravity){
-				gravity -= 2.0f;
+			if(Application.loadedLevelName != "Results"){
+				if(gravity > maxGravity){
+					gravity -= 2.0f;
+				}
+				verticalMove = gravity;
+			}else{
+				verticalMove = 0.0f;
 			}
 
-			verticalMove = gravity;
 			model.SetInteger("state",0);
 
 			break;
@@ -552,6 +557,9 @@ public class Character : MonoBehaviour {
 	public int readKills(){
 		return kills;
 	}
+	public int readLives(){
+		return lives;
+	}
 
 	void checkRespawn(){
 
@@ -578,6 +586,18 @@ public class Character : MonoBehaviour {
 			canRespawn = true;
 			break;
 		}
+	}
+
+	public bool getCanRespawn(){
+		return canRespawn;
+	}
+
+	public void setLives(int i){
+		lives = i;
+	}
+
+	public void affectGravity(float grav){
+		gravity += grav;
 	}
 
 	void respawn(){

@@ -55,7 +55,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 		int randomLevel = Random.Range (0, (LevelBackList.Length));
 
-		GameObject backLev = Instantiate (LevelBackList [randomLevel], levelPos, this.transform.rotation) as GameObject;
+		GameObject backLev = Instantiate (LevelBackList [randomLevel], levelPos, LevelBackList[randomLevel].transform.rotation) as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -64,7 +64,10 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 		switch(menu){
 
 		case MenuState.MENU_SPLASH:
-			if(Input.GetAxis("Jump1") > 0){
+
+			string[] mobiData = matchController.mobileInput;
+
+			if(Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0 || mobiData.Length > 1 && mobiData[0] == "Enter"){
 
 				foreach(ParticleSystem lParts in logoParticles){
 					lParts.Stop();
@@ -227,7 +230,6 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			isSelected = false;
 		}
 		else if(menu == MenuState.MENU_OPTIONSELECT){
-			Debug.Log("Hello?");
 			Application.LoadLevel (toSubmit);	
 		}
 	}

@@ -49,13 +49,20 @@ public class MatchControl : MonoBehaviour {
 
 	/* ---- Game Scoring ---- */
 
-	int selGameType;
+	int selGameType = 2;
 	int[] kills;
-
+	float matchTimer = 20;
+	GameObject timerDisplay;
+	bool timerSet;
+	public Font OutageFont;
+	float endTimer = 2;
+	bool isEnding;
+	public int[] results;
 
 	// Use this for initialization
 	void Start () {
 		players = new GameObject[4];
+		results = new int[4];
 		DontDestroyOnLoad (this.gameObject);
 		countdownTimer = 4;
 	}
@@ -65,7 +72,7 @@ public class MatchControl : MonoBehaviour {
 			setMusic ();
 		}
 
-		if (Application.loadedLevelName != "MainMenu") {
+		if (Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "Results") {
 			onLevelLoad ();
 		}
 	}
@@ -75,8 +82,11 @@ public class MatchControl : MonoBehaviour {
 			setMusic ();
 		}
 
-		if (Application.loadedLevelName != "MainMenu") {
+		if (Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "Results") {
 			onLevelLoad ();
+		}
+		else if(Application.loadedLevelName == "Results"){
+			createResults();
 		}
 	}
 
@@ -120,47 +130,69 @@ public class MatchControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		updateWinConditions ();
-
 		if(Input.GetKeyDown(KeyCode.Escape)){
-			GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
+			if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
+				GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
+			}
 			Application.LoadLevel("MainMenu");
 			Destroy(this.gameObject);
 		}
 
-		if (Application.loadedLevelName != "MainMenu") {
-			ifSingle ();
-			getHeartRates();
+		if (Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "Results") {
+
+			if(heartRate){
+				getHeartRates();
+			}
 			updateHud();
+
+			if(!isCountdown){
+				updateWinConditions ();
+			}
+
 			avHeartRate = getAvHeart ();
 			heartRateTrapSystem ();
-		}
 
-		if(isCountdown){
+			if(isCountdown){
 
-			if(countdownTimer > 0){
-				countdownTimer -= Time.fixedDeltaTime;
-				if(countdownTimer > 1){
-					levelGui.GetComponentInChildren<Text>().text = Mathf.Floor(countdownTimer).ToString();
+				if(countdownTimer > 0){
+					countdownTimer -= Time.fixedDeltaTime;
+					if(countdownTimer > 1){
+						if(levelGui){
+							levelGui.GetComponentInChildren<Text>().text = Mathf.Floor(countdownTimer).ToString();
+						}
+					}
+					else if(countdownTimer > 0){
+						levelGui.GetComponentInChildren<Text>().text = "Fight!";
+					}
 				}
-				else if(countdownTimer > 0){
-					levelGui.GetComponentInChildren<Text>().text = "Fight!";
+				else{
+					levelGui.GetComponentInChildren<Text>().text = "";
+
+					foreach(GameObject player in players){
+
+						if(player != null){
+							player.GetComponent<Character>().setFrozen(false);
+						}
+					}
+					isCountdown = false;
 				}
 			}
 			else{
-				levelGui.GetComponentInChildren<Text>().text = "";
-
-				foreach(GameObject player in players){
-
-					if(player != null){
-						player.GetComponent<Character>().setFrozen(false);
-					}
-				}
-				isCountdown = false;
+				countdownTimer = 4;
 			}
 		}
-		else{
-			countdownTimer = 4;
+
+		if (isEnding) {
+
+			endTimer -= 1 * Time.fixedDeltaTime;
+
+			if(endTimer <= 0){
+				if(FindObjectOfType<TCPclient>()){
+					GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Over " + (results[0]-1));
+				}
+				Application.LoadLevel ("Results");
+				isEnding = false;
+			}
 		}
 	}
 
@@ -238,6 +270,7 @@ public class MatchControl : MonoBehaviour {
 		TrapScript trapController; 
 		
 		int randTrap = Random.Range (0, (aoeTraps.Length));
+
 		trapController = aoeTraps[randTrap].GetComponent<TrapScript>();
 		
 		if(canHeartTrap && !isHeartTrapActive)
@@ -319,15 +352,95 @@ public class MatchControl : MonoBehaviour {
 
 	void updateWinConditions(){
 		switch(selGameType){
-		case 0:
+		
+		case 0: // SURVIVAL
+
+			int playersAlive = 0;
+		
+			foreach(GameObject player in players){
+				if(player != null && player.activeSelf == true){
+					playersAlive += 1;
+				}
+			}
+
+			if(playersAlive < 2){
+
+				foreach(GameObject player in players){
+					if(player){
+						if(player.GetComponent<Character>()){
+							if(player.GetComponent<Character>().readLives() > 0){
+								results[0] = player.GetComponent<Character>().playerNumber;
+							}
+							/*else{
+								if(results[1] == null){
+									results[1] = player.GetComponent<Character>().playerNumber;
+								}else{
+									if(results[2] == null){
+										results[2] = player.GetComponent<Character>().playerNumber;
+									}
+									else if(results[3] == null){
+										results[3] = player.GetComponent<Character>().playerNumber;
+									}
+								}
+							}*/
+						}
+					}
+				}
+
+				getResults();
+			}
+		
 			break;
-		case 1:
+
+		case 1: // TIMED DM
+		
+			getLeader();
+
+			if(!timerSet){
+			
+				timerDisplay = new GameObject();
+				Text timerText = timerDisplay.AddComponent<Text>();
+				timerDisplay.AddComponent<Outline>();
+
+				timerDisplay.transform.SetParent(levelGui.transform);
+
+				timerText.rectTransform.localPosition = new Vector3(0,-180,0);
+				timerText.rectTransform.localScale = new Vector3(1,1,1);
+				timerText.alignment = TextAnchor.MiddleCenter;
+				timerText.fontSize = 40;
+				timerText.font = OutageFont;
+				timerText.color = Color.white;
+
+				timerSet = true;
+			}
+
+			string seconds;
+
+			if(Mathf.Floor(matchTimer%60) < 10){
+				seconds = "0" + Mathf.Floor(matchTimer%60).ToString();
+			}
+			else{
+				seconds = Mathf.Floor(matchTimer%60).ToString();
+			}
+
+			timerDisplay.GetComponent<Text>().text = Mathf.Floor(matchTimer/60).ToString() + ":" + seconds;
+
+			if(matchTimer > 1){
+				matchTimer -= (1 * Time.fixedDeltaTime);
+			}
+			else if (matchTimer < 1){
+				getResults();
+			}
 			break;
-		case 2:
+
+		case 2: // SCORED DM
+
+			getLeader();
+
 			foreach(GameObject player in players){
 				if(player != null){
 					if(player.GetComponent<Character>().readKills() > 9){
-						Application.LoadLevel("Results");
+						getResults();
 					}
 				}
 			}
@@ -337,6 +450,82 @@ public class MatchControl : MonoBehaviour {
 
 	public void setThisGameType(int setType){
 		selGameType = setType;
+	}
+
+	void getLeader(){
+
+		int maxKills = 0;
+		//int secondKills = 0;
+		//int thirdKills = 0;
+
+		foreach(GameObject player in players){
+			if(player){
+				if(player.GetComponent<Character>().readKills() > maxKills){
+					results[0] = player.GetComponent<Character>().playerNumber;
+					maxKills = player.GetComponent<Character>().readKills();
+				}
+				/*else{
+					if(player.GetComponent<Character>().readKills() > secondKills){
+						results[1] = player.GetComponent<Character>().playerNumber;
+						secondKills = player.GetComponent<Character>().readKills();
+					}
+					else{
+						if(player.GetComponent<Character>().readKills() > thirdKills){
+							results[2] = player.GetComponent<Character>().playerNumber;
+							thirdKills = player.GetComponent<Character>().readKills();
+						}
+						else{
+							results[3] = player.GetComponent<Character>().playerNumber;
+						}
+					}
+				}*/
+			}
+		}
+	}
+
+	void getResults(){
+
+		levelGui.GetComponentInChildren<Text> ().fontSize = 80;
+		levelGui.GetComponentInChildren<Text>().text = "COMPLETE!";
+
+		foreach(GameObject player in players){
+			if(player){
+				player.GetComponent<Character>().setFrozen(true);
+
+				DontDestroyOnLoad(player);
+			}
+		}
+
+		isEnding = true;
+	}
+
+	void createResults(){
+
+		foreach (GameObject player in players) {
+			if(player){
+
+				if(player.activeInHierarchy == false){
+					player.GetComponent<Character>().setLives(1);
+					player.SetActive(true);
+				}
+
+				if(player.GetComponent<Character>().playerNumber == results[0]){
+					player.transform.position = new Vector3(-15,-10,0);
+					player.transform.rotation = new Quaternion(0,180,0,0);
+					player.transform.localScale = new Vector3(3,3,3);
+				}
+				else{
+					for(int i = 1; i < 4;i++){
+						if(player.GetComponent<Character>()){
+							if(player.GetComponent<Character>().playerNumber == results[i]){
+								player.transform.position = new Vector3((i*10)-25,-10,5);
+								player.transform.localScale = new Vector3(1,1,1);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	void setMusic(){
@@ -356,33 +545,6 @@ public class MatchControl : MonoBehaviour {
 			break;
 		default:
 			break;
-		}
-	}
-
-	void ifSingle(){
-		if(players.Length < 2)
-		{
-			Vector3 lastPos = players[0].transform.position;
-			Quaternion lastRot = players[0].transform.rotation;
-			
-			if(Input.GetKey(KeyCode.Z))
-			{
-				Destroy(players[0]);
-				players[0] = Instantiate(Liara, lastPos, lastRot)  as GameObject;
-				players[0].GetComponent<Character>().playerNumber = 1;
-			}
-			if(Input.GetKey(KeyCode.X))
-			{
-				Destroy(players[0]);
-				players[0] = Instantiate(Durain, lastPos, lastRot)  as GameObject;
-				players[0].GetComponent<Character>().playerNumber = 1;			
-			}
-			if(Input.GetKey(KeyCode.C))
-			{
-				Destroy(players[0]);
-				players[0] = Instantiate(Magna, lastPos, lastRot)  as GameObject;
-				players[0].GetComponent<Character>().playerNumber = 1;
-			}
 		}
 	}
 }
