@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour {
 
@@ -45,9 +46,11 @@ public class Character : MonoBehaviour {
 	
 	bool isHurt;
 	bool canRespawn;
-	int lives = 5;
+	int lives = 1;
 	int deaths;
 	int kills;
+	GameObject hudInfo;
+	public Font outageFont;
 
 	/*************Attacking***********/
 
@@ -101,7 +104,12 @@ public class Character : MonoBehaviour {
 	/************* Start ******************/
 
 	public void Start()
-	{
+	{	
+		hudInfo = new GameObject();
+		hudInfo.AddComponent<Text> ();
+		hudInfo.GetComponent<Text> ().font = outageFont;
+		hudInfo.transform.SetParent (FindObjectOfType<Canvas> ().transform);
+
 		body = this.GetComponent<CharacterController> ();
 		model = this.GetComponentInChildren<Animator>();
 		skin = this.GetComponentsInChildren<Renderer>();
@@ -122,6 +130,24 @@ public class Character : MonoBehaviour {
 	/************* Update ******************/
 
 	void FixedUpdate () {
+
+		if(hudInfo){
+			if(Application.loadedLevelName == "Results"){
+				hudInfo.GetComponent<Text>().text = "P" + playerNumber + "\nK " + kills + "\nD " + deaths;
+				hudInfo.transform.position = this.transform.position + new Vector3(6,5,0);
+				hudInfo.transform.localScale = new Vector3(10,10,10);
+			}
+			else{
+				hudInfo.GetComponent<Text>().text = "P" + playerNumber;
+				hudInfo.transform.position = FindObjectOfType<Camera> ().WorldToScreenPoint (this.transform.localPosition) + new Vector3(40,40,0);
+			}
+		}
+		else{
+			hudInfo = new GameObject();
+			hudInfo.AddComponent<Text> ();
+			hudInfo.GetComponent<Text> ().font = outageFont;
+			hudInfo.transform.SetParent (FindObjectOfType<Canvas> ().transform);
+		}
 
 		checkIdleReset ();
 
@@ -181,14 +207,11 @@ public class Character : MonoBehaviour {
 			canAttack = false;
 			canJump = false;
 
-			if(Application.loadedLevelName != "Results"){
-				if(gravity > maxGravity){
-					gravity -= 2.0f;
-				}
-				verticalMove = gravity;
-			}else{
-				verticalMove = 0.0f;
+			if(gravity > maxGravity){
+				gravity -= 2.0f;
 			}
+			verticalMove = gravity;
+
 
 			model.SetInteger("state",0);
 
@@ -605,9 +628,11 @@ public class Character : MonoBehaviour {
 		GameObject[] spawnLocs = GameObject.FindGameObjectsWithTag("Respawn");
 		int pickSpawn = Random.Range (0, spawnLocs.Length);
 
-		spawnLocs[pickSpawn].GetComponentInChildren<ParticleSystem>().Play();
+		if (spawnLocs.Length > 0) {
+			spawnLocs [pickSpawn].GetComponentInChildren<ParticleSystem> ().Play ();
+			this.gameObject.transform.position = spawnLocs [pickSpawn].transform.position;
+		}
 
-		this.gameObject.transform.position = spawnLocs [pickSpawn].transform.position;
 		lifeState_ = lifeState.STATE_ALIVE;
 
 		health = maxHealth;

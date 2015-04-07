@@ -67,7 +67,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 			string[] mobiData = matchController.mobileInput;
 
-			if(Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0 || mobiData.Length > 1 && mobiData[0] == "Enter"){
+			if(Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0 || mobiData[0] == "Enter"){
 
 				foreach(ParticleSystem lParts in logoParticles){
 					lParts.Stop();
@@ -110,6 +110,10 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			break;
 
 		case MenuState.MENU_LVLSELECT:
+
+			if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
+				GameObject.FindObjectOfType<TCPclient>().prepareString ("Started");
+			}
 
 			/* ---- End Character Select ---- */
 

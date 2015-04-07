@@ -42,6 +42,7 @@ public class MatchControl : MonoBehaviour {
 	Canvas levelGui;
 	public GameObject[] playerBoxes;
 	public Image[] healthBars;
+	public Sprite[] portraits;
 
 	/* ---- Audio ---- */
 
@@ -114,6 +115,21 @@ public class MatchControl : MonoBehaviour {
 				int num = (player.GetComponent<Character>().playerNumber - 1);
 				GameObject p = Instantiate(playerBoxes[num]) as GameObject;
 				p.transform.SetParent(levelGui.transform, false);
+
+				Transform portrait = p.transform.FindChild("PlayerPortrait");
+
+				if(player.GetComponent<Bandit>()){
+					portrait.GetComponent<Image>().sprite = portraits[0];
+				}
+				else if(player.GetComponent<Paladin>()){
+					portrait.GetComponent<Image>().sprite = portraits[1];
+				}
+				else if(player.GetComponent<Golem>()){
+					portrait.GetComponent<Image>().sprite = portraits[2];
+				}
+				else if(player.GetComponent<Dragon>()){
+					portrait.GetComponent<Image>().sprite = portraits[3];
+				}
 			}
 		}
 
@@ -131,6 +147,10 @@ public class MatchControl : MonoBehaviour {
 	void Update () {
 
 		if(Input.GetKeyDown(KeyCode.Escape)){
+			foreach(GameObject player in players){
+				Destroy(player);
+			}
+
 			if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
 				GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
 			}
@@ -510,18 +530,15 @@ public class MatchControl : MonoBehaviour {
 				}
 
 				if(player.GetComponent<Character>().playerNumber == results[0]){
-					player.transform.position = new Vector3(-15,-10,0);
+					player.transform.position = new Vector3(-15,-5,0);
 					player.transform.rotation = new Quaternion(0,180,0,0);
-					player.transform.localScale = new Vector3(3,3,3);
+					player.transform.localScale = new Vector3(2.5f,2.5f,2.5f);
 				}
 				else{
-					for(int i = 1; i < 4;i++){
-						if(player.GetComponent<Character>()){
-							if(player.GetComponent<Character>().playerNumber == results[i]){
-								player.transform.position = new Vector3((i*10)-25,-10,5);
-								player.transform.localScale = new Vector3(1,1,1);
-							}
-						}
+					if(player.GetComponent<Character>()){
+						player.transform.position = new Vector3((player.GetComponent<Character>().playerNumber*10)-15,-5,0);
+						player.transform.rotation = new Quaternion(0,180,0,0);
+						player.transform.localScale = new Vector3(2,2,2);
 					}
 				}
 			}

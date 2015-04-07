@@ -88,7 +88,9 @@ public class CameraControl : MonoBehaviour {
 		
 			}
 			else{
-				this.transform.position = new Vector3(players[0].transform.position.x, players[0].transform.position.y + 2.5f, -10);
+				if(players.Length < 1){
+					this.transform.position = new Vector3(players[0].transform.position.x, players[0].transform.position.y + 2.5f, -10);
+				}
 			}
 		}
 		else{

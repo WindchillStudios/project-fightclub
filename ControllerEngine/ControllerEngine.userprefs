@@ -1,11 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Control\MatchControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerScripts\Dragon.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScripts\Character.cs" Line="190" Column="25" />
-      <File FileName="Assets\Scripts\Game Control\MatchControl.cs" Line="134" Column="51" />
-      <File FileName="Assets\Scripts\Game Control\MainMenuScript.cs" Line="70" Column="130" />
+      <File FileName="Assets\Scripts\Game Control\MatchControl.cs" Line="151" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScripts\Character.cs" Line="672" Column="1" />
+      <File FileName="Assets\Scripts\Game Control\MainMenuScript.cs" Line="70" Column="160" />
       <File FileName="Assets\Scripts\Game Control\TCPclient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScripts\Dragon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScripts\Golem.cs" Line="71" Column="36" />
+      <File FileName="Assets\Scripts\PlayerScripts\Paladin.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScripts\Bandit.cs" Line="96" Column="31" />
+      <File FileName="Assets\Scripts\CameraControl.cs" Line="93" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
