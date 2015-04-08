@@ -103,7 +103,7 @@ public class Dragon : Character {
 			canSpecial = false;
 		}
 		else if(!isHeld) {
-			if(model.GetCurrentAnimatorStateInfo(0).IsName("Special Spray")){
+			if(model.GetCurrentAnimatorStateInfo(0).IsName("Special Spray") || model.GetCurrentAnimatorStateInfo(0).IsName("Special Windup")){
 				model.SetInteger("attackState", 4);
 			}
 			canSpecial = true;

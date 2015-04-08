@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Character : MonoBehaviour {
-
+	
 	public int playerNumber;
 	public int gameType;
 
@@ -50,7 +50,13 @@ public class Character : MonoBehaviour {
 	int deaths;
 	int kills;
 	GameObject hudInfo;
-	public Font outageFont;
+	Font outageFont;
+
+	/*************Sound***************/
+
+	public AudioClip[] attackSounds;
+	public AudioClip[] hurtSounds;
+	public AudioClip[] taunts;
 
 	/*************Attacking***********/
 
@@ -105,6 +111,7 @@ public class Character : MonoBehaviour {
 
 	public void Start()
 	{	
+		outageFont = Resources.Load ("Outage") as Font;
 		hudInfo = new GameObject();
 		hudInfo.AddComponent<Text> ();
 		hudInfo.GetComponent<Text> ().font = outageFont;
@@ -188,11 +195,28 @@ public class Character : MonoBehaviour {
 	}
 
 	void checkIdleReset(){
-		if(model.GetCurrentAnimatorStateInfo(0).nameHash == Animator.StringToHash("Base Layer.Idle") && state_ != State.STATE_FROZEN){
+		/*if(model.GetCurrentAnimatorStateInfo(0).nameHash == Animator.StringToHash("Base Layer.Idle") && state_ != State.STATE_FROZEN){
 			model.SetBool("isCombo", false);
+			if(state_ != State.STATE_JUMPING && state_ != State.STATE_FALLING){
+				state_ = State.STATE_IDLE;
+			}
+		}*/
+		if (model.GetCurrentAnimatorStateInfo (0).IsName ("Idle") && state_ != State.STATE_FROZEN) {
+			Debug.Log("IDLE");
+			model.SetBool("isCombo", false);
+
 			if(state_ != State.STATE_JUMPING){
 				state_ = State.STATE_IDLE;
 			}
+		}
+
+		if(state_ == State.STATE_ATTACKING && model.GetInteger("attackState") == 0 && !model.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
+			state_ = State.STATE_IDLE;
+		}
+
+
+		if (model.IsInTransition (0) && model.GetNextAnimatorStateInfo (0).nameHash != model.GetCurrentAnimatorStateInfo (0).nameHash) {
+			Debug.Log("Do next");
 		}
 	}
 
@@ -549,7 +573,10 @@ public class Character : MonoBehaviour {
 		{
 			if(!isHurt){
 				if(damage > 0)
-				{
+				{								
+					int randmHit = Random.Range(0,hurtSounds.Length);
+					this.GetComponent<AudioSource>().PlayOneShot(hurtSounds[randmHit],1.0f);
+
 					health = health - damage;
 					isHurt = true;
 					
@@ -624,6 +651,9 @@ public class Character : MonoBehaviour {
 	}
 
 	void respawn(){
+
+		int randmTaunt = Random.Range(0,taunts.Length);
+		this.GetComponent<AudioSource> ().PlayOneShot (taunts [randmTaunt], 1.0f);
 
 		GameObject[] spawnLocs = GameObject.FindGameObjectsWithTag("Respawn");
 		int pickSpawn = Random.Range (0, spawnLocs.Length);
@@ -753,6 +783,11 @@ public class Character : MonoBehaviour {
 		else{
 			state_ = State.STATE_IDLE;
 		}
+	}
+
+	public void doAttackSound(){
+		int randmAtt = Random.Range(0,attackSounds.Length);
+		this.GetComponent<AudioSource>().PlayOneShot(attackSounds[randmAtt],1.0f);
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit){

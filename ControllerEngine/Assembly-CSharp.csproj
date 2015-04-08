@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\HazardSpawner.cs" />
      <Compile Include="Assets\Scripts\IntroEnd.cs" />
      <Compile Include="Assets\Scripts\LazerScript.cs" />
-     <Compile Include="Assets\Scripts\OSC_Receiver_C.cs" />
      <Compile Include="Assets\Scripts\OldAttacks.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Bandit.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\Character.cs" />
@@ -71,11 +70,17 @@
      <Compile Include="Assets\Scripts\PlayerScripts\Paladin.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\TwoDCharControl.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\attacks.cs" />
+     <Compile Include="Assets\Scripts\Pulse Sensor\BeatScript.cs" />
+     <Compile Include="Assets\Scripts\Pulse Sensor\EventManager.cs" />
+     <Compile Include="Assets\Scripts\Pulse Sensor\HeartBeatVisualizer.cs" />
+     <Compile Include="Assets\Scripts\Pulse Sensor\HeartRateManager.cs" />
+     <Compile Include="Assets\Scripts\Pulse Sensor\OSC_Receiver_C.cs" />
      <Compile Include="Assets\Scripts\SwitchScript.cs" />
      <Compile Include="Assets\Scripts\TrapContainer.cs" />
      <Compile Include="Assets\Scripts\TrapScript.cs" />
      <Compile Include="Assets\Scripts\boulderScript.cs" />
      <Compile Include="Assets\Scripts\craneTrap.cs" />
+     <Compile Include="Assets\attackSound.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />

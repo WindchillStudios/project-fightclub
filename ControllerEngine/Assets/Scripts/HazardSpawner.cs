@@ -20,7 +20,6 @@ public class HazardSpawner : TrapScript {
 
 	void Update(){
 		if (isActive) {
-			target = GameObject.FindGameObjectWithTag ("Player");
 
 			hazardTimer += 1 * Time.deltaTime;
 			spawnTimer += 1 *Time.deltaTime;
@@ -29,7 +28,7 @@ public class HazardSpawner : TrapScript {
 			{
 				if (hazardTimer > hazDur)
 				{
-					isActive = false;
+					deactivate();
 				}
 
 				if (spawnTimer > hazFreq) {
@@ -49,7 +48,7 @@ public class HazardSpawner : TrapScript {
 				else
 					doTrap(target);
 
-				isActive = false;
+				deactivate();
 			}
 		}
 		else

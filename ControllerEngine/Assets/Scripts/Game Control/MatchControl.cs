@@ -11,10 +11,6 @@ public class MatchControl : MonoBehaviour {
 	float countdownTimer;
 	bool isCountdown;
 
-	public GameObject Liara;
-	public GameObject Durain;
-	public GameObject Magna;
-
 	public OSC_Receiver_C heartRate;
 
 	public int[] playerHeartRates;
@@ -31,6 +27,7 @@ public class MatchControl : MonoBehaviour {
 	float heartTrapDelay;
 	bool isHeartTrapActive = false;
 	bool canHeartTrap = false;
+	TrapScript trapController; 
 
 	int[] playerType;
 
@@ -47,6 +44,7 @@ public class MatchControl : MonoBehaviour {
 	/* ---- Audio ---- */
 
 	public AudioClip[] music;
+	public AudioClip[] announcer;
 
 	/* ---- Game Scoring ---- */
 
@@ -55,13 +53,15 @@ public class MatchControl : MonoBehaviour {
 	float matchTimer = 20;
 	GameObject timerDisplay;
 	bool timerSet;
-	public Font OutageFont;
+	Font OutageFont;
 	float endTimer = 2;
 	bool isEnding;
-	public int[] results;
+	int[] results;
+	bool fightPlayed = false;
 
 	// Use this for initialization
 	void Start () {
+		OutageFont = Resources.Load("Outage") as Font;
 		players = new GameObject[4];
 		results = new int[4];
 		DontDestroyOnLoad (this.gameObject);
@@ -177,6 +177,13 @@ public class MatchControl : MonoBehaviour {
 				if(countdownTimer > 0){
 					countdownTimer -= Time.fixedDeltaTime;
 					if(countdownTimer > 1){
+
+						if(countdownTimer < 2){
+							if(!fightPlayed){
+								this.GetComponent<AudioSource>().PlayOneShot(announcer[0],1.0f);
+								fightPlayed = true;
+							}
+						}
 						if(levelGui){
 							levelGui.GetComponentInChildren<Text>().text = Mathf.Floor(countdownTimer).ToString();
 						}
@@ -260,6 +267,15 @@ public class MatchControl : MonoBehaviour {
 
 	void heartRateTrapSystem()
 	{
+		if (isHeartTrapActive) {
+			Transform warningScreen = levelGui.transform.FindChild ("WarningScreen");
+			warningScreen.gameObject.SetActive (true);
+		}
+		else{
+			Transform warningScreen = levelGui.transform.FindChild ("WarningScreen");
+			warningScreen.gameObject.SetActive (false);
+		}
+
 		//Default State//
 		if(heartTrapDelay > aoeTrapFrequency)
 		{
@@ -287,12 +303,13 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void doAoeTrap(){
-		TrapScript trapController; 
 		
 		int randTrap = Random.Range (0, (aoeTraps.Length));
 
-		trapController = aoeTraps[randTrap].GetComponent<TrapScript>();
-		
+		if (!isHeartTrapActive) {
+			trapController = aoeTraps [randTrap].GetComponent<TrapScript> ();
+		}
+
 		if(canHeartTrap && !isHeartTrapActive)
 		{
 			avPulseTrap(trapController);
@@ -530,6 +547,10 @@ public class MatchControl : MonoBehaviour {
 				}
 
 				if(player.GetComponent<Character>().playerNumber == results[0]){
+
+					int randmTaunt = Random.Range(0,player.GetComponent<Character>().taunts.Length);
+					player.GetComponent<AudioSource> ().PlayOneShot (player.GetComponent<Character>().taunts[randmTaunt], 1.0f);
+
 					player.transform.position = new Vector3(-15,-5,0);
 					player.transform.rotation = new Quaternion(0,180,0,0);
 					player.transform.localScale = new Vector3(2.5f,2.5f,2.5f);
@@ -553,11 +574,19 @@ public class MatchControl : MonoBehaviour {
 			this.GetComponent<AudioSource>().Play();
 			break;
 		case "AsteroidMine":
-			this.GetComponent<AudioSource>().clip = music[2];
+			this.GetComponent<AudioSource>().clip = music[1];
 			this.GetComponent<AudioSource>().Play();
 			break;
 		case "TrainingRoom":
-			this.GetComponent<AudioSource>().clip = music[1];
+			this.GetComponent<AudioSource>().clip = music[2];
+			this.GetComponent<AudioSource>().Play();
+			break;
+		case "CityStreet":
+			this.GetComponent<AudioSource>().clip = music[3];
+			this.GetComponent<AudioSource>().Play();
+			break;
+		case "Results":
+			this.GetComponent<AudioSource>().clip = music[4];
 			this.GetComponent<AudioSource>().Play();
 			break;
 		default:

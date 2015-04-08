@@ -22,10 +22,12 @@ public class craneTrap : TrapScript {
 				this.transform.Rotate(new Vector3(0,-0.1f,0));
 			}
 
-			conveyorOn = true;
-			foreach(GameObject mechanism in mechanisms)
-			{
-				mechanism.GetComponent<TrapScript>().activate();
+			if(activeTimer > 1){
+				conveyorOn = true;
+				foreach(GameObject mechanism in mechanisms)
+				{
+					mechanism.GetComponent<TrapScript>().activate();
+				}
 			}
 
 			if(activeTimer < activeEnd){

@@ -57,7 +57,7 @@ public class TCPclient : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate(){
+	void Update(){
 		if(thereIsData == true){
 			//Debug.Log ("TCP " + stringData);
 
@@ -135,7 +135,7 @@ public class TCPclient : MonoBehaviour {
 			}
 
 			inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
-			//Debug.Log(stringData + " stringdata");
+			Debug.Log("inputs " + inputs.Peek());
 		}
 		//Debug.Log("Disconnecting from server...");
 		ns.Close ();

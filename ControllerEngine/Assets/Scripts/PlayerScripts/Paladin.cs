@@ -180,7 +180,7 @@ public class Paladin : Character {
 	}
 
 	void DoBasic()
-	{		
+	{	
 		charAttacks.GetCurrentAttack (attForce, currentDamage);
 		model.SetInteger ("attackState", attackNum);
 	}

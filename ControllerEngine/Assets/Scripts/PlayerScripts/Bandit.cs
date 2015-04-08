@@ -97,21 +97,21 @@ public class Bandit : Character {
 	}
 
 	public override void updateSpecial(){
-
+		
 		if(model.IsInTransition(0)){
 			if (state_ != State.STATE_ATTACKING) {
 				canSpecial = true;
 				chargeDamage = 0.0f;
 			}
 		}
-
+		
 		if(Input.GetAxis("SpecialAttack" + playerNumber) > 0 || actionInput == "Spcl"){
 			isHeld = true;
 		}
 		else{
 			isHeld = false;
 		}
-
+		
 		if (isHeld) {
 			if(model.GetInteger("attackState") == 3){
 				chargeDamage += 10 * Time.deltaTime;
@@ -119,24 +119,24 @@ public class Bandit : Character {
 		}
 		else if(!isHeld){
 			charAttacks.GetCurrentAttack (attForce, chargeDamage);
-
+			
 			if(model.GetInteger("attackState") == 3){
 				model.SetInteger("attackState",4);
 				model.SetTrigger("specialFinish");
 			}
 		}
-
+		
 		if (model.GetCurrentAnimatorStateInfo (0).IsName ("Special")) {
-
+			
 			charAttacks.GetCurrentAttack (attForce, chargeDamage);
-
+			
 			if(model.IsInTransition(0)){
-
+				
 				model.SetInteger("attackState",4);
 				model.SetTrigger("specialFinish");
 			}
 		}
-
+		
 		if(model.GetInteger("attackState") == 4){
 			if(!model.GetBool("specialFinish")){
 				canSpecial = true;
