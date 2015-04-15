@@ -13,7 +13,7 @@ public class TCPclient : MonoBehaviour {
 	public bool isOnline;
 	public bool isSet;
 
-	MatchControl gameController;
+	public MatchControl gameController;
 
 	string input, stringData;
 
@@ -62,7 +62,7 @@ public class TCPclient : MonoBehaviour {
 			//Debug.Log ("TCP " + stringData);
 
 			if(inputs.Count != 0){
-				Debug.Log("dequeue " + inputs.Peek());
+				//Debug.Log("dequeue " + inputs.Peek());
 
 				gameController.getInput(inputs.Dequeue ());
 				if(inputs.Count > 50){
@@ -106,6 +106,7 @@ public class TCPclient : MonoBehaviour {
 	}
 
 	public void prepareString(string outputString){
+		//Debug.Log (outputString);
 		byte[] encodedString = Encoding.ASCII.GetBytes (outputString);
 		outputs.Enqueue(encodedString);
 		dataToWrite = true;
@@ -134,12 +135,22 @@ public class TCPclient : MonoBehaviour {
 				break;
 			}
 
-			inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
-			Debug.Log("inputs " + inputs.Peek());
+			stringData = Encoding.ASCII.GetString (data, 0, recv);
+			SemiColonParsing(stringData);
+			//inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
+			//Debug.Log("inputs " + inputs.Peek());
 		}
 		//Debug.Log("Disconnecting from server...");
 		ns.Close ();
 		server.Close ();
+	}
+
+	void SemiColonParsing(string inputCommands){
+		string[] SemiArray;
+		SemiArray = inputCommands.Split (";" [0]);
+		foreach (string a in SemiArray) {
+			inputs.Enqueue(a);
+		}
 	}
 
 	~TCPclient(){

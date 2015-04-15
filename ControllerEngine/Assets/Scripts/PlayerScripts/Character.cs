@@ -34,7 +34,7 @@ public class Character : MonoBehaviour {
 
 	/******Input*********/
 
-	float moviInput;
+	public float moviInput;
 	float moveInput;
 	public string actionInput;
 
@@ -46,11 +46,12 @@ public class Character : MonoBehaviour {
 	
 	bool isHurt;
 	bool canRespawn;
-	int lives = 1;
+	int lives = 3;
 	int deaths;
 	int kills;
 	GameObject hudInfo;
 	Font outageFont;
+	public Character lastHit;
 
 	/*************Sound***************/
 
@@ -158,8 +159,6 @@ public class Character : MonoBehaviour {
 
 		checkIdleReset ();
 
-		moviInput = moviInput / 50;
-
 		updateMovement ();
 
 		if( lifeState_ == lifeState.STATE_ALIVE)
@@ -195,14 +194,8 @@ public class Character : MonoBehaviour {
 	}
 
 	void checkIdleReset(){
-		/*if(model.GetCurrentAnimatorStateInfo(0).nameHash == Animator.StringToHash("Base Layer.Idle") && state_ != State.STATE_FROZEN){
-			model.SetBool("isCombo", false);
-			if(state_ != State.STATE_JUMPING && state_ != State.STATE_FALLING){
-				state_ = State.STATE_IDLE;
-			}
-		}*/
+
 		if (model.GetCurrentAnimatorStateInfo (0).IsName ("Idle") && state_ != State.STATE_FROZEN) {
-			Debug.Log("IDLE");
 			model.SetBool("isCombo", false);
 
 			if(state_ != State.STATE_JUMPING){
@@ -212,11 +205,6 @@ public class Character : MonoBehaviour {
 
 		if(state_ == State.STATE_ATTACKING && model.GetInteger("attackState") == 0 && !model.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
 			state_ = State.STATE_IDLE;
-		}
-
-
-		if (model.IsInTransition (0) && model.GetNextAnimatorStateInfo (0).nameHash != model.GetCurrentAnimatorStateInfo (0).nameHash) {
-			Debug.Log("Do next");
 		}
 	}
 
@@ -230,6 +218,8 @@ public class Character : MonoBehaviour {
 			canMove = false;
 			canAttack = false;
 			canJump = false;
+
+			horizontalMove = 0;
 
 			if(gravity > maxGravity){
 				gravity -= 2.0f;
@@ -569,11 +559,17 @@ public class Character : MonoBehaviour {
 
 	public void takeDamage(float damage, GameObject attacker){
 
+		Debug.Log (damage);
+
 		if(lifeState_ != lifeState.STATE_DEAD)
 		{
 			if(!isHurt){
 				if(damage > 0)
-				{								
+				{			
+					if (attacker.GetComponentInParent<Character> ()) {
+						lastHit = attacker.GetComponentInParent<Character> ();
+					}
+
 					int randmHit = Random.Range(0,hurtSounds.Length);
 					this.GetComponent<AudioSource>().PlayOneShot(hurtSounds[randmHit],1.0f);
 
@@ -592,8 +588,24 @@ public class Character : MonoBehaviour {
 	
 	void takeDeath(GameObject attacker)
 	{
-		if(attacker.GetComponent<Character>()){
-			attacker.GetComponent<Character> ().addKill ();
+		if(attacker.GetComponentInParent<Character>()){
+			attacker.GetComponentInParent<Character> ().addKill ();
+		}
+
+		if(attacker.GetComponent<boulderScript>()){
+			Golem[] magPar = FindObjectsOfType<Golem>();
+
+			foreach(Golem m in magPar){
+				if(m.playerNumber == attacker.GetComponent<boulderScript>().parentNumber){
+					m.GetComponent<Character>().addKill();
+				}
+			}
+		}
+
+		if (attacker.tag == "Death") {
+			if(lastHit){
+				lastHit.addKill();
+			}
 		}
 
 		lifeState_ = lifeState.STATE_DEAD;
@@ -699,15 +711,18 @@ public class Character : MonoBehaviour {
 
 		// HORIZONTAL ///
 
-		if(Input.GetAxis("Horizontal" + playerNumber) != 0){
+		if(Input.GetAxis("Horizontal" + playerNumber) > 0.1f || Input.GetAxis("Horizontal" + playerNumber) < -0.1f){
 			moveInput = Input.GetAxis ("Horizontal" + playerNumber);
 		}
-		else if(moviInput != 0){
-			moveInput = moviInput;
+		else if(moviInput > 10 || moviInput < -10){
+			moveInput = moviInput / 50;
 		}
-		else
+		else if(moviInput < 10 && moviInput > -10){
 			moveInput = 0;
-
+		}
+		else{
+			moveInput = 0;
+		}
 
 		if(moveInput != 0)
 		{
@@ -770,7 +785,7 @@ public class Character : MonoBehaviour {
 	void OnTriggerEnter(Collider hit){
 		
 		// INSTANT DEATH OBJECT ////////////
-		
+
 		if (hit.gameObject.tag == "Death") { 
 			takeDamage(1000.0f, hit.gameObject);
 		}

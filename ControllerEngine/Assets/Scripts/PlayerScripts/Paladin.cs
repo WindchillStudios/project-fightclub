@@ -16,14 +16,15 @@ public class Paladin : Character {
 	public bool isCharged;
 	public bool charging;
 	public bool canSpecial;
-	bool isSpecial;
+	public bool isDoSpecial;
+	bool isHeld;
 
 	new void Start () {
 		
 		maxJump = 25;
 		maxSpeed = 15;
 		maxHealth = 110;
-		chargeTime = 0.5f;
+		chargeTime = 0.4f;
 		attackEffects = GetComponentInChildren<ParticleSystem> ();
 
 		base.Start ();
@@ -41,28 +42,28 @@ public class Paladin : Character {
 			{
 			case 0://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*5f,5f);
 				
 				break;
 				
 			case 1://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
 				
 			case 2://Up Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(0,-1f);
 				
 				break;
 				
 			case 3://Down Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
@@ -71,7 +72,7 @@ public class Paladin : Character {
 				model.SetTrigger("isCombo");
 				model.SetInteger("attackState", 0);
 				
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
 					attForce = new Vector2(facing*5f,5f);
 				}
@@ -90,17 +91,26 @@ public class Paladin : Character {
 	}
 
 	public override void updateSpecial(){
-		if(isSpecial)
-		{
-			extMovement(new Vector3(facing*10,0,0));
 
-			if(model.IsInTransition(0)){
-				if(!model.GetNextAnimatorStateInfo(0).IsTag("Attack"))
-				{
-					isSpecial = false;
-				}
-			}
+
+		if (Input.GetAxis ("SpecialAttack" + playerNumber) > 0 || actionInput == "Spcl") {
+			isHeld = true;
 		}
+		else{
+			isHeld = false;
+		}
+
+		/* ----- Do Attack ----- */
+
+		if(model.GetCurrentAnimatorStateInfo(0).IsName("Special")){
+			isDoSpecial = true;
+			extMovement(new Vector3(facing*10,0,0));
+		}
+		else{
+			isDoSpecial = false;
+		}
+		
+		/* ----- Particle Glow ----- */
 
 		if (charging || isCharged) {
 			Debug.Log(attackEffects);
@@ -114,6 +124,8 @@ public class Paladin : Character {
 			}
 		}
 
+		/* ----- Charge Work ----- */
+
 		if(chargeTimer > chargeTime){
 			isCharged = true;
 			chargeTimer = 0;
@@ -121,60 +133,63 @@ public class Paladin : Character {
 			model.SetTrigger("charging");
 		}
 
-		if(isCharged && (actionInput != "Spcl") && !canSpecial)
+		if(isCharged && !isHeld && !canSpecial)
 		{
-			state_ = State.STATE_IDLE;
-			canSpecial = true;
-		}
-		else if(isCharged && !(Input.GetAxis("SpecialAttack" + playerNumber) > 0) && !canSpecial)
-		{
-			state_ = State.STATE_IDLE;
 			canSpecial = true;
 		}
 
-		if(!isCharged)
-		{
-			if(charging){
+		if (isCharged && isHeld && !canSpecial) {
+			model.SetInteger("attackState", 0);
+		}
 
-				if(actionInput == "Spcl" || Input.GetAxis("SpecialAttack" + playerNumber) > 0){
-					chargeTimer += 0.1f * Time.deltaTime;
-					model.SetInteger("attackState", 5);
+		if(!isDoSpecial){
+			if(!isCharged)
+			{
+				if(charging){
+						if(isHeld){
+							chargeTimer += 0.1f * Time.deltaTime;
+							model.SetInteger("attackState", 5);
+						}
+						else{
+							charging = false;
+							model.SetTrigger("charging");
+						}
 				}
 				else{
-					charging = false;
 					model.SetTrigger("charging");
+					attackEffects.Stop();
 				}
 			}
 			else{
-				attackEffects.Stop();
+				model.SetTrigger("charging");
+				charging = false;
 			}
 		}
-		else
-			charging = false;
 	}
 
 	void DoSpecial()
 	{
-		if(isCharged)
-		{	
-			if(canSpecial)
+		if(!isDoSpecial){
+			if(isCharged)
 			{	
-				isSpecial = true;
-				currentDamage = 20.0f;
-				attForce =  new Vector2 (facing*5,5);
-				charAttacks.GetCurrentAttack (attForce, currentDamage);
-			
-				model.SetInteger("attackState", 6);
-				canSpecial = false;
-				isCharged = false;
+				if(canSpecial)
+				{	
+					currentDamage = 30.0f;
+					attForce =  new Vector2 (facing*5,5);
+					charAttacks.GetCurrentAttack (attForce, currentDamage);
+				
+					model.SetInteger("attackState", 6);
+					canSpecial = false;
+					isCharged = false;
+				}
 			}
-		}
-		else if(!isCharged)
-		{
-			if(!charging)
+			else if(!isCharged)
 			{
-				model.SetInteger("attackState", 4);
-				charging = true;
+				if(!charging)
+				{
+					model.SetInteger("attackState", 4);
+					charging = true;
+				}
 			}
 		}
 	}

@@ -15,12 +15,13 @@ public class Golem : Character {
 	public float shotDelay;
 	public float currentShot;
 	Vector3 handSpawner;
+	bool isShooting;
 
 	new void Start () {
 		
-		maxJump = 25;
-		maxSpeed = 15;
-		maxHealth = 110;
+		maxJump = 26;
+		maxSpeed = 16;
+		maxHealth = 100;
 
 		shotDelay = 6;
 		canShoot = true;
@@ -36,9 +37,20 @@ public class Golem : Character {
 				currentShot += 1 * Time.deltaTime;
 			}
 			else{
+				isShooting = false;
 				canShoot = true;
 				currentShot = 0;
 			}
+		}
+
+		if(model.GetCurrentAnimatorStateInfo(0).IsName("Special Shoot")){
+			if(!isShooting){
+				FireBoulder();
+			}
+		}
+
+		if(!model.GetBool("isShooting")){
+			model.SetInteger("attackState", 0);
 		}
 	}
 
@@ -113,12 +125,16 @@ public class Golem : Character {
 	
 	void DoSpecial()
 	{
-		//Debug.Log ("Special");
+		model.SetInteger("attackState", 3);
+		model.SetTrigger ("isShooting");
+		canShoot = false;
+	}
+
+	void FireBoulder(){
+		isShooting = true;
 		GameObject newBoulder = Instantiate (boulder, handSpawner, this.transform.rotation) as GameObject;
 		newBoulder.GetComponent<boulderScript> ().parentNumber = this.playerNumber;
 		newBoulder.GetComponent<Rigidbody> ().AddForce (20 * facing, 0, 0, ForceMode.Impulse);
-		model.SetInteger("attackState", 3);
-		canShoot = false;
 	}
 	
 	void DoBasic()

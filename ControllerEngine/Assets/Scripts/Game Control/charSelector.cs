@@ -27,7 +27,7 @@ public class charSelector : MonoBehaviour {
 
 		if (!isSelected) {
 
-			if(Input.GetAxis("Horizontal" + playerNumber) > 0){
+			if(Input.GetAxis("Horizontal" + playerNumber) > 0.1f){
 
 				if(!AnimControl.GetComponent<Animator>().IsInTransition(0)){
 
@@ -40,7 +40,7 @@ public class charSelector : MonoBehaviour {
 					}
 				}
 			}
-			else if(Input.GetAxis("Horizontal" + playerNumber) < 0){
+			else if(Input.GetAxis("Horizontal" + playerNumber) < -0.1f){
 				if(!AnimControl.GetComponent<Animator>().IsInTransition(0)){
 
 					this.GetComponent<AudioSource>().Stop(); 

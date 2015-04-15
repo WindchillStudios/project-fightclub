@@ -45,28 +45,28 @@ public class Bandit : Character {
 			{
 			case 0://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 8.0f;
 				attForce = new Vector2(facing*5f,5f);
 				
 				break;
 				
 			case 1://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 8.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
 				
 			case 2://Up Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 8.0f;
 				attForce = new Vector2(0,-1f);
 				
 				break;
 				
 			case 3://Down Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 8.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
@@ -75,7 +75,7 @@ public class Bandit : Character {
 				model.SetTrigger("isCombo");
 				model.SetInteger("attackState", 0);
 				
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
 					attForce = new Vector2(facing*5f,5f);
 				}
@@ -98,10 +98,10 @@ public class Bandit : Character {
 
 	public override void updateSpecial(){
 		
-		if(model.IsInTransition(0)){
+		if(!model.GetCurrentAnimatorStateInfo(0).IsName("Special") && !model.GetCurrentAnimatorStateInfo(0).IsName("Special Attack")){
 			if (state_ != State.STATE_ATTACKING) {
 				canSpecial = true;
-				chargeDamage = 0.0f;
+				chargeDamage = 10.0f;
 			}
 		}
 		
@@ -118,9 +118,10 @@ public class Bandit : Character {
 			}
 		}
 		else if(!isHeld){
-			charAttacks.GetCurrentAttack (attForce, chargeDamage);
-			
-			if(model.GetInteger("attackState") == 3){
+
+			if(model.GetCurrentAnimatorStateInfo(0).IsName("Special") || model.GetNextAnimatorStateInfo(0).IsName("Special")){
+				charAttacks.GetCurrentAttack (attForce, chargeDamage);
+
 				model.SetInteger("attackState",4);
 				model.SetTrigger("specialFinish");
 			}

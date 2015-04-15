@@ -67,7 +67,7 @@ public class CameraControl : MonoBehaviour {
 
 				fightDistance = mostRight.transform.position.x - mostLeft.transform.position.x;
 
-				camLocation.z = -fightDistance/2;
+				camLocation.z = -fightDistance/1.5f;
 
 				/******Finalize******/
 
@@ -88,7 +88,7 @@ public class CameraControl : MonoBehaviour {
 		
 			}
 			else{
-				if(players.Length < 1){
+				if(players.Length == 1){
 					this.transform.position = new Vector3(players[0].transform.position.x, players[0].transform.position.y + 2.5f, -10);
 				}
 			}

@@ -27,7 +27,7 @@ public class boulderScript : MonoBehaviour {
 		if(hit.gameObject.tag == "Player")
 		{
 			if(parentNumber != hit.gameObject.GetComponent<Character>().playerNumber){
-				hit.gameObject.GetComponent<Character>().takeDamage(10,this.gameObject);
+				hit.gameObject.GetComponent<Character>().takeDamage(7,this.gameObject);
 			}
 		}
 	}

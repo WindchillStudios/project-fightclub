@@ -8,8 +8,10 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	public GameObject logo;
 	public GameObject confirmText;
 	public Text infoText;
+	public Sprite Xbutton;
 
 	public AudioClip[] menuSounds;
+	bool skipSplash;
 
 	Animator logoAnim;
 	ParticleSystem[] logoParticles;
@@ -21,10 +23,13 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	bool charsLoaded;
 
 	public EventSystem MenuEvents;
-
+	
 	public GameObject levelSelectGui;
+	float slctDelay;
+	bool canSlct;
 	Selectable curLevel;
 	bool isSelected;
+	bool roomSet;
 	string toSubmit;
 	float mobiDirectionInput;
 
@@ -64,13 +69,29 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	// Update is called once per frame
 	void Update () {
 
+		if(FindObjectOfType<TCPclient>()){
+			if (!FindObjectOfType<TCPclient>().isOnline) {
+				GameObject[] uiButtons =  GameObject.FindGameObjectsWithTag("UIButton");
+
+				foreach (GameObject Button in uiButtons){
+					Button.GetComponent<Image>().overrideSprite = Xbutton;
+				}
+			}
+		}
+
 		switch(menu){
 
 		case MenuState.MENU_SPLASH:
 
 			string[] mobiData = matchController.mobileInput;
 
-			if(Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0){// || mobiData[0] == "Enter"){
+			if(mobiData.Length > 0){
+				if(mobiData[0] == "Enter"){
+					skipSplash = true;
+				}
+			}
+
+			if(skipSplash || Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0){
 
 				foreach(ParticleSystem lParts in logoParticles){
 					lParts.Stop();
@@ -106,6 +127,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 					mobiSubmitChar(i);
 
 					if(Input.GetAxis("Jump" + (i+1)) > 0){
+
 						menu = MenuState.MENU_LVLSELECT;
 					}
 				}
@@ -114,9 +136,12 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			break;
 
 		case MenuState.MENU_LVLSELECT:
-
-			if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
-				GameObject.FindObjectOfType<TCPclient>().prepareString ("Started");
+			
+			if(!roomSet){
+				if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
+					GameObject.FindObjectOfType<TCPclient>().prepareString ("Started");
+				}
+				roomSet = true;
 			}
 
 			/* ---- End Character Select ---- */
@@ -145,15 +170,23 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			mobiDirectionInput = mobiLevelSelect();
 
 			if(mobiDirectionInput > 0){
-				if(curLevel.FindSelectableOnRight() != null){
-					curLevel = curLevel.FindSelectableOnRight();
-					curLevel.Select();
+				if(canSlct){
+					if(curLevel.FindSelectableOnRight() != null){
+						curLevel = curLevel.FindSelectableOnRight();
+						curLevel.Select();
+						canSlct = false;
+						slctDelay = 1f;
+					}
 				}
 			}
 			else if(mobiDirectionInput < 0){
-				if(curLevel.FindSelectableOnLeft() != null){
-					curLevel = curLevel.FindSelectableOnLeft();
-					curLevel.Select();
+				if(canSlct){
+					if(curLevel.FindSelectableOnLeft() != null){
+						curLevel = curLevel.FindSelectableOnLeft();
+						curLevel.Select();
+						canSlct = false;
+						slctDelay = 1f;
+					}
 				}
 			}
 
@@ -192,22 +225,30 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			mobiDirectionInput = mobiLevelSelect();
 			
 			if(mobiDirectionInput > 0){
-				if(curLevel.FindSelectableOnRight() != null){
-					curLevel = curLevel.FindSelectableOnRight();
-					curLevel.Select();
+				if(canSlct){
+					if(curLevel.FindSelectableOnRight() != null){
+						curLevel = curLevel.FindSelectableOnRight();
+						curLevel.Select();
+						canSlct = false;
+						slctDelay = 0.5f;
+					}
 				}
 			}
 			else if(mobiDirectionInput < 0){
-				if(curLevel.FindSelectableOnLeft() != null){
-					curLevel = curLevel.FindSelectableOnLeft();
-					curLevel.Select();
+				if(canSlct){
+					if(curLevel.FindSelectableOnLeft() != null){
+						curLevel = curLevel.FindSelectableOnLeft();
+						curLevel.Select();
+						canSlct = false;
+						slctDelay = 0.5f;
+					}
 				}
 			}
 			
 			if(MenuEvents.currentSelectedGameObject){
 				switch(MenuEvents.currentSelectedGameObject.name){
 				case "Survival":
-					infoText.text = "5 Life Limit. Make 'em Count";
+					infoText.text = "3 Life Limit. Make 'em Count";
 					GameObject.FindObjectOfType<MatchControl>().setThisGameType(0);
 					break;
 				case "Timed":
@@ -215,7 +256,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 					GameObject.FindObjectOfType<MatchControl>().setThisGameType(1);
 					break;
 				case "Score":
-					infoText.text = "First to 10. Dominate the Competition";
+					infoText.text = "First to 3. Dominate the Competition";
 					GameObject.FindObjectOfType<MatchControl>().setThisGameType(2);
 					break;
 				default:
@@ -228,6 +269,13 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 			}
 			
 			break;
+		}
+
+		if (slctDelay > 0) {
+			slctDelay -= 1 * Time.deltaTime;
+		}
+		else{
+			canSlct = true;
 		}
 	}
 

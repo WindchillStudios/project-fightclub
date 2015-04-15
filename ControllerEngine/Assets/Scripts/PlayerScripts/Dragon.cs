@@ -30,14 +30,11 @@ public class Dragon : Character {
 		if (isSpecial)
 		{
 			attForce = Vector2.zero;
-			currentDamage = 1.0f;
+			currentDamage = 4.0f;
 
 			if(canSpecial)
 			{
 				DoSpecial();
-			}
-			else{
-				state_ = State.STATE_IDLE;
 			}
 		}
 		else
@@ -46,28 +43,28 @@ public class Dragon : Character {
 			{
 			case 0://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*5f,5f);
 				
 				break;
 				
 			case 1://No Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
 				
 			case 2://Up Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(0,-1f);
 				
 				break;
 				
 			case 3://Down Input
 				attackNum = 1;
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				attForce = new Vector2(facing*1f,0);
 				
 				break;
@@ -76,7 +73,7 @@ public class Dragon : Character {
 				model.SetTrigger("isCombo");
 				model.SetInteger("attackState", 0);
 
-				currentDamage = 10.0f;
+				currentDamage = 12.0f;
 				if(model.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")){
 					attForce = new Vector2(facing*5f,5f);
 				}
@@ -99,11 +96,9 @@ public class Dragon : Character {
 	
 	public override void updateSpecial(){
 
-		if (isHeld) {
-			canSpecial = false;
-		}
-		else if(!isHeld) {
+		if(!isHeld) {
 			if(model.GetCurrentAnimatorStateInfo(0).IsName("Special Spray") || model.GetCurrentAnimatorStateInfo(0).IsName("Special Windup")){
+				Debug.Log("release");
 				model.SetInteger("attackState", 4);
 			}
 			canSpecial = true;
@@ -119,8 +114,10 @@ public class Dragon : Character {
 	
 	void DoSpecial()
 	{
-		model.SetInteger("attackState", 3);
-		model.SetTrigger ("isSpraying");
+		if (!model.GetBool("isSpraying") && !model.GetCurrentAnimatorStateInfo(0).IsName("Special Windup")) {
+			model.SetInteger ("attackState", 3);
+			model.SetTrigger ("isSpraying");
+		}
 	}
 	
 	void DoBasic()

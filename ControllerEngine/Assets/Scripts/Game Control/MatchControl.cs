@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class MatchControl : MonoBehaviour {
@@ -11,23 +12,30 @@ public class MatchControl : MonoBehaviour {
 	float countdownTimer;
 	bool isCountdown;
 
-	public OSC_Receiver_C heartRate;
-
-	public int[] playerHeartRates;
-
 	/* ----	Heart Rate Traps ---- */
+
+	HeartRateManager[] BPMMans;
+	int threshHolds;
 
 	public float aoeTrapFrequency;
 	public GameObject[] aoeTraps;
 
-	public float soloTrapFrequency;
-	public GameObject[] soloTraps;
+	//public float soloTrapFrequency;
+	//public GameObject[] soloTraps;
+	//float soloTimer;
+	//float soloCounter;
 
-	int avHeartRate;
+	bool lowHeartRates;
 	float heartTrapDelay;
-	bool isHeartTrapActive = false;
+	//float soloTrapDelay;
+
+	public bool isHeartTrapActive = false;
+	//public bool isSoloTrapActive = false;
 	bool canHeartTrap = false;
+	//bool canSoloTrap = false;
+
 	TrapScript trapController; 
+	//TrapScript soloTrapController; 
 
 	int[] playerType;
 
@@ -50,14 +58,17 @@ public class MatchControl : MonoBehaviour {
 
 	int selGameType = 2;
 	int[] kills;
-	float matchTimer = 20;
+	float matchTimer = 120;
 	GameObject timerDisplay;
 	bool timerSet;
 	Font OutageFont;
 	float endTimer = 2;
 	bool isEnding;
 	int[] results;
+	List<GameObject> losers = new List<GameObject>();
 	bool fightPlayed = false;
+
+	float resultsTimer;
 
 	// Use this for initialization
 	void Start () {
@@ -96,9 +107,8 @@ public class MatchControl : MonoBehaviour {
 		if (GameObject.FindObjectOfType<TrapContainer> ())
 		{
 			aoeTraps = GameObject.FindObjectOfType<TrapContainer> ().allAoeTraps;
-			soloTraps = GameObject.FindObjectOfType<TrapContainer> ().allSoloTraps;
+			//soloTraps = GameObject.FindObjectOfType<TrapContainer> ().allSoloTraps;
 		}
-		heartRate = GameObject.FindObjectOfType<OSC_Receiver_C> ();
 		spawnLocs = GameObject.FindGameObjectsWithTag ("Respawn");
 
 		SpawnPlayers ();
@@ -146,30 +156,27 @@ public class MatchControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKeyDown(KeyCode.Escape)){
-			foreach(GameObject player in players){
-				Destroy(player);
-			}
+		if (Application.loadedLevelName == "Results") {
+			resultsTimer += 1*Time.deltaTime;
 
-			if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
-				GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
+			if(resultsTimer > 15){
+				resetMainMenu();
 			}
-			Application.LoadLevel("MainMenu");
-			Destroy(this.gameObject);
+		}
+
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			resetMainMenu();
 		}
 
 		if (Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "Results") {
 
-			if(heartRate){
-				getHeartRates();
-			}
 			updateHud();
 
 			if(!isCountdown){
 				updateWinConditions ();
 			}
 
-			avHeartRate = getAvHeart ();
+			lowHeartRates = getAvHeart ();
 			heartRateTrapSystem ();
 
 			if(isCountdown){
@@ -214,9 +221,7 @@ public class MatchControl : MonoBehaviour {
 			endTimer -= 1 * Time.fixedDeltaTime;
 
 			if(endTimer <= 0){
-				if(FindObjectOfType<TCPclient>()){
-					GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Over " + (results[0]-1));
-				}
+
 				Application.LoadLevel ("Results");
 				isEnding = false;
 			}
@@ -253,16 +258,9 @@ public class MatchControl : MonoBehaviour {
 	}
 
 	void sendInput(int playNum, string type, string contrInput){
-		if(players.Length > 0){
+		if(players[playNum]){
 			players[playNum].GetComponent<Character>().readInput(type, contrInput);
 		}
-	}
-
-	void getHeartRates(){
-		int curHeart = heartRate.message1;
-
-		if(playerHeartRates.Length > 0)
-			playerHeartRates[0] = curHeart;
 	}
 
 	void heartRateTrapSystem()
@@ -281,25 +279,42 @@ public class MatchControl : MonoBehaviour {
 		{
 			canHeartTrap = true;
 		}
+		/*if (soloTrapDelay > soloTrapFrequency) {
+			canSoloTrap = true;
+		}*/
 
 		//Trap Delay State//
 		if(!isHeartTrapActive && !canHeartTrap)
 		{
 			heartTrapDelay += 1 * Time.deltaTime;
 		}
+		/*if(!isSoloTrapActive && !canSoloTrap)
+		{
+			soloTrapDelay += 1 * Time.deltaTime;
+		}*/
 
 		if(canHeartTrap)
 		{
 			heartTrapDelay = 0;
 		}
 
+		/*if (canSoloTrap) {
+			soloTrapDelay = 0;
+		}*/
+
 		//Trap Running State//
-		if(avHeartRate < 80)
+		if(lowHeartRates)
 		{
 			if(aoeTraps.Length > 0){
 				doAoeTrap();
 			}
 		}
+
+		/*foreach(HeartRateManager soloHeart in BPMMans){
+			if(soloHeart.underThreshold){
+				doSoloTrap(soloHeart);
+			}
+		}*/
 	}
 
 	void doAoeTrap(){
@@ -312,7 +327,7 @@ public class MatchControl : MonoBehaviour {
 
 		if(canHeartTrap && !isHeartTrapActive)
 		{
-			avPulseTrap(trapController);
+			avPulseTrap(trapController, null);
 		}
 		
 		if(isHeartTrapActive && !trapController.GetComponent<TrapScript>().isActive)
@@ -320,6 +335,21 @@ public class MatchControl : MonoBehaviour {
 			isHeartTrapActive = false;
 		}
 	}
+
+	/*void doSoloTrap(HeartRateManager soloHeart){
+
+		if(soloHeart.reallyLame){
+			int randTrap = Random.Range (0, (soloTraps.Length));
+
+			if(soloTraps.Length > 0){
+				soloTrapController = soloTraps [randTrap].GetComponent<TrapScript> ();
+			}
+
+			if(canSoloTrap && !isSoloTrapActive){
+				avPulseTrap(soloTrapController, players[soloHeart.thisPlayer]);
+			}
+		}
+	}*/
 
 	void SpawnPlayers(){
 
@@ -333,6 +363,7 @@ public class MatchControl : MonoBehaviour {
 				players[i] = Instantiate(players[i], spawnLocs[pickSpawn].transform.position, spawnLocs[pickSpawn].transform.rotation) as GameObject;
 				players[i].GetComponent<Character>().playerNumber = i+1;
 				players[i].GetComponent<Character>().setGameType(selGameType);
+				players[i].GetComponent<Character>().actionInput = "Idle";
 				spawnLocs[pickSpawn].tag = "Despawn";
 			}
 		}
@@ -345,27 +376,45 @@ public class MatchControl : MonoBehaviour {
 		}
 	}
 
-	int getAvHeart(){
+	bool getAvHeart(){
 
-		int average = 0;
+		BPMMans = FindObjectsOfType<HeartRateManager>();
+		int threshHolds = 0;
 
-		foreach(int heart in playerHeartRates)
+		foreach(HeartRateManager heart in BPMMans)
 		{
-			average = average + heart;
+			if(heart.underThreshold){
+				threshHolds ++;
+			}
 		}
-
-		if(playerHeartRates.Length != 0)
-			average = average / playerHeartRates.Length;
-
-		return average;
+	
+		if(BPMMans.Length != 0)
+		{
+			if(threshHolds > (BPMMans.Length/2)){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}else{
+			return false;
+		}
 	}
 
-	void avPulseTrap(TrapScript trap)
+	void avPulseTrap(TrapScript trap, GameObject target)
 	{
 		canHeartTrap = false;
-		isHeartTrapActive = true;
+		//canSoloTrap = false;
 
-		trap.activate();
+		isHeartTrapActive = true;
+		//isSoloTrapActive = true;
+
+		if (!target) {
+			trap.activate();
+		}
+		else if(target){
+			trap.activate(target);
+		}
 	}
 
 	void updateHud(){
@@ -476,7 +525,7 @@ public class MatchControl : MonoBehaviour {
 
 			foreach(GameObject player in players){
 				if(player != null){
-					if(player.GetComponent<Character>().readKills() > 9){
+					if(player.GetComponent<Character>().readKills() > 2){
 						getResults();
 					}
 				}
@@ -538,13 +587,21 @@ public class MatchControl : MonoBehaviour {
 
 	void createResults(){
 
+		Debug.Log (results [0]);
+
+		if(FindObjectOfType<TCPclient>()){
+			GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Over " + (results[0]-1));
+		}
+
 		foreach (GameObject player in players) {
 			if(player){
-
 				if(player.activeInHierarchy == false){
-					player.GetComponent<Character>().setLives(1);
 					player.SetActive(true);
 				}
+
+				player.GetComponent<Character>().state_ = Character.State.STATE_FROZEN;
+				player.GetComponent<Character>().lifeState_ = Character.lifeState.STATE_ALIVE;
+				player.GetComponent<Character>().model.SetInteger("state",0);
 
 				if(player.GetComponent<Character>().playerNumber == results[0]){
 
@@ -557,13 +614,28 @@ public class MatchControl : MonoBehaviour {
 				}
 				else{
 					if(player.GetComponent<Character>()){
-						player.transform.position = new Vector3((player.GetComponent<Character>().playerNumber*10)-15,-5,0);
-						player.transform.rotation = new Quaternion(0,180,0,0);
-						player.transform.localScale = new Vector3(2,2,2);
+						losers.Add(player);
 					}
 				}
 			}
 		}
+		for(int i = 0; i < losers.Count; i++){
+			losers[i].transform.position = new Vector3((i*10)-5,-5,0);
+			losers[i].transform.rotation = new Quaternion(0,180,0,0);
+			losers[i].transform.localScale = new Vector3(2f,2f,2f);		
+		}
+	}
+
+	void resetMainMenu(){
+		foreach(GameObject player in players){
+			Destroy(player);
+		}
+		
+		if(GameObject.FindObjectOfType<TCPclient>() && GameObject.FindObjectOfType<TCPclient>().isOnline){
+			GameObject.FindObjectOfType<TCPclient>().prepareString ("Close Menu");
+		}
+		Application.LoadLevel("MainMenu");
+		Destroy(this.gameObject);
 	}
 
 	void setMusic(){
@@ -592,5 +664,6 @@ public class MatchControl : MonoBehaviour {
 		default:
 			break;
 		}
+		this.GetComponent<AudioSource> ().loop = true;
 	}
 }
