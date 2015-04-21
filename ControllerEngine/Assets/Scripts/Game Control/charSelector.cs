@@ -53,7 +53,7 @@ public class charSelector : MonoBehaviour {
 				}			
 			}
 
-			if(Input.GetAxis("Attack" + playerNumber) > 0){
+			if(Input.GetAxis("SpecialAttack" + playerNumber) > 0){
 				selectCharacter();
 			}
 

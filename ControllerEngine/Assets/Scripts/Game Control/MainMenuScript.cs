@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 	public GameObject confirmText;
 	public Text infoText;
 	public Sprite Xbutton;
+	public Sprite Ybutton;
 
 	public AudioClip[] menuSounds;
 	bool skipSplash;
@@ -74,7 +75,13 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 				GameObject[] uiButtons =  GameObject.FindGameObjectsWithTag("UIButton");
 
 				foreach (GameObject Button in uiButtons){
-					Button.GetComponent<Image>().overrideSprite = Xbutton;
+
+					if(Button.GetComponent<Image>().sprite.name == "A_Button"){ 
+						Button.GetComponent<Image>().overrideSprite = Xbutton;
+					}
+					else if(Button.GetComponent<Image>().sprite.name == "B_Button"){ 
+						Button.GetComponent<Image>().overrideSprite = Ybutton;
+					}
 				}
 			}
 		}
@@ -91,7 +98,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 				}
 			}
 
-			if(skipSplash || Input.GetAxis("Jump" + 1) > 0 || Input.GetAxis("Jump" + 2) > 0 || Input.GetAxis("Jump" + 3) > 0 || Input.GetAxis("Jump" + 4) > 0){
+			if(skipSplash || Input.GetAxis("Attack" + 1) > 0 || Input.GetAxis("Attack" + 2) > 0 || Input.GetAxis("Attack" + 3) > 0 || Input.GetAxis("Attack" + 4) > 0){
 
 				foreach(ParticleSystem lParts in logoParticles){
 					lParts.Stop();
@@ -126,7 +133,7 @@ public class MainMenuScript : MonoBehaviour, ISubmitHandler {
 
 					mobiSubmitChar(i);
 
-					if(Input.GetAxis("Jump" + (i+1)) > 0){
+					if(Input.GetAxis("Attack" + (i+1)) > 0){
 
 						menu = MenuState.MENU_LVLSELECT;
 					}
