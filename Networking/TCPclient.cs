@@ -10,89 +10,166 @@ using System.Text;
 
 public class TCPclient : MonoBehaviour {
 
+	public bool isOnline;
+	public bool isSet;
+
+	public MatchControl gameController;
+
 	string input, stringData;
+
 	Queue<string> inputs = new Queue<string>();	
 	Queue<byte[]> outputs = new Queue<byte[]>();
-	bool buffer1full, buffer2full, buffer3full, buffer4full;
-	byte[] writeData, writeBuffer1, writeBuffer2, writeBuffer3, writeBuffer4;
+	byte[] writeData, writeData2;
+
 	TcpClient server;
-	public Movement playerMove;
+
 	bool runThread;
 	bool thereIsData = false;
 	bool dataToWrite = false;
 
 	void Start(){
-		Debug.Log ("Hi");
-		server = new TcpClient ("localhost", 8001);
-		if (server.Connected) {
-			Debug.Log ("Connected");
-			runThread = true;
-			new Thread (OpenStream).Start();
-			prepareString ("Game");
+
+		if(!isSet){
+			DontDestroyOnLoad(this);
+
+			try{
+				Debug.Log("Trying to Connect");
+				server = new TcpClient ("192.168.0.100", 8001);
+				isOnline = true;
+				Debug.Log("Found Connection ");
+			}
+			catch(SocketException e){
+				Debug.Log("Can't Connect");
+				if (e.Source != null){
+					isOnline = false;
+				}
+			}
+
+			if(isOnline){
+				if (server.Connected) {
+					runThread = true;
+					new Thread (OpenStream).Start();
+					prepareString ("Game");
+				}
+			}
+			isSet = true;
+			Application.LoadLevel ("MainMenu");
 		}
 	}
 
 	void Update(){
 		if(thereIsData == true){
-			Debug.Log ("thereisdata");
-			playerMove.playerInput(inputs.Dequeue ());
-			thereIsData = false;
-		}
-		if(dataToWrite){
-			NetworkStream ns2 = server.GetStream();
-			Debug.Log ("Data to be wrote");
-			if(ns2.CanWrite){
-				Debug.Log ("CW");
-				ns2.Write(outputs.Dequeue(),0,4);
-				if(outputs.Count == 0){
-					dataToWrite = false;
+			//Debug.Log ("TCP " + stringData);
+
+			if(inputs.Count != 0){
+				//Debug.Log("dequeue " + inputs.Peek());
+
+				gameController.getInput(inputs.Dequeue ());
+				if(inputs.Count > 50){
+					inputs.Clear();
 				}
-			}else{
-				Debug.Log ("You can not write to the stream.");
+			}
+
+			if(inputs.Count == 0){
+				thereIsData = false;
+			}
+		}
+		else{
+			if(gameController){
+				gameController.getInput("No Mobile Input");
+			}
+		}
+
+		if(dataToWrite){
+			if(server != null){
+				NetworkStream ns2 = server.GetStream();
+				//Debug.Log ("Data to be wrote");
+				if(ns2.CanWrite){
+					//Debug.Log ("CW");
+					byte[] outputByte = outputs.Dequeue();
+					ns2.Write(outputByte,0,outputByte.Length);
+					if(outputs.Count == 0){
+						dataToWrite = false;
+					}
+				
+				}else{
+					//Debug.Log ("You can not write to the stream.");
+				}
 			}
 		}
 	}
 
+	void OnLevelWasLoaded(){
+		if (!gameController) {
+				gameController = GameObject.FindObjectOfType<MatchControl> ();
+		}
+	}
+	//Prepare string into bytes to send to server
 	public void prepareString(string outputString){
-		Debug.Log ("String prep");
+		//Debug.Log (outputString);
 		byte[] encodedString = Encoding.ASCII.GetBytes (outputString);
 		outputs.Enqueue(encodedString);
 		dataToWrite = true;
 	}
-
+	//Stream to read inputs from server
 	private void OpenStream(){
-		Debug.Log ("STREAM!");
+		//Debug.Log ("STREAM!");
 		NetworkStream ns = server.GetStream ();
 		byte[] data = new byte[1024];
 		int recv;
 		while (runThread == true) {
-			Debug.Log("Waiting");
+			//Debug.Log("Waiting");
 			recv = 0;
 			try{
 				recv = ns.Read (data, 0, data.Length);
 				thereIsData = true;
-				Debug.Log (recv + " data");
+				//Debug.Log (recv + " data");
 			}
 			catch
 			{
-				Debug.Log("Caught");
+				//Debug.Log("Caught");
 				break;
 			}
 			if(recv == 0){
-				Debug.Log ("Breaking down");
+				//Debug.Log ("Breaking down");
 				break;
 			}
 
-			inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
-			Debug.Log(stringData + " stringdata");
+			stringData = Encoding.ASCII.GetString (data, 0, recv);
+			SemiColonParsing(stringData);
+			//inputs.Enqueue(Encoding.ASCII.GetString (data, 0, recv));
+			//Debug.Log("inputs " + inputs.Peek());
 		}
-		Debug.Log("Disconnecting from server...");
+		//Debug.Log("Disconnecting from server...");
 		ns.Close ();
 		server.Close ();
 	}
 
+	void SemiColonParsing(string inputCommands){
+		string[] SemiArray;
+		SemiArray = inputCommands.Split (";" [0]);
+		foreach (string a in SemiArray) {
+			inputs.Enqueue(a);
+		}
+	}
+
 	~TCPclient(){
-		Debug.Log ("down");
 		runThread = false;
+		server.Close ();
+	}
+
+	void OnApplicationQuit(){
+
+		runThread = false;
+		writeData = Encoding.ASCII.GetBytes("Close Game");
+		
+		if (server != null) {
+			NetworkStream ns2 = server.GetStream ();
+			ns2.Write(writeData,0,writeData.Length);
+
+			server.Close ();
+		}
+
+		Application.Quit ();
 	}
 }
